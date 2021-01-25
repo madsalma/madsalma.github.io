@@ -33,6 +33,11 @@ p,cite,code,ul {
 	font-size: 1.2em;
 	padding-bottom: 1.2em;
 }
+.button {
+	border: 1px solid #AAA;
+	margin-left: 5px;
+	padding: 2px 3px;
+}
 h1 {
 	font-size: 1.4em;
 	margin-bottom: 4px;
@@ -175,7 +180,7 @@ h2 {
 
 /* footer */
 .footer {
-	background: #0094D6 url(img/bgfooter.gif) repeat-x;
+	background: #007155 url(img/bgfooter.gif) repeat-x;
 	color: #C1DEF0;
 	font-size: 1.1em;
 	line-height: 40px;
@@ -192,7 +197,7 @@ h2 {
 
 
 /* Bold my name in the author list */
-a.bibbase.author.link[href="https://molzahn.github.io/publications2.html"] {
+a.bibbase.author.link[href="https://madsalma.github.io/publications2.html"] {
   font-weight: bold;
    pointer-events: none;
    cursor: default;
