@@ -204,6 +204,14 @@ a.bibbase.author.link[href="https://madsalma.github.io/publications2.html"] {
    color: gray;
 }
 
+ul {
+  list-style-type: none;
+}
+
+li span {
+    font-size: 10px;
+}
+
 .bibbase_icon { display: none; }
 
 .bibbase_paper_title {

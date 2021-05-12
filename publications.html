@@ -29,7 +29,6 @@
 
 		<div class="navigation">
 			<a href="index.html">Homepage</a>
-			<a href="biography.html">Biography</a>
 			<a href="people.html">People</a>
 			<a href="publications.html">Publications</a>
 			<a href="madsCV full.pdf">CV</a>
@@ -76,57 +75,119 @@ Please see the links for the copy of record, which may have different formatting
 		<h2>Journal Papers</h2>
 	</div>
 	<div class="tile scale-anm Year">
-		<span>
-			<li><p>D. Turizo and <b>D.K. Molzahn</b>, "Invertibility Conditions for the Admittance Matrices of Balanced Power Systems," <i>Submitted</i>.<br />
-				<span id="admittance_year" class="abstract" style="display:none">
-					The admittance matrix encodes the network topology and electrical parameters of a power system in order to relate the current injection and voltage phasors. Since admittance matrices are central to many power engineering analyses, their characteristics are important subjects of theoretical studies. This paper focuses on the key characteristic of <i>invertibility</i>. Previous literature has presented an invertibility condition for admittance matrices. This paper first identifies and fixes a technical issue in the proof of this previously presented invertibility condition. This paper then extends this previous work by deriving new conditions that are applicable to a broader class of systems with lossless branches and transformers with off-nominal tap ratios.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('admittance_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/turizo_molzahn-admittance_matrix_invertibility.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2012.04087">link</a> ] [ Ref: <a href="pubs/turizo_molzahn-admittance_matrix_invertibility.bib">bib</a>   <a href="pubs/turizo_molzahn-admittance_matrix_invertibility.txt">txt</a> ] </p></li>
-		</span>
-	</div>
+			<span>
+				<li><p> N. Nazir and M. Almassalkhi, "Guaranteeing a physically realizable battery dispatch without charge-discharge complementarity constraints," <i>IEEE Transactions on Power Systems</i>, submitted.<br />
+					<span id="twprs_ccBatt_2021" class="abstract" style="display:none">
+						The non-convex complementarity constraints present a fundamental computational challenge in energy constrained optimization problems. In this work, we present a new, linear, and robust battery optimization formulation that sidesteps the need for battery complementarity constraints and integers and prove analytically that the formulation guarantees that all energy constraints are satisfied which ensures that the optimized battery dispatch is physically realizable. In addition, we bound the worst-case model mismatch and discuss conservativeness. Simulation results further illustrate the effectiveness of this approach.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('twprs_ccBatt_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+			</span>
+		</div>
 	<div class="tile scale-anm Year">
-		<span>
-			<li><p>D. Lee, K. Turitsyn, <b>D.K. Molzahn</b>, and L.A. Roald, "Robust AC Optimal Power Flow with Robust Convex Restriction," <i>Submitted</i>.<br />
-				<span id="robustACOPFconvexrestriction_year" class="abstract" style="display:none">
-					Electric power grids regularly experience uncertain fluctuations from load demands and renewables, which poses a risk of violating operational limits designed to safeguard the system. In this paper, we consider the robust AC OPF problem that minimizes the generation cost while requiring a certain level of system security in the presence of uncertainty. The robust AC OPF problem requires that the system satisfy operational limits for all uncertainty realizations within a specified uncertainty set. Guaranteeing robustness is particularly challenging due to the non-convex, nonlinear AC power flow equations, which may not always have a solution. In this work, we extend a previously developed convex restriction to a <i>robust convex restriction</i>, which is a convex inner approximation of the non-convex feasible region of the AC OPF problem that accounts for uncertainty in the power injections. We then use the robust convex restriction in an algorithm that obtains robust solutions to AC OPF problems by solving a sequence of convex optimization problems. We demonstrate our algorithm and its ability to control robustness versus operating cost trade-offs using PGLib test cases.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('robustACOPFconvexrestriction_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/lee_turitsyn_molzahn_roald-robust_acopf.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2005.04835">link</a> ] [ Ref: <a href="pubs/lee_turitsyn_molzahn_roald-robust_acopf.bib">bib</a>   <a href="pubs/lee_turitsyn_molzahn_roald-robust_acopf.txt">txt</a> ] </p></li>
-		</span>
-	</div>
+			<span>
+				<li><p> A. Khurram, M. Amini, L. Duffaut Espinosa, P. H. Hines, and M. Almassalkhi, "Real-time Grid and DER Co-simulation Platform for Validating Large-scale DER Control Schemes," <i>IEEE Transactions on Smart Grid</i>, submitted.<br />
+					<span id="tsg_hilDER_2021" class="abstract" style="display:none">
+						Distributed energy resources (DERs) such as responsive loads and energy storage systems are valuable resources available to grid operators for balancing supply-demand mismatches via load coordination. However, consumer acceptance of load coordination schemes depends on ensuring quality of service (QoS), which embodies device-level constraints. Since each device has its own internal energy state, the effect of QoS on the fleet can be cast as fleet-wide energy limits within which the aggregate "state of charge" (SoC) must be actively maintained. This requires coordination of DERs that is cognizant of the SoC, responsive to grid conditions, and depends on fast communication networks. To that effect, this paper presents a novel real-time grid-and-DER co-simulation platform for validating advanced DER coordination schemes and characterizing the capability of such a DER fleet. In particular, we present how the co-simulation platform is suitable for: i) testing real-time performance of a large fleet of DERs in delivering advanced grid services, including frequency regulation; ii) online state estimation to characterize the corresponding SoC of a large fleet of DERs;  and iii) incorporating practical limitations of DERs and communications and analyzing the effects on fleet-wide performance. To illustrate these benefits of the presented grid-DER co-simulation platform, we employ the advanced DER coordination scheme called packetized energy management (PEM), which is a novel device-driven, asynchronous, and randomizing control paradigm for DERs. A fleet of thousands of PEM-enabled DERs are then added to a realistic and dynamical model of the Vermont transmission system to complete validation of the co-simulation platform.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tsg_hilDER_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tsg_hilDER_2021.pdf">pdf</a> ] </p></li>
+			</span>
+		</div>
 	<div class="tile scale-anm Year">
-		<span>
-			<li><p>J. Liu, B. Cui, <b>D.K. Molzahn</b>, C. Chen, and X. Lu, "Optimal Power Flow for DC Networks with Robust Feasibility and Stability Guarantees," <i>Submitted</i>.<br />
-				<span id="robust_dc_network_year" class="abstract" style="display:none">
-					With high penetrations of renewable generation and variable loads, there is significant uncertainty associated with power flows in DC networks such that stability and constraint satisfaction are important concerns. Most existing DC network optimal power flow (DN-OPF) formulations assume exact knowledge about loading conditions and do not provide stability guarantees. In contrast, this paper studies a DN-OPF formulation which considers both stability and constraint satisfaction under uncertainty. The need to account for a range of uncertainty realizations in this paper’s robust optimization formulation results in a challenging semi-infinite program (SIP). The proposed solution algorithm reformulates this SIP into a computationally amenable problem whose solution provides a feasible operating point for the SIP. This algorithm constructs a convex stability set using sufficient conditions for the existence of a feasible and stable power flow solution. Solving an optimization problem based on this convex stability set provides generator set points which ensure that the DC network has a stable operating point for any considered uncertainty realization. This optimization problem takes a form similar to a deterministic DN-OPF problem and is therefore tractable. The proposed algorithm is demonstrated using various DC networks adapted from IEEE test cases.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('robust_dc_network_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/liu_cui_molzahn_chen_lu-robust_dc_network_opf.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/1902.08163">link</a> ] [ Ref: <a href="pubs/liu_cui_molzahn_chen_lu-robust_dc_network_opf.bib">bib</a>   <a href="pubs/liu_cui_molzahn_chen_lu-robust_dc_network_opf.txt">txt</a> ] </p></li>
-		</span>
-  </div>
+			<span>
+				<li><p> N. Nazir and M. Almassalkhi, "Grid-aware aggregation and realtime disaggregation of distributed energy resources in radial networks," <i>IEEE Transactions on Power Systems</i>, submitted.<br />
+					<span id="tpwrs_ciaDist_2021" class="abstract" style="display:none">
+						Dispatching a large fleet of distributed energy resources (DERs) in response to wholesale energy market or regional grid signals  requires solving a challenging disaggregation problem when the DERs are located within a distribution network. This manuscript presents a computationally tractable convex inner approximation for the optimal power flow (OPF) problem that characterizes a feeders aggregate DERs hosting capacity and enables a realtime, grid-aware dispatch of DERs for radial distribution networks. The inner approximation is derived by considering convex envelopes on the nonlinear terms in the AC power flow equations. The resulting convex formulation is then used to derive provable nodal injection limits, such that any combination of DER dispatches within their respective nodal limits is guaranteed to be AC admissible. These nodal injection limits are then used to construct a realtime, open-loop control policy for dispatching DERs at each location in the network to collectively deliver grid services. The IEEE-37 distribution network is used to validate the technical results and highlight various use-cases.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tpwrs_ciaDist_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_ciaDist_2021.pdf">pdf</a> ] </p></li>
+			</span>
+		</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> M. Botkin-Levy, A. Engelmann, T. M&#252hlpfordt, T. Faulwasser, and M. Almassalkhi, "Distributed control of charging for electric vehicle fleets under dynamic transformer ratings," <i>IEEE Transactions on Control Systems Technology</i>, submitted.<br />
+					<span id="tcst_EVC_2021" class="abstract" style="display:none">
+							Due to their large power draws and increasing adoption rates, electric vehicles (EVs) will become a significant challenge for electric distribution grids. However, with proper charging control strategies, the challenge can be mitigated without the need for expensive grid reinforcements. This manuscript presents and analyzes new distributed charging control methods to coordinate EV charging under nonlinear transformer temperature ratings. Specifically, we assess the trade-offs between required data communications, computational efficiency, and optimality guarantees for different control strategies based on a convex relaxation of the underlying nonlinear transformer temperature dynamics. Classical distributed control methods such as those based on dual decomposition and alternating direction method of multipliers (ADMM) are compared against the new Augmented Lagrangian-based Alternating Direction Inexact Newton (ALADIN) method and a novel low-information, look-ahead version of packetized energy management (PEM). These algorithms are implemented and analyzed for two case studies on residential and commercial EV fleets. Simulation results validate the new methods and provide insights into key trade-offs.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tcst_EVC_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_EVC_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2007.10304">arXiv</a> ] </p></li>
+			</span>
+	</div>
+			
 	<div class="tile scale-anm Year">
 		<h2>Conference Proceedings</h2>
 	</div>
 	<div class="tile scale-anm Year">
-		<span>
-			<li><p>S. Xu, R. Ma, <b>D.K. Molzahn</b>, H.L. Hijazi, and C. Josz, "Verifying Global Optimality of Candidate Solutions to Polynomial Optimization Problems using a Determinant Relaxation Hierarchy," submitted.<br />
-				<span id="verifying_opt_year" class="abstract" style="display:none">
-					We propose an approach for verifying that a given feasible point for a polynomial optimization problem is globally optimal. The approach relies on the Lasserre hierarchy and the result of Lasserre regarding the importance of the convexity of the feasible set as opposed to that of the individual constraints. By focusing solely on certifying global optimality and relaxing the Lasserre hierarchy using necessary conditions for positive semidefiniteness based on matrix determinants, the proposed method is implementable as a computationally tractable linear program. We demonstrate this method via application to the optimal power flow problem used to operate electric power systems.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('verifying_opt_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/xu_ma_molzahn_hijazi_josz-verifying_global_opt.pdf">pdf</a> ] [ Ref: <a href="pubs/xu_ma_molzahn_hijazi_josz-verifying_global_opt.bib">bib</a>   <a href="pubs/xu_ma_molzahn_hijazi_josz-verifying_global_opt.txt">txt</a> ] </p></li>
-		</span>
-  </div>
+			<span>
+				<li><p> N. Nazir, I. Hiskens, and M. Almassalkhi, "Exploring reactive power limits on wind farm collector networks with convex inner approximations," <i>IEEE Conference on Decision and Control (CDC)</i>, submitted.<br />
+					<span id="twprs_ccBatt_2021" class="abstract" style="display:none">
+						The non-convex complementarity constraints present a fundamental computational challenge in energy constrained optimization problems. In this work, we present a new, linear, and robust battery optimization formulation that sidesteps the need for battery complementarity constraints and integers and prove analytically that the formulation guarantees that all energy constraints are satisfied which ensures that the optimized battery dispatch is physically realizable. In addition, we bound the worst-case model mismatch and discuss conservativeness. Simulation results further illustrate the effectiveness of this approach.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('twprs_ccBatt_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+			</span>
+		</div>
 
 	</ul>
 	<ul class="tile scale-anm Year">
 		<div class="tile scale-anm Year">
-			<a name="2021"><h1>2020</h1></a>
+			<a name="2021"><h1>2021</h1></a>
+		</div>
+<!--
+		<div class="tile scale-anm Year">
+			<h2>Journal Papers</h2>
+		</div>
+		
+		 <div class="tile scale-anm Year">
+			<span>
+				<li><p> N. Nazir and M. Almassalkhi, "Voltage positioning using co-optimization of controllable grid assets," <i>IEEE Transactions on Power Systems</i> 2020 (Early Access).<br />
+					<span id="twprs_voltPosOPF_2020" class="abstract" style="display:none">
+						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('twprs_voltPosOPF_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_voltPosOPF_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9288638">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
+			</span>
+		</div>
+-->
+		
+		<div class="tile scale-anm Year">
+			<h2>Conference Proceedings</h2>
+		</div>
+		<div class="tile scale-anm Year">
+		
+			<span>
+				<li><p>S. Brahma, M. Almassalkhi, and H. Ossareh, "Optimal Control of Virtual Batteries using Stochastic Linearization," <i>IEEE Conference on Control Technology and Applications (CCTA) </i>, August 8-11, 2021.<br />
+					<span id="ccta_qlcVB_2021" class="abstract" style="display:none">
+					Stochastic Linearization (SL) is a method of linearizing a nonlinearity that, unlike traditional Jacobian linearization that is valid only close to the operating point, uses statistical properties of the input to render the linearization fairly accurate over a wide range of inputs. In this paper, the method of SL is applied to optimally design controllers for an aggregation of distributed energy resources (DERs), called a virtual battery (VB), by taking into account the solar penetration levels, grid parameters, and the VB power limits.  Analysis and simulation results show that VB performance can be greatly improved over a baseline design that ignores VB power limits, and that the controllers can be adaptively designed to effectively respond to changes in system parameters. This proves to be a new method for designing controllers to improve the participation of power-constrained VBs.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('ccta_qlcVB_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/ccta_qlcVB_2021.pdf">pdf</a> ] [IEEE (to appear)] </p></li>
+			</span>
+		</div>
+			<div class="tile scale-anm Year">
+		
+			<span>
+				<li><p>A. Khurram, L. Duffaut Espinosa, and M. Almassalkhi, "A Methodology for Quantifying Flexibility in a fleet of Diverse DERs," <i>IEEE PES PowerTech </i>, June 28 - July 2, 2021.<br />
+					<span id="ptech_flex_2021" class="abstract" style="display:none">
+				This paper addresses the question: how many distributed energy resources (DERs) are needed to provide &plusmn1MW of flexibility over a number of hours? For this purpose, a metric based on an ISO's own performance score is proposed. Then, a systematic procedure is presented and validated that makes use of either a simulator or the solution to an optimization problem based on a nominal analytical formulation to get flexibility in terms of kW-per-device. Furthermore, simulation-based analysis indicates that flexibility from different DER fleets adds linearly, that is, the total flexibility provided by a mixture of different DER types can be obtained as a convex combination of their individual kW-per-device flexibility. The proposed methodology is validated on (i) a centralized coordinator and (ii) a device driven DER coordination scheme called packetized energy management (PEM). Furthermore, the effect of heterogeneity as well as PEM specific parameters such as packet length and mean time-to-request on flexibility is also quantified.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('ptech_flex_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/ptech_flex_2021.pdf">pdf</a> ] [IEEE (to appear)] </p></li>
+			</span>
+		</div>
+	
+	<ul class="tile scale-anm Year">
+		<div class="tile scale-anm Year">
+			<a name="2020"><h1>2020</h1></a>
 		</div>
 		<div class="tile scale-anm Year">
 			<h2>Journal Papers</h2>
@@ -258,7 +319,7 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>H. Mavalizadeh, L. Duffaut Espinosa, and M. Almassalkhi, "Decentralized Frequency Control using Packet-based Energy Coordination," <i>IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, February 2-5, 2021.<br />
+				<li><p>H. Mavalizadeh, L. Duffaut Espinosa, and M. Almassalkhi, "Decentralized Frequency Control using Packet-based Energy Coordination," <i>IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, December, 2020.<br />
 					<span id="sgc_freqresp_2020" class="abstract" style="display:none">
 						Distributed algorithms provide attractive features for solving Optimal Power Flow (OPF) problems in interconnected power systems compared to traditional centralized algorithms. Distributed algorithms help to maintain the control autonomy and data privacy of subsystems, which is particularly relevant in competitive markets and practical control system implementations. This paper analyzes a distributed optimization algorithm known as the "Auxiliary Principle Problem" to solve multiperiod distributed DCOPF problems with energy storage systems. The proposed approach enables multiple interconnected systems with their own sub-objectives to share their resources and to participate in an electricity market without implicitly sharing information about their local generators or internal network parameters. The paper also shows how the proposed approach can enable future microgrids to coordinate their operation, reduce the total operational cost, and avoid internal constraint violations caused by unscheduled flows (USF) while maintaining the subsystems’ autonomy. We used an 11-bus test system consisting of two interconnected subsystems to evaluate the proposed approach and analyze the impact of USF.
 					</span>
