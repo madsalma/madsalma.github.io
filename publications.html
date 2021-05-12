@@ -258,7 +258,7 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>H. Mavalizadeh, L. Du aut Espinosa, and M. Almassalkhi, "Decentralized Frequency Control using Packet-based Energy Coordination," <i>IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, February 2-5, 2021.<br />
+				<li><p>H. Mavalizadeh, L. Duffaut Espinosa, and M. Almassalkhi, "Decentralized Frequency Control using Packet-based Energy Coordination," <i>IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, February 2-5, 2021.<br />
 					<span id="sgc_freqresp_2020" class="abstract" style="display:none">
 						Distributed algorithms provide attractive features for solving Optimal Power Flow (OPF) problems in interconnected power systems compared to traditional centralized algorithms. Distributed algorithms help to maintain the control autonomy and data privacy of subsystems, which is particularly relevant in competitive markets and practical control system implementations. This paper analyzes a distributed optimization algorithm known as the "Auxiliary Principle Problem" to solve multiperiod distributed DCOPF problems with energy storage systems. The proposed approach enables multiple interconnected systems with their own sub-objectives to share their resources and to participate in an electricity market without implicitly sharing information about their local generators or internal network parameters. The paper also shows how the proposed approach can enable future microgrids to coordinate their operation, reduce the total operational cost, and avoid internal constraint violations caused by unscheduled flows (USF) while maintaining the subsystems’ autonomy. We used an 11-bus test system consisting of two interconnected subsystems to evaluate the proposed approach and analyze the impact of USF.
 					</span>
@@ -326,70 +326,58 @@ Please see the links for the copy of record, which may have different formatting
 	<div class="tile scale-anm Year">
 		<h2>Conference Proceedings</h2>
 	</div>
-	<div class="tile scale-anm Year">
+<div class="tile scale-anm Year">
 		<span>
-			<li><p>M.R. Narimani, <b>D.K. Molzahn</b>, H. Nagarajan, and M.L. Crow, "Comparison of Various Trilinear Monomial Envelopes for Convex Relaxations of Optimal Power Flow Problems," <i>IEEE Global Conference on Signal and Information Processing (GlobalSIP),</i> November 26-29, 2018.<br />
-				<span id="globalsip2018_year" class="abstract" style="display:none">
-					Solutions to optimal power flow (OPF) problems provide operating points for electric power systems that minimize operational costs while satisfying both engineering limits and the power flow equations. OPF problems are non-convex and may have multiple local optima. To search for global optima, recent research has developed a variety of convex relaxations to bound the optimal objective values of OPF problems. Certain relaxations, such as the quadratic convex (QC) relaxation, are derived from OPF representations that contain trilinear monomials. Previous work has considered three techniques for relaxing these trilinear monomials: <i>recursive McCormick</i> (RMC) envelopes, <i>Meyer and Floudas</i> (MF) envelopes, and <i>extreme-point</i> (EP) envelopes. This paper compares the tightness and computational speed of relaxations that employ each of these techniques. Forming the convex hull of a single trilinear monomial, MF and EP envelopes are equivalently tight. Empirical results show that QC formulations using MF and EP envelopes give tighter bounds than those using RMC envelopes. Empirical results also indicate that the EP envelopes have advantages over MF envelopes with respect to computational speed and numerical stability when used with state-of-the-art second-order cone programming solvers.
+			<li><p> L. D. Espinosa, M. Almassalkhi, P. D. H. Hines, and J. Frolik, "System Properties of Packetized Energy Management for Aggregated Diverse Resources," <i>Power Systems Computation Conference (PSCC)</i>, 11-15 June 2018.<br />
+				<span id="pscc_sysPEM_2018" class="abstract" style="display:none">
+						This paper presents the systematic analysis of a population of diverse distributed energy resources (DERs) coordinated using a bottom-up approach known as packetized energy management (PEM). Particularly, for the aggregation of DERs modeled as a bilinear system, a simple discrete-time control law is provided that maximizes the number of accepted requests while tracking a regulation signal provided by a regional transmission operator. Moreover, the mechanics of energy packet completion rates under persistent inputs and the definition of a nominal quality of service (QoS) controller for PEM are provided. Finally, the observability of the PEM system is addressed including an implementation of the extended Kalman filter (EKF) for state estimation of the dynamic state of a diverse DER population.
 				</span>
-		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('globalsip2018_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/narimani_molzahn_nagarajan_crow-globalsip2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8646323">link</a> ] [ Ref: <a href="pubs/narimani_molzahn_nagarajan_crow-globalsip2018.bib">bib</a>   <a href="pubs/narimani_molzahn_nagarajan_crow-globalsip2018.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('pscc_sysPEM_2018');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_sysPEM_2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442954">link</a> ] </p></li>
+		</span>
+  </div>
+<div class="tile scale-anm Year">
+		<span>
+			<li><p> M. Amini and M. Almassalkhi, "Trading off robustness and performance in receding horizon control with uncertain energy resources," <i>Power Systems Computation Conference (PSCC)</i>, 11-15 June 2018.<br />
+				<span id="pscc_uncVES_2018" class="abstract" style="display:none">
+						Increased utilization of residential and small commercial distributed energy resources (DERs) has led DER aggregators to develop concepts such as the virtual power plants (VPP). VPPs aggregate the energy resources and dispatch them akin to a conventional power plant or grid-scale battery to provide flexibility to the system operator. Since the level of flexibility from aggregated DERs is uncertain and time varying, the VPPs' dispatch can be challenging. To improve the system operation, flexible VPPs can be formulated probabilistically and can be realized with chance-constrained model predictive control (CCMPC). This can be solved using scenario-based methodology, which provides a-priori probabilistic guarantees on constraint satisfaction. This paper focuses on understanding the robustness and performance trade offs in receding horizon control with uncertain energy resources. The CCMPC dispatches robustly the uncertain VPPs and conventional generators while taking into account economically optimal, secure reference trajectory for generating assets. Closed-loop performance is with respect to minimizing the deviation of conventional generators from their reference trajectory. To evaluate the trade off between robustness and system performance with uncertain energy resources, a simulation-based analysis is carried out on the modified IEEE 30-bus system.
+				</span>
+		<span style="cursor:auto;">
+			&emsp;[ <span onclick="showDiv('pscc_uncVES_2018');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_uncVES_2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442985">link</a> ] </p></li>
 		</span>
   </div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p>M.R. Narimani, <b>D.K. Molzahn</b>, D. Wu, and M.L. Crow, "Empirical Investigation of Non-Convexities in Optimal Power Flow Problems," <i>American Control Conference (ACC),</i> June 27-29, 2018.<br />
-				<span id="empirical_nonconvexity2017_year" class="abstract" style="display:none">
-					Optimal power flow (OPF) is a central problem in the operation of electric power systems. An OPF problem optimizes a specified objective function subject to constraints imposed by both the non-linear power flow equations and engineering limits. These constraints can yield non-convex feasible spaces that result in significant computational challenges. Despite these non-convexities, local solution algorithms actually find the global optima of some practical OPF problems. This suggests that OPF problems have a range of difficulty: some problems appear to have convex or "nearly convex" feasible spaces in terms of the voltage magnitudes and power injections, while other problems can exhibit significant non-convexities. Understanding this range of problem difficulty is helpful for creating new test cases for algorithmic benchmarking purposes. Leveraging recently developed computational tools for exploring OPF feasible spaces, this paper first describes an empirical study that aims to characterize non-convexities for small OPF problems. This paper then proposes and analyzes several medium-size test cases that challenge a variety of solution algorithms.
+			<li><p> N. Nazir and M. Almassalkhi, "Receding-horizon optimization of unbalanced distribution systems with time-scale separation for discrete and continuous control devices," <i>Power Systems Computation Conference (PSCC)</i>, 11-15 June 2018.<br />
+				<span id="pscc_unbalDiscrCont_2018" class="abstract" style="display:none">
+					This paper presents a method for the optimal control of discrete and continuous devices in an unbalanced three-phase distribution network with significant renewable generation. A hierarchical control scheme is presented where the discrete mechanical assets are dispatched at a slow time-scale as a mixed-integer program (MIP) and the continuous DERs are controlled at a fast time-scale as a convex program. The optimization programs are operated at two time scales as they manage controllable grid resources with different levels of responsiveness and flexibility. The MIP optimizes slow mechanical assets to position voltage robustly against uncertain net-load and a three-phase SOCP program is used to solve the fast loss-minimization optimization for the continuously operated DERs while providing corrective control against the intermittent and variable renewable net-load generation. The scheme is presented on the IEEE-13 node test feeder.
 				</span>
-		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('empirical_nonconvexity2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/narimani_molzahn_wu_crow-acc2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/8431760">link</a> ] [ Ref: <a href="pubs/narimani_molzahn_wu_crow-acc2018.bib">bib</a>   <a href="pubs/narimani_molzahn_wu_crow-acc2018.txt">txt</a> ] [ <a href="pubs/narimani_molzahn_wu_crow-acc2018_test_cases.zip">test cases</a> ]</p></li>
+			&emsp;[ <span onclick="showDiv('pscc_unbalDiscrCont_2018');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_unbalDiscrCont_2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442555">link</a> ] </p></li>
 		</span>
   </div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p><b>D.K. Molzahn</b> and L.A. Roald, "Towards an AC Optimal Power Flow Algorithm with Robust Feasibility Guarantees," <i>20th Power Systems Computation Conference (PSCC)</i>, June 11-15, 2018.<br />
-				<span id="acopf_robust2017_year" class="abstract" style="display:none">
-					With growing penetrations of stochastic renewable generation and the need to accurately model the network physics, optimization problems that explicitly consider uncertainty and the AC power flow equations are becoming increasingly important to the operation of electric power systems. This paper describes initial steps towards an AC Optimal Power Flow (AC OPF) algorithm which yields an operating point that is guaranteed to be robust to all realizations of stochastic generation within a specified uncertainty set. Ensuring robust feasibility requires overcoming two challenges: 1) ensuring solvability of the power flow equations for all uncertainty realizations and 2) guaranteeing feasibility of the engineering constraints for all uncertainty realizations. This paper primarily focuses on the latter challenge. Specifically, this paper poses the robust AC OPF problem as a bi-level program that maximizes (or minimizes) the constraint values over the uncertainty set, where a convex relaxation of the AC power flow constraints is used to ensure conservativeness. The resulting optimization program is solved using an alternating solution algorithm. The algorithm is illustrated via detailed analyses of two small test cases.
+			<li><p> S. Brahma, M. Almassalkhi, and H. Ossareh, "A Stochastic Linearization Approach to Optimal Primary Control of Power Systems with Generator Saturation," <i>IEEE Conference on Control Technology and Applications (CCTA)</i>, 21-24 Aug. 2018.<br />
+				<span id="ccta_qlcGen_2018" class="abstract" style="display:none">
+						Quasilinear Control (QLC) is a set of methods used for analysis and design of systems with nonlinear actuators and sensors. It is based on the method of stochastic linearization, which replaces a nonlinearity by an equivalent gain and bias. Here, we leverage QLC to systematically design an optimal droop controller for primary frequency control of power systems with asymmetric generator saturation and renewable penetration. The droop parameters are found by solving an optimization problem wherein the cost function is a combination of the change in frequency and the actuator input. Simulation studies show that the combined output and control cost is improved compared to a baseline design, and that the systematic design process provides an appropriate response to any change in input or system parameters.
 				</span>
-		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('acopf_robust2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_roald-acopf_robust2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442889">link</a> ] [ Ref: <a href="pubs/molzahn_roald-acopf_robust2018.bib">bib</a>   <a href="pubs/molzahn_roald-acopf_robust2018.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('ccta_qlcGen_2018');" class="abstractLink">abstract</span> ] [ <a href="pubs/ccta_qlcGen_2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8511401">link</a> ] </p></li>
 		</span>
+  </div>
+  <div class="tile scale-anm Year">
+		<h2>Book Chapter</h2>
 	</div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p>S. Misra, <b>D.K. Molzahn</b>, and K. Dvijotham, "Optimal Adaptive Linearizations of the AC Power Flow Equations," <i>20th Power Systems Computation Conference (PSCC)</i>, June 11-15, 2018.<br />
-				<span id="adaptive_linearizations2018_year" class="abstract" style="display:none">
-					The power flow equations are at the heart of many optimization and control problems relevant to power systems. The non-linearity of these equations leads to computational challenges in solving power flow and optimal power flow problems (non-convergence, local optima, etc.). Accordingly, various linearization techniques, such as the DC power flow, are often used to approximate the power flow equations. In contrast to a wide variety of general linearization techniques in the power systems literature, this paper computes a linear approximation that is specific to a given power system and operating range of interest. An "adaptive linearization" developed using this approach minimizes the worst-case error between the output of the approximation and the actual non-linear power flow equations over the operating range of interest. To compute an adaptive linearization, this paper proposes a constraint generation algorithm that iterates between 1) using an optimization algorithm to identify a point that maximizes the error of the linearization at that iteration and 2) updating the linearization to minimize the worst-case error among all points identified thus far. This approach is tested on several IEEE test cases, with the results demonstrating up to a factor of four improvement in approximation error over linearizations based on a first-order Taylor approximation.
+			<li><p>Mads Almassalkhi, Luis Duffaut Espinosa, Paul D. H. Hines, Jeff Frolik, Sumit Paudyal, and Mahraz Amini, "Asynchronous Coordination of Distributed Energy Resources with Packetized Energy Management," <i>20th In: Meyn S., Samad T., Hiskens I., Stoustrup J. (eds) Energy Markets and Responsive Grids. The IMA Volumes in Mathematics and its Applications,</i>, pp 333-361, vol 162. Springer, 2018.<br />
+				<span id="springer_asynchCoord_2018" class="abstract" style="display:none">
+					To enable greater penetration of renewable energy, there is a need to move away from the traditional form of ensuring electric grid reliability through fast-ramping generators and instead consider an active role for flexible and controllable distributed energy resources (DERs), e.g., plug-in electric vehicles (PEVs), thermostatically controlled loads (TCLs), and energy storage systems (ESSs) at the consumer level. However, in order to facilitate consumer acceptance of this type of load coordination, DERs need to be managed in a way that avoids degrading the consumers’ quality of service (QoS), autonomy, and privacy. This work leverages a probabilistic packetized approach to energy delivery that draws inspiration from random access, digital communications. Packetized energy management (PEM) is an asynchronous, bottom-up coordination scheme for DERs that both abides by the constraints of the transmission and distribution grids and does not require explicit knowledge of specific DER’s local states or schedules. We present a novel macro-model that approximates the aggregate behavior of packetized DERs and is suitable for estimation and control of available flexible DERs to closely track a time-varying regulation signal. PEM is then implemented in a transmission/distribution system setting, validated with realistic numerical simulations, and compared against state-of-the-art load coordination schemes from industry.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('adaptive_linearizations2018_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/misra_molzahn_dvijotham-adaptive_linearizations2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442547">link</a> ] [ Ref: <a href="pubs/misra_molzahn_dvijotham-adaptive_linearizations2018.bib">bib</a>   <a href="pubs/misra_molzahn_dvijotham-adaptive_linearizations2018.txt">txt</a> ] </p></li>
-		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p>M.R. Narimani, <b>D.K. Molzahn</b>, and M.L. Crow, "Improving QC Relaxations of OPF Problems via Voltage Magnitude Difference Constraints and Envelopes for Trilinear Monomials," <i>20th Power Systems Computation Conference (PSCC)</i>, June 11-15, 2018.<br />
-				<span id="qc_voltage_difference2018_year" class="abstract" style="display:none">
-					AC optimal power flow (AC OPF) is a challenging non-convex optimization problem that plays a crucial role in power system operation and control. Recently developed convex relaxation techniques provide new insights regarding the global optimality of AC OPF solutions. The quadratic convex (QC) relaxation is one promising approach that constructs convex envelopes around the trigonometric and product terms in the polar representation of the power flow equations. This paper proposes two methods for tightening the QC relaxation. The first method introduces new variables that represent the voltage magnitude differences between connected buses. Using "bound tightening" techniques, the bounds on the voltage magnitude difference variables can be significantly smaller than the bounds on the voltage magnitudes themselves, so constraints based on voltage magnitude differences can tighten the relaxation. Second, rather than a potentially weaker "nested McCormick" formulation, this paper applies "Meyer and Floudas" envelopes that yield the convex hull of the trilinear monomials formed by the product of the voltage magnitudes and trignometric terms in the polar form of the power flow equations. Comparison to a state-of-the-art QC implementation demonstrates the advantages of these improvements via smaller optimality gaps.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('qc_voltage_difference2018_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/narimani_molzahn_crow-qc_improvements2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442667">link</a> ] [ Ref: <a href="pubs/narimani_molzahn_crow-qc_improvements2018.bib">bib</a>   <a href="pubs/narimani_molzahn_crow-qc_improvements2018.txt">txt</a> ] </p></li>
-		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p>J.A. Kersulis, I.A. Hiskens, C. Coffrin, and <b>D.K. Molzahn</b>, "Topological Graph Metrics for Detecting Grid Anomalies and Improving Algorithms," <i>20th Power Systems Computation Conference (PSCC)</i>, June 11-15, 2018.<br />
-				<span id="graph_metrics2017_year" class="abstract" style="display:none">
-					Power grids are naturally represented as graphs, with buses as nodes and power lines as edges. Graph theory provides many ways to measure power grid graphs, allowing researchers to characterize system structure and optimize algorithms. We apply several topological graph metrics to 33 publiclyavailable power grids. Results show that a straightforward, computationally inexpensive set of checks can quickly identify structural anomalies, especially when a broad set of test networks is available to establish norms. Another application of graph metrics is the characterization of computational behavior. We conclude by illustrating one compelling example: the close connection between clique analysis and semidefinite programming solver performance. These two applications demonstrate the power of purely topological graph metrics when utilized in the right settings.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('graph_metrics2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/kersulis_hiskens_coffrin_molzahn-graph_metrics2018.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8442682">link</a> ] [ Ref: <a href="pubs/kersulis_hiskens_coffrin_molzahn-graph_metrics2018.bib">bib</a>   <a href="pubs/kersulis_hiskens_coffrin_molzahn-graph_metrics2018.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('springer_asynchCoord_2018');" class="abstractLink">abstract</span> ] [ <a href="pubs/springer_asynchCoord_2018.pdf">pdf</a> ] [ <a href="https://link.springer.com/chapter/10.1007/978-1-4939-7822-9_14">link</a> ] </p></li>
 		</span>
 	</div>
 	</ul>
@@ -402,35 +390,35 @@ Please see the links for the copy of record, which may have different formatting
 	</div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p>M. Yao, J.L. Mathieu, and <b>D.K. Molzahn</b>, "The Impact of Load Models in an Algorithm for Improving Power System Voltage Stability via Demand Response," <i>55th Annual Allerton Conference on Communication, Control, and Computing,</i> October 4-6, 2017.<br />
-				<span id="allerton2017_year" class="abstract" style="display:none">
-					Increasing communication and control capabilities will allow future power system operators to exploit large quantities of responsive demand. This paper discusses ongoing work that employs demand response to improve voltage stability via virtual spatial shifting of loads (i.e., altering the locational distribution of power consumption in one time period with an energy payback in a following time period). In this paper, we study the impact of load models on a previously proposed iterative linearization algorithm to determine loading patterns that maximize a voltage stability margin, namely, the smallest singular value (SSV) of the power flow Jacobian matrix. Specifically, we extend the algorithm to enable inclusion of composite load models consisting of both "ZIP" components and a steady-state squirrel-cage induction machine (IM) model. We then investigate the impact of different load models on both the stability margin and the loading pattern. Using the IEEE 14-bus system as an illustrative example, the results show that the  type of load model affects the nominal system's SSV, the optimal SSV, and the optimal loading pattern. The maximum-achievable percent change in SSV is larger using IM models than using ZIP models. We also discuss the difficulty in interpreting the stability margin when the system undergoes structural changes resulting from the use of different voltage-dependent load models.
+			<li><p>M. Almassalkhi, J. Frolik, and P. Hines, "Packetized energy management: asynchronous and anonymous coordination of thermostatically controlled loads," <i>American Control Conference (ACC)</i>, May 24-26, 2017.<br />
+				<span id="acc_pem_2017" class="abstract" style="display:none">
+					Because of their internal energy storage, electrically powered, distributed thermostatically controlled loads (TCLs) have the potential to be dynamically managed to match their aggregate load to the available supply. However, in order to facilitate consumer acceptance of this type of load management, TCLs need to be managed in a way that avoids degrading perceived quality of service (QoS), autonomy, and privacy. This paper presents a real-time, adaptable approach to managing TCLs that both meets the requirements of the grid and does not require explicit knowledge of a specific TCL's state. The method leverages a packetized, probabilistic approach to energy delivery that draws inspiration from digital communications. We demonstrate the packetized approach using a case-study of 1000 simulated water heaters and show that the method can closely track a time-varying reference signal without noticeably degrading the QoS. In addition, we illustrate how placing a simple ramp-rate limit on the aggregate response overcomes synchronization effects that arise under prolonged peak curtailment scenarios.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('allerton2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/yao_molzahn_mathieu-allerton2017.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8262731">link</a> ] [ Ref: <a href="pubs/yao_molzahn_mathieu-allerton2017.bib">bib</a>   <a href="pubs/yao_molzahn_mathieu-allerton2017.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('acc_pem_2017');" class="abstractLink">abstract</span> ] [ <a href="pubs/acc_pem_2017.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8262731">link</a> ]  </p></li>
 		</span>
   </div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p>L.A. Roald, <b>D.K. Molzahn</b>, and A.F. Tobler, "Power System Optimization with Uncertainty and AC Power Flow: Analysis of an Iterative Algorithm," <i>IREP Symposium on Bulk Power System Dynamics and Control-X. The Power System of the Future: Global Dynamics arising from Distributed Actions,</i> August 27 - September 1, 2017.<br />
-				<span id="irep2017_year" class="abstract" style="display:none">
-					Many power system optimization problems are inherently affected by uncertainty, as it is generally impossible to exactly forecast load or renewable generation. Finding solutions that lead to low-cost, yet secure operation for a range of conditions is an important concern to system operators. This paper considers an iterative algorithm for solving power system optimization problems that include models of uncertainty and AC power flow physics. This algorithm iterates between solving deterministic nonlinear optimization problems with the AC power flow model and updating constraint tightenings that adjust the constraints to facilitate secure operation. Decoupling the uncertainty and the nonlinear optimization steps provides several advantages, such as tractability for large-scale problems and the ability to separately apply state-of-the-art techniques for handling the uncertainty and the nonlinearity. Using numerical examples and theoretical analyses, this paper discusses the benefits and limitations of the iterative algorithm in solving general power system optimization problems. This paper further characterizes the behavior of the iterative algorithm with respect to convergence, optimality, and infeasibility, and suggests several modifications to improve performance.
+			<li><p>L. D. Espinosa, M. Almassalkhi, P. D. H. Hines, and J. Frolik, "Aggregate Modeling and Coordination of Diverse Energy Resources Under Packetized Energy Management," <i>IEEE Conference on Decision and Control (CDC)</i>, Dec. 12-15, 2017.<br />
+				<span id="cdc_pem_2017" class="abstract" style="display:none">
+						Transmitting a large file across the internet requires breaking up the file into smaller packets of data. Packetized energy management (PEM) leverages similar concepts from communication theory to coordinate distributed energy resources by breaking up deferrable residential consumer demands into smaller fixed-duration/fixed-power packets of energy. Each individual load is managed by a probabilistic automaton that stochastically requests energy packets as a function of its local dynamic state (e.g., temperature or state-of-charge). Based on the aggregate request rate from packetized loads and grid conditions, the PEM coordinator will modulate the rate of accepting requests, which permits tight tracking of a reference (load-shaping or market) signal. This paper presents a state bin transition (macro) model suitable for characterizing a diverse population of electric water heaters (EWHs) and energy storage systems (ESSs) under a single PEM coordinator that is validated against an agent-based simulation of the diverse loads. The resulting model illustrates how diversity of packetized load types enhances the level of flexibility offered by the coordinator.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('irep2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/roald_molzahn_tobler-irep2017.pdf">pdf</a> ] [ <a href="http://irep2017.inesctec.pt/conference-papers/conference-papers/paper48p3m2eqlp.pdf">link</a> ] [ Ref: <a href="pubs/roald_molzahn_tobler-irep2017.bib">bib</a>   <a href="pubs/roald_molzahn_tobler-irep2017.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('cdc_pem_2017');" class="abstractLink">abstract</span> ] [ <a href="pubs/cdc_pem_2017.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/8263849">link</a> ] </p></li>
 		</span>
   </div>
-	<div class="tile scale-anm Year">
+		<div class="tile scale-anm Year">
 		<span>
-			<li><p>M. Yao, J.L. Mathieu, and <b>D.K. Molzahn</b>, "Using Demand Response to Improve Power System Voltage Stability Margins," <i>IEEE PowerTech Manchester</i>, June 18-22, 2017.<br /><b>High-quality paper award.</b><br />
-				<span id="powertech2017_year" class="abstract" style="display:none">
-					Electric power systems with high penetrations of fluctuating renewable generation may operate close to their stability limits. Demand response can be used to improve power system stability. For example, it is already used to provide frequency control, improving frequency stability. This paper presents a new demand response strategy that uses fast-acting flexible loads to change the loading pattern while keeping the total load constant, improving steady-state voltage stability without affecting the system frequency. The new loading pattern is maintained only for a short period of time until the generators can be re-dispatched. Our goal is to find a permissible loading pattern that maximizes the smallest singular value of the power flow Jacobian matrix, which serves as a measure of voltage stability. The corresponding non-convex optimization problem is solved with an iterative linear programming approach that uses eigenvalue sensitivities and a linearization of the AC power flow equations. Using two IEEE test cases as illustrative examples, we show that the loading patterns resulting from the proposed approach give smallest singular values that are very close to those obtained from a brute force search. The results are also compared to another voltage stability measure given by the maximum loading margin for uniformly varying power injections.
+			<li><p> L. Duffaut Espinosa and Mads Almassalkhi and Paul Hines and S. Heydari and Jeff Frolik, "Towards a Macromodel for Packetized Energy Management of Resistive Water Heaters," <i>IEEE Conference on Information Sciences and Systems (CISS) </i>, Dec. 12-15, 2017.<br />
+				<span id="ciss_pem_2017" class="abstract" style="display:none">
+This paper presents a state bin transition (macro)model for a large homogeneous population of thermostatically controlled loads (TCLs). The energy use of these TCLs is coordinated with a novel bottom-up asynchronous, anonymous, and randomizing control paradigm called Packetized Energy Management (PEM). A macro-model for a population of TCLs is developed and then augmented with a timer to capture the duration and consumption of energy packets and with exit-ON/OFF dynamics to ensure consumer quality of service. PEM permits a virtual power plant (VPP) operator to interact with TCLs through a packet request mechanism. The VPP regulates the proportion of accepted packet requests to allow tight tracking of balancing signals. The developed macro-model compares well with (agent-based) micro-simulations of TCLs under PEM and can be represented by a controlled Markov chain.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('powertech2017_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/yao_mathieu_molzahn-powertech2017.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7980798/">link</a> ] [ Ref: <a href="pubs/yao_mathieu_molzahn-powertech2017.bib">bib</a>   <a href="pubs/yao_mathieu_molzahn-powertech2017.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('ciss_pem_2017');" class="abstractLink">abstract</span> ] [ <a href="pubs/ciss_pem_2017.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/7926078">link</a> ] </p></li>
 		</span>
   </div>
 	</ul>
@@ -443,70 +431,37 @@ Please see the links for the copy of record, which may have different formatting
 	</div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p>K. Dvijotham and <b>D.K. Molzahn</b>, "Error Bounds on the DC Power Flow Approximation: A Convex Relaxation Approach," <i>IEEE 55th Annual Conference on Decision and Control (CDC)</i>, December 12-14, 2016.<br />
-				<span id="cdc2016_year" class="abstract" style="display:none">
-					Power flow models are fundamental to power systems analyses ranging from short-term market clearing and voltage stability studies to long-term planning. Due to the nonlinear nature of the AC power flow equations and the associated computational challenges, linearized approximations (like the DC power flow) have been widely used to solve these problems in a computationally tractable manner. The linearized approximations have been justified using traditional engineering assumptions that under "normal" operating conditions, voltage magnitudes do not significantly deviate from nominal values and phase differences are "small". However, there is only limited work on rigorously quantifying when it is safe to use these linearized approximations. In this paper, we propose an algorithm capable of computing rigorous bounds on the approximation error in the DC power flow (and, in future extensions, more general linearized approximations) using convex relaxation techniques. Given a set of operational constraints (limits on the voltage magnitudes, phase angle differences, and power injections), the algorithm determines an upper bound on the difference in injections at each bus computed by the AC and DC power flow power flow models within this domain. We test our approach on several IEEE benchmark networks. Our experimental results show that the bounds are reasonably tight (i.e., there are points within the domain of interest that are close to achieving the bound) over a range of operating conditions.
+			<li><p>Mads Almassalkhi, Yury Dvorkin, Jennifer Marley, Ricardo Fernandez-Blanco, Ian Hiskens, Daniel Kirschen, Jonathon Martin, Hrvoje Pandzic, Ting Qiu, Mushfiqur Sarker, Maria Vrakopoulou, Yishen Wang, Mengran Xue, "Incorporating Storage as a Flexible Transmission Asset in Power System Operation Procedure," <i>Power Systems Computation Conference (PSCC) </i>, June 20-24, 2016.<br />
+				<span id="pscc_storage_2016" class="abstract" style="display:none">
+					Managing uncertainty caused by the large-scale integration of wind power is a challenge in both the day-ahead planning and real-time operation of a power system. Increasing system flexibility is the key factor in preserving operational reliability. While distributed energy storage is a promising way to increase system flexibility, its benefits have to be optimally exploited to justify its high installation cost. Optimally operating distributed energy storage in an uncertain environment requires decisions on multiple time scales. Additionally, storage operation needs to be coordinated with the scheduling and dispatching of conventional generators. This paper proposes and demonstrates a three-level framework for coordinating day-ahead, near real-time and minute-by-minute control actions of conventional generating units and distributed energy storage. A case study illustrates the interactions between the three levels and the effectiveness of this approach both in terms of economics and operational reliability.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('cdc2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/dvijotham_molzahn-cdc2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7798623/">link</a> ] [ Ref: <a href="pubs/dvijotham_molzahn-cdc2016.bib">bib</a>   <a href="pubs/dvijotham_molzahn-cdc2016.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('pscc_storage_2016');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_storage_2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7540964/">link</a> ] </p></li>
+		</span>
+  </div>
+<div class="tile scale-anm Year">
+		<span>
+			<li><p>Mads Almassalkhi and Anna Towle, "Enabling city-scale multi-energy optimal dispatch with energy hubs," <i>Power Systems Computation Conference (PSCC) </i>, June 20-24, 2016.<br />
+				<span id="pscc_hubert_2016" class="abstract" style="display:none">
+						This paper further extends the class of energy hubs that can be modeled with a concise system description and in a computationally efficient optimization framework to permit rapid analysis of multi-energy systems. The new hub models are then embedded in the multi-energy system analysis tool Hubert and solves the multi-period optimal dispatch (MPOD) problem for a broad class of energy hub systems. Specifically, this paper presents recent improvements developed for Hubert, including the use of piece-wise linear modeling to capture nonlinear converter efficiencies, limits on hub component outputs to reflect physical limits of converters, and hub emission limits. These developments enable appropriate modeling of multi-energy micro-grids and cities and are illustrated with a multi-energy model of The University of Vermont's campus under different capital planning scenarios and modeling assumptions. Interestingly, the shortcomings of using a traditional constant-efficiency hub converter model are illustrated with an energy storage sizing application for multi-energy systems. It is shown that the traditional hub models can significantly undersize energy storage as compared to the more accurate piece-wise linear energy hub formulation.
+				</span>
+		</span>
+		<span style="cursor:auto;">
+			&emsp;[ <span onclick="showDiv('pscc_hubert_2016');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_hubert_2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7540964/">link</a> ] </p></li>
 		</span>
   </div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p><b>D.K. Molzahn</b>, C. Josz, and I.A. Hiskens, "Moment Relaxations of Optimal Power Flow Problems: Beyond the Convex Hull," <i>IEEE Global Conference on Signal and Information Processing (GlobalSIP)</i>, December 7-9, 2016.<br />
-				<span id="globalsip2016_year" class="abstract" style="display:none">
-					Optimal power flow (OPF) is one of the key electric power system optimization problems. "Moment" relaxations from the Lasserre hierarchy for polynomial optimization globally solve many OPF problems. Previous work illustrates the ability of higher-order moment relaxations to approach the convex hulls of OPF problems' non-convex feasible spaces. Using a small test case, this paper focuses on the ability of the moment relaxations to globally solve problems with objective functions that have unconstrained minima at infeasible points inside the convex hull of the non-convex constraints.
+			<li><p>Mahraz Amini and M. Almassalkhi, "Investigating delays in frequency-dependent load control," <i>IEEE Innovative Smart Grid Technologies (ISGT) Asia </i>, Nov/Dec 28-01, 2016.<br />
+				<span id="isgt_delayLoadCntrl_2016" class="abstract" style="display:none">
+						Increased penetration of renewables will require significant regulating reserves, so there is a need to re-think the traditional operating paradigm: supply follows demand. Recent work has expanded the role of flexible and controllable energy resources, such as energy storage and dispatchable demand, to regulate power imbalances and stabilize grid frequency. However, as shown in this paper, the large-scale deployment of dispatchable (i.e., controllable) loads needs to carefully consider the existing regulation schemes in power systems, i.e., generator droop control. That is, this paper illustrates with a standard linearized model, the complex nature of system-wide frequency stability from time-delays in actuation of dispatchable loads and the effect of different network topologies. Interestingly, we show that delay-induced instability can be stabilized by injecting additional delay into load controller.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('globalsip2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_josz_hiskens-globalsip2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7905964/">link</a> ] [ Ref: <a href="pubs/molzahn_josz_hiskens-globalsip2016.bib">bib</a>   <a href="pubs/molzahn_josz_hiskens-globalsip2016.txt">txt</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('isgt_delayLoadCntrl_2016');" class="abstractLink">abstract</span> ] [ <a href="pubs/isgt_delayLoadCntrl_2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7796427/">link</a> ] </p></li>
 		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b>, D. Mehta, and M. Niemerg, "Toward Topologically Based Upper Bounds on the Number of Power Flow Solutions," <i>American Control Conference (ACC)</i>, July 6-8, 2016.<br /><b>Best presentation in session award.</b><br />
-				<span id="acc2016_year" class="abstract" style="display:none">
-					The power flow equations, which relate power injections and voltage phasors, are at the heart of many electric power system computations. While Newton-based methods typically find the "high-voltage" solution to the power flow equations, which is of primary interest, there are potentially many "low-voltage" solutions that are useful for certain analyses. This paper addresses the number of solutions to the power flow equations. There exist upper bounds on the number of power flow solutions; however, there is only limited work regarding bounds that are functions of network topology. This paper empirically explores the relationship between the network topology, as characterized by the maximal cliques, and the number of power flow solutions. To facilitate this analysis, we use a numerical polynomial homotopy continuation approach that is guaranteed to find all complex solutions to the power flow equations. The number of solutions obtained from this approach upper bounds the number of real solutions. Testing with many small networks informs the development of upper bounds that are functions of the network topology. Initial results include empirically derived expressions for the maximum number of solutions for certain classes of network topologies.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('acc2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_mehta_niemerg-acc2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7526599/">link</a> ] [ Ref: <a href="pubs/molzahn_mehta_niemerg-acc2016.bib">bib</a>   <a href="pubs/molzahn_mehta_niemerg-acc2016.txt">txt</a> ] </p></li>
-		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p>D. Mehta, <b>D.K. Molzahn</b>, and K. Turitsyn, "Recent Advances in Computational Methods for the Power Flow Equations," <i>American Control Conference (ACC)</i>, July 6-8, 2016.<br />
-				<span id="acc_pfsurvey2016_year" class="abstract" style="display:none">
-					The power flow equations are at the core of most of the computations for designing and operating electric grids. This system of multivariate nonlinear equations relate the power injections and voltages in an electric power system. A plethora of methods have been devised to solve these equations, from Newton-based methods to homotopy continuation and other optimization-based methods. Although many of these methods often efficiently find a high-voltage, stable solution, challenges remain for finding low-voltage solutions, which play significant roles in certain stability-related computations. While we do not claim to have exhausted the existing literature on all related methods, this tutorial paper introduces some of the recent advances in power flow solution methods to the wider power systems community as well as bringing attention from the computational mathematics and optimization communities to power systems problems. After briefly reviewing some of the traditional computational methods used to solve the power flow equations, we focus on three emerging methods: the numerical polynomial homotopy continuation method, Gr&ouml;bner basis techniques, and moment/sum-of-squares relaxations using semidefinite programming. In passing, we also emphasize the importance of an upper bound on the number of solutions of the power flow equations and review the current status of research in this direction.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('acc_pfsurvey2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/mehta_molzahn_turitsyn-acc2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7525170/">link</a> ] [ Ref: <a href="pubs/mehta_molzahn_turitsyn-acc2016.bib">bib</a>   <a href="pubs/mehta_molzahn_turitsyn-acc2016.txt">txt</a> ]</p></li>
-		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b>, C. Josz, I.A. Hiskens, and P. Panciatici, "Computational Analysis of Sparsity-Exploiting Moment Relaxations of the OPF Problem," <i>19th Power Systems Computation Conference (PSCC)</i>, June 20-24, 2016.<br />
-				<span id="pscc2016_year" class="abstract" style="display:none">
-					With the potential to find global solutions, significant research interest has focused on convex relaxations of the non-convex OPF problem. Recently, "moment-based" relaxations from the Lasserre hierarchy for polynomial optimization have been shown capable of globally solving a broad class of OPF problems. Global solution of many large-scale test cases is accomplished by exploiting sparsity and selectively applying the computationally intensive higher-order relaxation constraints. Previous work describes an iterative algorithm that indicates the buses for which the higher-order constraints should be enforced. In order to speed computation of the moment relaxations, this paper provides a study of the key parameter in this algorithm as applied to relaxations from both the original Lasserre hierarchy and a recent complex extension of the Lasserre hierarchy.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('pscc2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_josz_hiskens_pantiatici-pscc2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/document/7540831/">link</a> ] [ Ref: <a href="pubs/molzahn_josz_hiskens_pantiatici-pscc2016.bib">bib</a>   <a href="pubs/molzahn_josz_hiskens_pantiatici-pscc2016.txt">txt</a> ]</p></li>
-		</span>
-	</div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b>, I.A. Hiskens, and B.C. Lesieutre, "Calculation of Voltage Stability Margins and Certification of Power Flow Insolvability using Second-Order Cone Programming," <i>49th Hawaii International Conference on System Sciences (HICSS)</i>, January 5-8, 2016.<br />
-				<span id="hicss2016_year" class="abstract" style="display:none">
-					Reliable power system operation requires maintaining sufficient voltage stability margins. Traditional techniques based on continuation and optimization calculate lower bounds for these margins and generally require appropriate initialization. Building on a previous semidefinite programming (SDP) formulation, this paper proposes a new second-order cone programming (SOCP) formulation which directly yields upper bounds for the voltage stability margin without needing to specify an initialization. Augmentation with integer-constrained variables enables consideration of reactive-power-limited generators. Further, leveraging the ability to globally solve these problems, this paper describes a sufficient condition for insolvability of the power flow equations. Trade-offs between tightness and computational speed of the SDP and SOCP relaxations are studied using large test cases representing portions of European power systems.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('hicss2016_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_hiskens_lesieutre-hicss2016.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7427472">link</a> ] [ Ref: <a href="pubs/molzahn_hiskens_lesieutre-hicss2016.bib">bib</a>   <a href="pubs/molzahn_hiskens_lesieutre-hicss2016.txt">txt</a> ]</p></li>
-		</span>
-	</div>
+  </div>
 	</ul>
 	<ul class="tile scale-anm Year">
 	<div class="tile scale-anm Year">
@@ -528,7 +483,7 @@ Please see the links for the copy of record, which may have different formatting
   </div>
   <div class="tile scale-anm Year">
 		<span>
-			<li><p>M. Almassalkhi and I. Hiskens, "Model-Predictive Cascade Mitigation in Electric Power Systems With Storage and Renewables—Part II: Case-Study," <i>IEEE Transactions on Power Systems</i>, vol. 30, no. 1, pp. 78 - 87, 2015.<br />
+			<li><p>M. Almassalkhi and I. Hiskens, "Model-Predictive Cascade Mitigation in Electric Power Systems With Storage and Renewables Part II: Case-Study," <i>IEEE Transactions on Power Systems</i>, vol. 30, no. 1, pp. 78 - 87, 2015.<br />
 			<span id="twprs_cascade2_2015" class="abstract" style="display:none">
 				The novel cascade-mitigation scheme developed in Part I of this paper is implemented within a receding-horizon model predictive control (MPC) scheme with a linear controller model. This present paper illustrates the MPC strategy with a case-study that is based on the IEEE RTS-96 network, though with energy storage and renewable generation added. It is shown that the MPC strategy alleviates temperature overloads on transmission lines by rescheduling generation, energy storage, and other network elements, while taking into account ramp-rate limits and network limitations. Resilient performance is achieved despite the use of a simplified linear controller model. The MPC scheme is compared against a base-case that seeks to emulate human operator behavior.				</span>
 			</span>
@@ -536,53 +491,20 @@ Please see the links for the copy of record, which may have different formatting
 			&emsp;[ <span onclick="showDiv('twprs_cascade2_2015');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_cascade2_2015.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6825913">link</a> ] </p></li>
 		</span>
   </div>
-	<div class="tile scale-anm Year">
-		<h2>Conference Proceedings</h2>
+    <div class="tile scale-anm Year">
+		<h2>Book Chapter</h2>
 	</div>
 	<div class="tile scale-anm Year">
 		<span>
-			<li><p><b>D.K. Molzahn</b>, C. Josz, I.A. Hiskens, and P. Panciatici, "Solution of Optimal Power Flow Problems using Moment Relaxations Augmented with Objective Function Penalization," <i>IEEE 54th Annual Conference on Decision and Control (CDC)</i>, December 15-18, 2015.<br />
-				<span id="cdc2015_year" class="abstract" style="display:none">
-					The optimal power flow (OPF) problem minimizes the operating cost of an electric power system. Applications of convex relaxation techniques to the non-convex OPF problem have been of recent interest, including work using the Lasserre hierarchy of "moment" relaxations to globally solve many OPF problems. By preprocessing the network model to eliminate low-impedance lines, this paper demonstrates the capability of the moment relaxations to globally solve large OPF problems that minimize active power losses for portions of several European power systems. Large problems with more general objective functions have thus far been computationally intractable for current formulations of the moment relaxations. To overcome this limitation, this paper proposes the combination of an objective function penalization with the moment relaxations. This combination yields feasible points with objective function values that are close to the global optimum of several large OPF problems. Compared to an existing penalization method, the combination of penalization and the moment relaxations eliminates the need to specify one of the penalty parameters and solves a broader class of problems.
+			<li><p>M. Almassalkhi and I. Hiskens, "Impact of energy storage on cascade mitigation in multi-energy systems," <i> in Energy Storage for Smart Grids: Planning and Operation for Renewable and Variable Energy Resources, P. Du and N. Lu, Eds.</i>, Pages 115-169, Elsevier, 2015.<br />
+				<span id="elsevier_cascadeMES_2015" class="abstract" style="display:none">
+						The methods described in this chapter examine a bilevel cascade mitigation scheme that considers both the economic and security objectives in operation of the energy system. The rst level operates on a slow timescale (i.e., hourly) and determines a trajectory of optimal economical set points for generation, storage, load control, and wind curtailment. The second level operates in the background and responds to contingencies (i.e., line outages) on a much faster minute-by-minute timescale to ensure that the system is driven back to a secure and economically optimal operating regime and line overloads are alleviated. The eect of energy storage on the performance of cascade mitigation is investigated through storage scenarios within a multienergy\energy hub" framework. Finally, a temperature-based cascade mitigation is described for the electric bulk power system where the role of energy storage is highlighted with a case-study.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('cdc2015_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_josz_hiskens_panciatici-cdc2015.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7402083">link</a> ] [ Ref: <a href="pubs/molzahn_josz_hiskens_panciatici-cdc2015.bib">bib</a>   <a href="pubs/molzahn_josz_hiskens_panciatici-cdc2015.txt">txt</a> ]</p></li>
+			&emsp;[ <span onclick="showDiv('elsevier_cascadeMES_2015');" class="abstractLink">abstract</span> ] [ <a href="pubs/elsevier_cascadeMES_2015.pdf">pdf</a> ] [ <a href="https://www.sciencedirect.com/science/article/pii/B9780124104914000051?via%3Dihub">link</a> ] </p></li>
 		</span>
-  </div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b>, Z.B. Friedman, B.C. Lesieutre, C.L. DeMarco, and M.C. Ferris, "Estimation of Constraint Parameters in Optimal Power Flow Data Sets," <i>47th North American Power Symposium (NAPS)</i>, October 4-6, 2015.<br />
-				<span id="naps2015_year" class="abstract" style="display:none">
-					Large-scale electric power system analysis depends upon representation of vast numbers of components whose individual models must be populated with parameters. The challenge of populating such component models is particularly apparent in optimal power flow applications, in which incorrect parameters and/or constraint limits can yield overall system representations with either unrealistically large feasible regions or an empty feasible set. Unfortunately, many data sets, particularly those of publicly available test cases, were originally developed to illustrate simpler "power flow only" applications, and may contain unrealistic values or wholly omit important constraint limits. This paper describes engineering-based approaches to obtain credible estimates for parameters and limits associated with line-flow constraints and generator capability curves, as may be employed in a number of steady state analyses such as the optimal power flow. These can substitute for missing or unrealistic data in test systems for which more fully detailed, "real-world" component specifications and limits are not available, and thereby make such test systems more valuable as research tools.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('naps2015_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_friedman_lesieutre_demarco_ferris-naps2015.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7335092">link</a> ] [ Ref: <a href="pubs/molzahn_friedman_lesieutre_demarco_ferris-naps2015.bib">bib</a>   <a href="pubs/molzahn_friedman_lesieutre_demarco_ferris-naps2015.txt">txt</a> ]</p></li>
-		</span>
-  </div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b> and I.A. Hiskens, "Mixed SDP/SOCP Moment Relaxations of the Optimal Power Flow Problem," <i>IEEE PowerTech Eindhoven</i>, June 29 - July 2, 2015.<br />
-				<span id="powertech2015_year" class="abstract" style="display:none">
-					Recently, convex "moment" relaxations developed from the Lasserre hierarchy for polynomial optimization problems have been shown capable of globally solving many optimal power flow (OPF) problems. The moment relaxations, which take the form of semidefinite programs (SDP), generalize a previous SDP relaxation of the OPF problem. This paper presents an approach for improving the computational performance of the moment relaxations for many problems. This approach enforces second-order cone programming (SOCP) constraints that establish necessary (but not sufficient) conditions for satisfaction of the SDP constraints arising from the higher-order moment relaxations. The resulting "mixed SDP/SOCP" formulation implements the first-order relaxation using SDP constraints and the higher-order relaxations using SOCP constraints. Numerical results demonstrate that this mixed SDP/SOCP relaxation is capable of solving many problems for which the first-order moment relaxation fails to yield a global solution. For several examples, the mixed SDP/SOCP relaxation improves computational speed by factors from 1.13 to 18.7.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('powertech2015_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_hiskens-powertech2015.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7232429">link</a> ] [ Ref: <a href="pubs/molzahn_hiskens-powertech2015.bib">bib</a>   <a href="pubs/molzahn_hiskens-powertech2015.txt">txt</a> ]</p></li>
-		</span>
-  </div>
-	<div class="tile scale-anm Year">
-		<span>
-			<li><p><b>D.K. Molzahn</b>, S.S. Baghsorkhi, and I.A. Hiskens, "Semidefinite Relaxations of Equivalent Optimal Power Flow Problems: An Illustrative Example," <i>IEEE International Symposium on Circuits and Systems (ISCAS)</i>, May 24-27, 2015.<br />
-				<span id="iscas2015_year" class="abstract" style="display:none">
-					Recently, there has been significant interest in convex relaxations of the optimal power flow (OPF) problem. A semidefinite relaxation globally solves many OPF problems. However, there exist practical problems for which the semidefinite relaxation fails to yield the global solution. Conditions for the success or failure of the semidefinite relaxation are valuable for determining whether the relaxation is appropriate for a given OPF problem. To move beyond existing conditions, which only apply to a limited class of problems, a typical conjecture is that failure of the semidefinite relaxation can be related to  physical characteristics of the system. By presenting an example OPF problem with two equivalent formulations, this paper demonstrates that physically based conditions cannot universally explain algorithm behavior. The semidefinite relaxation fails for one formulation but succeeds in finding the global solution to the other formulation. Since these formulations represent the same system, success (or otherwise) of the semidefinite relaxation must involve factors beyond just the network physics.
-				</span>
-		</span>
-		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('iscas2015_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_baghsorkhi_hiskens-iscas2015.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7169026">link</a> ] [ <a href="pubs/molzahn_baghsorkhi_hiskens-iscas2015_errata.pdf">errata</a> ] [ Ref: <a href="pubs/molzahn_baghsorkhi_hiskens-iscas2015.bib">bib</a>   <a href="pubs/molzahn_baghsorkhi_hiskens-iscas2015.txt">txt</a> ]</p></li>
-		</span>
-  </div>
+	</div>
 	</ul>
 	<ul class="tile scale-anm Year">
 		<div class="tile scale-anm Year">
@@ -593,35 +515,13 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>P. Panciatici, M.C. Campi, S. Garatti, S.H. Low, <b>D.K. Molzahn</b>, A.X. Sun, and L. Wehenkel, "Advanced Optimization Methods for Power Systems," <i>18th Power Systems Computation Conference (PSCC),</i> August 18-22, 2014.<br />
-					<span id="pscc2014survey_year" class="abstract" style="display:none">
-						Power system planning and operation offers multitudinous opportunities for optimization methods. In practice, these problems are generally large-scale, non-linear, subject to uncertainties, and combine both continuous and discrete variables. In the recent years, a number of complementary theoretical advances in addressing such problems have been obtained in the field of applied mathematics. The paper introduces a selection of these advances in the fields of non-convex optimization, in mixed-integer programming, and in optimization under uncertainty. The practical relevance of these developments for power systems planning and operation are discussed, and the opportunities for combining them, together with high-performance computing and big data  infrastructures, as well as novel machine learning and randomized algorithms, are highlighted.
+				<li><p>M. Almassalkhi, B. Simon, and A. Gupta, "A Novel Online Energy Management Solution for Energy Plants," <i>IEEE Power Systems Conference (PSC),</i> March 11-14, 2014.<br />
+					<span id="psc_energyPlant_2014" class="abstract" style="display:none">
+							Energy plants represent large energy consumers with a wide array of energy needs, assets (e.g. boilers, chillers, storage, on-site generation), and constraints on operations. An innovative energy management system for energy plants is presented in this paper. Through predictive optimization of plant assets, energy analytics, pricing signals, and historical and real-time data, the online energy management system supplies energy plants with salient hourly, real-time recommendations and enables “what-if” analysis to achieve improved economic efficiency. Within a systems context, the paper draws upon ideas from power systems and highlights technical issues related to plant optimization. The paper also describes actual implementations of the energy management solution at two energy plants in the US, providing economic details and an analysis of the savings achieved.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('pscc2014survey_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/panciatici_campi_garatti_low_molzahn_sun_wehenkel-pscc2014.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=7038504">link</a> ] [ Ref: <a href="pubs/panciatici_campi_garatti_low_molzahn_sun_wehenkel-pscc2014.bib">bib</a>   <a href="pubs/panciatici_campi_garatti_low_molzahn_sun_wehenkel-pscc2014.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b> and I.A. Hiskens, "Moment-Based Relaxation of the Optimal Power Flow Problem," <i>18th Power Systems Computation Conference (PSCC),</i> August 18-22, 2014.<br />
-					<span id="pscc2014_year" class="abstract" style="display:none">
-						The optimal power flow (OPF) problem minimizes power system operating cost subject to both engineering and network constraints. With the potential to find global solutions, significant research interest has focused on convex relaxations of the non-convex AC OPF problem. This paper investigates "moment-based" relaxations of the OPF problem developed from polynomial optimization theory. At the cost of increased computational requirements, moment relaxations are generally tighter than relaxations employed in previous research, thus resulting in global solutions for a broader class of OPF problems. Exploration of the feasible spaces of test systems illustrates the effectiveness of the moment relaxations.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('pscc2014_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_hiskens-Moment_OPF.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7038397">link</a> ] [ Ref: <a href="pubs/molzahn_hiskens-Moment_OPF.bib">bib</a>   <a href="pubs/molzahn_hiskens-Moment_OPF.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b>, B.C. Lesieutre, and C.L. DeMarco, "Investigation of Non-Zero Duality Gap Solutions to a Semidefinite Relaxation of the Optimal Power Flow Problem," <i>47th Hawaii International Conference on System Sciences (HICSS)</i>, January 6-9, 2014.<br />
-					<span id="hicss2014_year" class="abstract" style="display:none">
-						Recently, a semidefinite programming relaxation of the power flow equations has been applied to the optimal power flow problem. When this relaxation is "tight" (i.e., the solution has zero duality gap), a globally optimal solution is obtained. Existing literature investigates sufficient conditions whose satisfaction guarantees zero duality gap solutions. However, there is limited study of non-zero duality gap solutions. By illustrating the feasible spaces for optimal power flow problems and their semidefinite relaxations, this paper investigates examples of nonzero duality gap solutions. Results for large system models suggest that non-convexities associated with small subsections of the network are responsible for non-zero duality gap solutions.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('hicss2014_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_lesieutre_demarco-hicss2014.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6758891">link</a> ] [ <a href="pubs/molzahn_lesieutre_demarco-hicss2014_errata.pdf">errata</a> ] [ Ref: <a href="pubs/molzahn_lesieutre_demarco-hicss2014.bib">bib</a>   <a href="pubs/molzahn_lesieutre_demarco-hicss2014.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('psc_energyPlant_2014');" class="abstractLink">abstract</span> ] [ <a href="pubs/psc_energyPlant_2014.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6808098">link</a> ] </p></li>
 			</span>
 		</div>
 	</ul>
@@ -629,62 +529,18 @@ Please see the links for the copy of record, which may have different formatting
 		<div class="tile scale-anm Year">
 	    <a name="2013"><h1>2013</h1></a>
 	  </div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b>, B.C. Lesieutre, and C.L. DeMarco, "A Sufficient Condition for Power Flow Insolvability with Applications to Voltage Stability Margins," <i>IEEE Transactions on Power Systems,</i>  vol. 28, no. 3, pp. 2592-2601, August 2013.<br />
-					<span id="pfcondition013_year" class="abstract" style="display:none">
-						For the nonlinear power flow problem specified with standard PQ, PV, and slack bus equality constraints, we present a sufficient condition under which the specified set of nonlinear algebraic equations has no solution. This sufficient condition is constructed in a framework of an associated feasible, convex optimization problem. The objective employed in this optimization problem yields a measure of distance (in a parameter set) to the power flow solution boundary. In practical terms, this distance is closely related to quantities that previous authors have proposed as voltage stability margins.  A typical margin is expressed in terms of the parameters of system loading (injected powers); here we additionally introduce a new margin in terms of the parameters of regulated bus voltages.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('pfcondition013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_lesieutre_demarco-pfcondition.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6403907">link</a> ] [ <a href="pubs/molzahn_lesieutre_demarco-pfcondition_tech_report.pdf">extended version</a> ] [ Ref: <a href="pubs/molzahn_lesieutre_demarco-pfcondition.bib">bib</a>   <a href="pubs/molzahn_lesieutre_demarco-pfcondition.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b> and B.C. Lesieutre, "Initializing Dynamic Power System Simulations Using Eigenvalue Formulations of the Induction Machine and Power Flow Models," <i>IEEE Transactions on Circuits and Systems I: Regular Papers</i>, vol. 60, no. 3, pp. 690-702, March 2013.<br />
-					<span id="initialization2013_year" class="abstract" style="display:none">
-						Initializing internal variables in dynamic power system simulations is a two-stage process. First, a power flow model is used to find the steady state bus variables. Second, values for the internal variables associated with bus connected components are determined such that the components' terminal values match the bus variables calculated from the power flow model. Initializing most components' variables is a straightforward, direct process. However, initializing induction machine variables traditionally uses an indirect, iterative process. In this paper, eigenvalue formulations are detailed for both the induction machine initialization and power flow models, which provide a direct method for determining all possible sets of induction machine initializations and offer a novel model for the power flow equations.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('initialization2013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_lesieutre-initialization.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6324399">link</a> ] [ Ref: <a href="pubs/molzahn_lesieutre-initialization.bib">bib</a>   <a href="pubs/molzahn_lesieutre-initialization.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b>, B.C. Lesieutre, and H. Chen, "Counterexample to a Continuation-Based Algorithm for Finding All Power Flow Solutions," <i>IEEE Transactions on Power Systems (Letters)</i>, vol. 28, no. 1, pp. 564-565, February 2013.<br />
-					<span id="counterexample2013_year" class="abstract" style="display:none">
-						Existing literature claims that an algorithm based on continuation is capable of finding all solutions to the power flow equations for all power systems. This claim is demonstrated to be incorrect through the use of a five-bus system counterexample. Existing literature also claims that a similar algorithm is capable of finding all Type-1 solutions (i.e., solutions where the power flow Jacobian has a single eigenvalue with positive real part) to the power flow equations for all systems. This claim is also shown to be incorrect using the five-bus system counterexample.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('counterexample2013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_lesieutre_chen-counterexample.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6225409">link</a> ] [ Ref: <a href="pubs/molzahn_lesieutre_chen-counterexample.bib">bib</a>   <a href="pubs/molzahn_lesieutre_chen-counterexample.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
+	  		<div class="tile scale-anm Year">
 			<h2>Conference Proceedings</h2>
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>A.R. Borden, <b>D.K. Molzahn</b>, B.C. Lesieutre, and P. Ramanathan, "Power System Structure and Confidentiality Preserving Transformation of Optimal Power Flow Model," <i>51st Annual Allerton Conference on Communication, Control, and Computing</i>, October 2-4, 2013.<br />
-					<span id="allerton2013_year" class="abstract" style="display:none">
-						In the field of power system engineering, the optimal power flow problem is essential in planning and operations. With increasing system size and complexity, the computational requirements needed to solve practical optimal power flow problems continues to grow. Increasing computational requirements make the possibility of performing these computations remotely with cloud computing appealing. However, power system structure and component values are often confidential; therefore, the problem cannot be shared. To address this issue of confidential information in cloud computing, some techniques for masking optimization problems have been developed. The work of this paper builds upon these techniques for optimization problems but is specifically developed for addressing the DC and AC optimal power flow problems. We study the application of masking a sample OPF using the IEEE 14-bus network.
+				<li><p>M. Almassalkhi and I. Hiskens, "Temperature-based Model-Predictive Cascade Mitigation in Electric Power Systems," <i>IEEE Conference on Decision and Control (CDC),</i>  Dec. 10-13, 2013.<br />
+					<span id="cdc_tempMPC_2013" class="abstract" style="display:none">
+						This paper proposes a novel model-predictive control scheme which combines both economic and security objectives to mitigate the effects of severe disturbances in electrical power systems. A linear convex relaxation of the AC power flow is employed to model transmission line losses and conductor temperatures. Then, a receding-horizon model predictive control (MPC) strategy is developed to alleviate line temperature overloads and prevent the propagation of outages. The MPC strategy seeks to alleviate temperature overloads by rescheduling generation, energy storage and other network elements, subject to ramp-rate limits and network limitations. The MPC strategy is illustrated with simulations of the IEEE RTS-96 network augmented with energy storage and renewable generation.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('allerton2013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/borden_molzahn_lesieutre_ramanathan-allerton2013.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6736637">link</a> ] [ Ref: <a href="pubs/borden_molzahn_lesieutre_ramanathan-allerton2013.bib">bib</ma>   <a href="pubs/borden_molzahn_lesieutre_ramanathan-allerton2013.txt">txt</a> ]</p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p><b>D.K. Molzahn</b>, V. Dawar, B.C. Lesieutre, and C.L. DeMarco, "Sufficient Conditions for Power Flow Insolvability Considering Reactive Power Limited Generators with Applications to Voltage Stability Margins," <i>IREP Symposium on Bulk Power System Dynamics and Control - IX. Optimization, Security and Control of the Emerging Power Grid</i>, 25-30 August 2013.<br />
-					<span id="irep2013_year" class="abstract" style="display:none">
-						For the non-linear power flow problem with PQ and reactive power limited slack and PV buses, we present two sufficient conditions under which the specified set of nonlinear algebraic equations has no solution. The first condition uses a semidefinite programming relaxation of the power flow equations along with binary variables to model the generators' reactive power capabilities. As a byproduct, this condition yields a voltage stability margin to the power flow solvability boundary. The second condition formulates the power flow equations, including generator reactive power limits, as a system of polynomials and uses real algebraic geometry and sum of squares programming to create infeasibility certificates which prove power flow insolvability.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('irep2013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn_dawar_lesieutre_demarco-irep2013.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6629370">link</a> ] [ Ref: <a href="pubs/molzahn_dawar_lesieutre_demarco-irep2013.bib">bib</a>   <a href="pubs/molzahn_dawar_lesieutre_demarco-irep2013.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('cdc_tempMPC_2013');" class="abstractLink">abstract</span> ] [ <a href="pubs/cdc_tempMPC_2013.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6761090">link</a> ] </p></li>
 			</span>
 		</div>
 		<div class="tile scale-anm Year">
@@ -692,21 +548,15 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p><b>D.K. Molzahn</b>, "Application of Semidefinite Optimization Techniques to Problems in Electric Power Systems," <i>Ph.D. Dissertation, University of Wisconsin-Madison Department of Electrical and Computer Engineering</i>, August 2013. <br />&emsp;<b>2014 Harold A. Peterson Best Dissertation Award, Second Place in the UW-Madison ECE Department.</b><br />
-					<span id="dissertation2013_year" class="abstract" style="display:none">
-						Motivated by the potential for improvements in electric power system economics and reliability, this dissertation investigates applications of a semidefinite programming relaxation of the power flow equations, which model the steady-state relationship between power injections and voltages in a power system. In contrast to other optimal power flow solution techniques, semidefinite program solvers can reliably find a global optimum in polynomial time when the semidefinite relaxation is "tight" (i.e., the solution has zero relaxation gap). Semidefinite relaxations have been applied to a variety of computationally difficult problems in many fields. The power systems literature details limited success in applying semidefinite programming to the optimal power flow (OPF) problem, which minimizes operating cost under engineering and network constraints. Semidefinite programming holds significant promise for application to other power systems problems.</br></br>
-
-						This dissertation first investigates power system economics using a semidefinite relaxation of the OPF problem. In contrast to claims in the literature, this dissertation shows that the semidefinite relaxation may fail to give a physically meaningful solution (i.e., the solution has non-zero relaxation gap) for some practical problems. This dissertation also provides computational and modeling advances required for solving large-scale, realistic OPF problems. Modeling advances include allowing multiple generators at the same bus; parallel transmission lines and transformers; and an approximate method for modeling constant impedance, constant current, constant power (ZIP) loads. Existing methods exploit system sparsity to speed computation using matrix completion techniques that decompose the large positive semidefinite matrix constraint into constraints on many smaller matrices. Computational advances include modifying the matrix decomposition techniques for further reductions in solver times, extending the applicability of an existing decomposition, and a method for obtaining an optimal voltage profile from a solution to a decomposed semidefinite program. This dissertation also provides a sufficient condition test for global optimality of a candidate OPF solution obtained by any method.</br></br>
-
-						This dissertation next provides techniques for improving power system reliability. The first reliability-related research develops a sufficient condition under which the power flow equations have no solution. This sufficient condition is evaluated using a feasible semidefinite optimization problem. The objective employed in this optimization problem yields a measure of distance (in a parameter set) to the power flow solvability boundary. This distance is closely related to quantities that previous authors have proposed as voltage stability margins. A typical margin is expressed in terms of the parameters of system loading (injected powers); this dissertation additionally introduces a new margin in terms of the parameters of regulated bus voltages. This dissertation considers generators modeled as ideal voltage sources and generators with reactive power limits, which require either mixed-integer semidefinite programming or sum of squares programming formulations.</br></br>
-
-						Also related to power system reliability is the problem of finding multiple solutions to the power flow equations. Power systems typically operate at a high-voltage, stable power flow solution; however, other solutions are used for stability calculations. Existing literature claims that a continuation-based algorithm can reliably find all power flow solutions. This claim is demonstrated to be incorrect with a small counterexample system. Thus, no computationally tractable algorithms exist for reliably finding all power flow solutions. Methods for calculating multiple power flow solutions therefore deserve further research. This dissertation describes a method for finding multiple power flow solutions using semidefinite programming. Results suggest the method's promise for identifying large numbers of power flow solutions.</br></br>
-
-						Although the semidefinite relaxation of the power flow equations is often "tight," non-zero relaxation gap solutions can occur. This dissertation investigates examples of non-zero relaxation gap solutions to semidefinite formulations for the optimal power flow problem, for the power flow insolvability condition, and for determining multiple solutions to the power flow equations.
+				<li><p>Mads R. Almassalkhi, "Optimization & Model-Predictive Control for Overload Mitigation in Resilient Power Systems," <i>Ph.D. Dissertation, University of Michigan Department of Electrical Engineering and Computer Science</i>, May 2013. <br />
+					<span id="phd_dissertation_2013" class="abstract" style="display:none">
+						The National Academy of Engineering named the electric power grid the greatest engineering achievement of the 20th century. However, as recent large-scale power grid failures illustrate, the (electro-mechanical) electric grid is being operated closer and closer to its limits. Specifically, the electric grid of the 20th century is aging and congested. Due to the protracted and cost-intensive nature of upgrading energy infrastructures, major research initiatives are now underway to improve the utility of the existing infrastructure. One important topic is contingency management. Accordingly, this dissertation comprises of practical, yet rigorously justified, feedback control algorithms that are suitable for power system contingency management. The main goals of the algorithms are to prevent or mitigate overloads on network elements (e.g. lines and transformers).
+						
+						In this dissertation, a coupling of energy infrastructures is examined as a method for improving system reliability and a simple cascade mitigation approach highlights the role of model-predictive control and energy storage in improving system response to severe disturbances (e.g. line outages). The ideas of balancing economic and safety criteria are developed and implemented with a receding-horizon model-predictive controller (RHMPC) for electric transmission systems with energy storage and renew- ables. The novel RHMPC scheme employs a lossy “DC” power flow model and is proven to alleviate conductor temperature overloads and returns the system to an economically optimal state. Finally, an incentive-based distributed predictive-control algorithm is developed to prevent overloads in the distribution network caused by overnight charging of PEVs. In addition, Matlab-based simulations are included to illustrate the performance and behavior of all proposed overload mitigation schemes. The automatic schemes presented in this dissertation are, essentially, “closing the loop” in contingency management, and will help bring the electric power grid into the 21st century.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('dissertation2013_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/molzahn-dissertation.pdf">pdf</a> ] [ <a href="http://search.library.wisc.edu/catalog/ocn856529046">link</a> ] [ <a href="pubs/molzahn-dissertation_errata.pdf">errata</a> ] [ Ref: <a href="pubs/molzahn-dissertation.bib">bib</a>   <a href="pubs/molzahn-dissertation.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('phd_dissertation_2013');" class="abstractLink">abstract</span> ] [ <a href="pubs/phd_dissertation_2013.pdf">pdf</a> ] [ <a href="https://deepblue.lib.umich.edu/handle/2027.42/100049">link</a> ] </p></li>
 			</span>
 		</div>
 	</ul>
@@ -719,34 +569,26 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>A.R. Borden, <b>D.K. Molzahn</b>, P. Ramanathan, and B.C. Lesieutre, "Confidentiality-Preserving Optimal Power Flow for Cloud Computing," <i>50th Annual Allerton Conference on Communication, Control, and Computing,</i> pp. 1300-1307, October 1-5, 2012.<br />
-					<span id="allerton2012_year" class="abstract" style="display:none">
-						In the field of power system engineering, the optimal power flow problem is essential in planning and operations. With increasing system size and complexity, the computational requirements needed to solve practical optimal power flow problems continues to grow. Increasing computational requirements make the possibility of performing these computations remotely with cloud computing appealing. However, power system structure and component values are often confidential; therefore, the problem cannot be shared. To address this issue of confidential information in cloud computing, some techniques for masking optimization problems have been developed. The work of this paper builds upon these techniques for optimization problems but is specifically developed for addressing the DC and AC optimal power flow problems. We study the application of masking a sample OPF using the IEEE 14-bus network.
+				<li><p>M. Almassalkhi and I. Hiskens, "Impact of Energy Storage on Cascade Mitigation in Multi-energy Systems," <i>IEEE Power and Energy Society General Meeting,</i> July 22-26, 2012.<br />
+					<span id="pesgm_cascadeMES_2012" class="abstract" style="display:none">
+							In this paper, we establish energy-hub networks as multi-energy systems and present a relevant model-predictive cascade mitigation control (MPC) scheme within the framework of energy hubs. The performance of both open- and closed-loop mitigation schemes is investigated for various energy storage scenarios. The results are illustrated using a small 11-hub network and a larger 69-hub network and show that sizing and performance ratings of energy storage devices have significant effect on cascade mitigation control in multi-energy systems. Specifically, we conclude that increasing energy storage capacity and limiting the rate of energy delivery improves long-term performance of our closed-loop MPC scheme.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('allerton2012_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/borden_molzahn_ramanathan_lesieutre-allerton2012.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6483368">link</a> ] [ Ref: <a href="pubs/borden_molzahn_ramanathan_lesieutre-allerton2012.bib">bib</a>   <a href="pubs/borden_molzahn_ramanathan_lesieutre-allerton2012.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('pesgm_cascadeMES_2012');" class="abstractLink">abstract</span> ] [ <a href="pubs/pesgm_cascadeMES_2012.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6344815">link</a> ]</p></li>
 			</span>
 	  </div>
-		<div class="tile scale-anm Year">
-			<h2>Technical Reports</h2>
-		</div>
-		<div class="tile scale-anm Year">
+	  <div class="tile scale-anm Year">
 			<span>
-				<li><p>B.C. Lesieutre, C.L. DeMarco, and <b>D.K. Molzahn</b>, "Power System Deliverability Ranking of Critical Elements to Support Select Facilities," <i>Report to the Federal Energy Regulatory Commission</i>, January 2012.<br />
+				<li><p>R. Hermans, M. Almassalkhi, and I. Hiskens, "Incentive-based Coordinated Charging Control of Plug-in Electric Vehicles at the Distribution-transformer Level," <i>American Control Conference,</i> June 27-29, 2012.<br />
+					<span id="acc_evc_2012" class="abstract" style="display:none">
+						Distribution utilities are becoming increasingly aware that their networks may struggle to accommodate large numbers of plug-in electric vehicles (PEVs). In particular, uncoordinated overnight charging is expected to be problematic, as the corresponding aggregated power demand exceeds the capacity of most distribution substation transformers. In this paper, a dynamical model of PEVs served by a single temperature-constrained substation transformer is presented and a centralized scheduling scheme is formulated to coordinate charging of a heterogeneous PEV fleet. We employ the dual-ascent method to derive an iterative, incentive-based and non-centralized implementation of the PEV charging algorithm, which is optimal upon convergence. Then, the distributed open-loop problem is embedded in a predictive control scheme to introduce robustness against disturbances. Simulations of an overnight charging scenario illustrate the effectiveness of the so-obtained incentive-based coordinated PEV control scheme in terms of performance and enforcing the transformer's thermal constraint.
+					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ not publicly available ]</p></li>
+				&emsp;[ <span onclick="showDiv('acc_evc_2012');" class="abstractLink">abstract</span> ] [ <a href="pubs/acc_evc_2012.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6315577">link</a> ]</p></li>
 			</span>
 	  </div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p>B.C. Lesieutre, C.L. DeMarco, and <b>D.K. Molzahn</b>, "Power System Ranking of Nodal Locations," <i>Report to the Federal Energy Regulatory Commission</i>, January 2012.<br />
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ not publicly available ]</p></li>
-			</span>
-		</div>
 	</ul>
 	<ul class="tile scale-anm Year">
 		<div class="tile scale-anm Year">
@@ -755,28 +597,28 @@ Please see the links for the copy of record, which may have different formatting
 		<div class="tile scale-anm Year">
 			<h2>Conference Proceedings</h2>
 		</div>
-		<div class="tile scale-anm Year">
+			  <div class="tile scale-anm Year">
 			<span>
-				<li><p>B.C. Lesieutre, <b>D.K. Molzahn</b>, A.R. Borden, and C.L. DeMarco, "Examining the Limits of the Application of Semidefinite Programming to Power Flow Problems," <i>49th Annual Allerton Conference on Communication, Control, and Computing</i>, pp. 1492-1499, September 28-30, 2011.<br />
-					<span id="allerton2011_year" class="abstract" style="display:none">
-						The application of semidefinite programming (SDP) to power system problems has recently attracted substantial research interest. Specifically, a recent SDP formulation offers a convex relaxation to the well-known, typically nonconvex "optimal power flow" (OPF) problem. This new formulation was demonstrated to yield zero duality gap for several standard power systems test cases, thereby ensuring a globally optimal OPF solution in each. The first goal of the work here is to investigate this SDP algorithm for the OPF, and show by example that it can fail to give a physically meaningful solution (i.e., it has a nonzero duality gap) in some scenarios of practical interest. The remainder of this paper investigates a SDP approach utilizing modified objective and constraints to compute all solutions of the nonlinear power flow equations. Several variants are described. Results suggest SDP's promise as an efficient algorithm for identifying large numbers of solutions to the power flow equations.
+				<li><p>M. Almassalkhi and I. Hiskens, "Cascade mitigation in energy hub networks," <i>IEEE Conference on Decision and Control,</i> Dec 12-15, 2011.<br />
+					<span id="cdc_cascadeHubs_2011" class="abstract" style="display:none">
+						The paper establishes a formulation for energy hub networks that is consistent with mixed-integer quadratic programming problems. Line outages and cascading failures can be considered within this framework. Power flows across transmission lines and pipelines are compared with flow bounds, and tripped when violations occur. The outaging of lines is achieved using a mixed-integer disjunctive model. A model predictive control (MPC) strategy is developed to mitigate cascading failures, and prevent propagation of outages from one energy-carrier network to another. The MPC strategy seeks to alleviate overloads by adjusting generation and storage schedules, subject to ramp-rate limits and governor action. If overloads cannot be eliminated by rescheduling alone, MPC determines the minimum amount of load that must be shed to restore system integrity. The MPC strategy is illustrated using a small 12 hub network and a much larger network that includes 132 energy hubs.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('allerton2011_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/lesieutre_molzahn_borden_demarco-allerton2011.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6120344">link</a> ] [ <a href="pubs/lesieutre_molzahn_borden_demarco-allerton2011_errata.pdf">errata</a> ] [ Ref: <a href="pubs/lesieutre_molzahn_borden_demarco-allerton2011.bib">bib</a>   <a href="pubs/lesieutre_molzahn_borden_demarco-allerton2011.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('cdc_cascadeHubs_2011');" class="abstractLink">abstract</span> ] [ <a href="pubs/cdc_cascadeHubs_2011.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6161484">link</a> ]</p></li>
 			</span>
 	  </div>
-		<div class="tile scale-anm Year">
+	<div class="tile scale-anm Year">
 			<span>
-				<li><p>D.R. Schwarting, <b>D.K. Molzahn</b>, C.L. DeMarco, and B.C. Lesieutre. "Topological and Impedance Element Ranking (TIER) of the Bulk-Power System," <i>44th Hawaii International Conference on System Sciences (HICSS)</i>, pp. 1-10, January 4-7, 2011.<br />
-					<span id="hicss2011_year" class="abstract" style="display:none">
-						The Electricity Modernization Act of the Energy Policy Act of 2005 requires the creation of enforceable reliability standards for users, owners, and operators of the “Bulk-Power System” (BPS). This paper introduces an algorithm based on electrical properties of an electric power network that yields a numeric ranking of its branch elements, as a step towards identifying which elements should be considered part of the BPS. This ranking depends solely on network topology and element electrical characteristics, and is wholly independent of generator cost functions and system operating point. Two perspectives for deriving and justifying this ranking algorithm are described: one based on the sensitivity of bus-to-branch Lagrange multipliers and another based on generation shift factors. Summary results obtained from applying the algorithm to a detailed model of the US Eastern Interconnection are reported (with suitable anonymity for any facility specific data, in keeping with Critical Energy Infrastructure Information (CEII) protections).
+				<li><p>M. Almassalkhi and I. Hisken, "Optimization framework for the analysis of large-scale networks of energy hubs," <i>Power Systems Computation Conference,</i> June 27-29, 2012.<br />
+					<span id="pscc_hubert_2011" class="abstract" style="display:none">
+						Through a reformulation of energy hubs, this paper presents a novel format for describing general energy hub networks. This format underpins the development of tools for analyzing large-scale interconnected energy hub networks. The tools are developed in MATLAB and seam- lessly interface with CPLEX optimization libraries to al- low users to quickly implement and solve optimal schedul- ing problems. Our application takes a concise network description file as input, uses MATLAB to build the matrices for the entire system, and outputs the requested results from CPLEX. The work presented herein supports electrical and natural gas networks, wind generating capacity, district heat loads, and the main elements of energy hubs (converters and energy storage). Addition of other energy types and hub elements is straightforward.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('hicss2011_year');" class="abstractLink">abstract</span> ] [ <a href="pubs/schwarting_molzahn_demarco_lesieutre-hicss2011.pdf">pdf</a> ] [ <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5718671">link</a> ] [ Ref: <a href="pubs/schwarting_molzahn_demarco_lesieutre-hicss2011.bib">bib</a>   <a href="pubs/schwarting_molzahn_demarco_lesieutre-hicss2011.txt">txt</a> ]</p></li>
+				&emsp;[ <span onclick="showDiv('pscc_hubert_2011');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_hubert_2011.pdf">pdf</a> ] [ <a href="https://pscc-central.epfl.ch/repo/papers/2011/fp328_01.pdf">link</a> ]</p></li>
 			</span>
-		</div>
+	  </div>
 	</ul>
 	<!-- End of year organization -->
 </div>
@@ -812,9 +654,6 @@ Please see the links for the copy of record, which may have different formatting
 
 	</div>
 
-</div>
-
-<div class="footer"> Template design by <a href="http://arcsin.se">Arcsin</a>
 </div>
 
 </body>
