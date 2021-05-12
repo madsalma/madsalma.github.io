@@ -211,6 +211,31 @@ a.bibbase.author.link[href="https://madsalma.github.io/publications2.html"] {
   cursor: default; 
 }
 
+#title{
+	height: 20px;
+	float: left;
+	padding-right: 10px;
+    margin-bottom: 5px;
+	font-size: 13pt;
+    font-weight: bold;
+    background-color: white;
+	}
+
+#title-line{
+    height: 10px;
+    border-bottom: solid 1px #ccc;
+}
+
+#section{
+	height: 20px;
+	float: left;
+	padding-right: 5px;
+    margin-bottom: 5px;
+	font-size: 11pt;
+    font-weight: bold;
+    background-color: white;
+	}
+
 /* Remove group by downloads */
   #bibbase_header a[onclick="groupby('downloads')"] { display: none; }
 
