@@ -209,7 +209,7 @@ ul {
 }
 
 li span {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .bibbase_icon { display: none; }
@@ -224,7 +224,7 @@ li span {
 	float: left;
 	padding-right: 10px;
     margin-bottom: 5px;
-	font-size: 13pt;
+	font-size: 18pt;
     font-weight: bold;
     background-color: white;
 	}
@@ -239,7 +239,7 @@ li span {
 	float: left;
 	padding-right: 5px;
     margin-bottom: 5px;
-	font-size: 11pt;
+	font-size: 18px;
     font-weight: bold;
     background-color: white;
 	}
