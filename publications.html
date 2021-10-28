@@ -76,46 +76,79 @@ Please see the links for the copy of record, which may have different formatting
 	</div>
 	<div class="tile scale-anm Year">
 			<span>
-				<li><p> N. Nazir and M. Almassalkhi, "Guaranteeing a physically realizable battery dispatch without charge-discharge complementarity constraints," <i>IEEE Transactions on Power Systems</i>, submitted.<br />
-					<span id="twprs_ccBatt_2021" class="abstract" style="display:none">
-						The non-convex complementarity constraints present a fundamental computational challenge in energy constrained optimization problems. In this work, we present a new, linear, and robust battery optimization formulation that sidesteps the need for battery complementarity constraints and integers and prove analytically that the formulation guarantees that all energy constraints are satisfied which ensures that the optimized battery dispatch is physically realizable. In addition, we bound the worst-case model mismatch and discuss conservativeness. Simulation results further illustrate the effectiveness of this approach.
+				<li><p> O. Oyefeso, G. Ledva, I. Hiskens, M. Almassalkhi, and J. Mathieu "Control of Aggregate Air-Conditioning Load using Packetized Energy Concepts,". <i>Electric Power Systems Research</i>, Under review for PSCC 2022.<br />
+					<span id="pscc_hvacPEM_2022" class="abstract" style="display:none">
+						This paper extends the packetized energy man- agement (PEM) control strategy to enable coordination of compressor-based thermostatically controlled loads (TCLs), such as air conditioners, thus providing a new method to harness the flexibility of this ubiquitous resource. This flexibility can be used to provide a variety of grid services such as frequency regulation. While in traditional PEM, resources request energy packets and turn on if their request is approved, here we modify the PEM scheme by introducing the concept of turn- off requests. We find that this increases flexibility and improves load tracking performance. Through a case study, we evaluate the performance of a population of air conditioners providing fre- quency regulation under PEM, highlighting both the capabilities and performance limitations. Simulations indicate our controller extensions increase resource availability by at least 150% and improve tracking performance by up to 61%. Specifically, we show that it is possible for a population of about 1000 TCLs to achieve power tracking RMS errors below 1% when providing more than 0.2 MW of frequency regulation.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('twprs_ccBatt_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('pscc_hvacPEM_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_hvacPEM_2022.pdf">pdf</a> ] </p></li>
 			</span>
-		</div>
+	</div>
 	<div class="tile scale-anm Year">
 			<span>
-				<li><p> A. Khurram, M. Amini, L. Duffaut Espinosa, P. H. Hines, and M. Almassalkhi, "Real-time Grid and DER Co-simulation Platform for Validating Large-scale DER Control Schemes," <i>IEEE Transactions on Smart Grid</i>, submitted.<br />
+				<li><p> N. Nazir and M. Almassalkhi, "Market mechanism to enable grid-aware dispatch of Aggregators in radial distribution networks,". <i>Electric Power Systems Research</i>, Under review for PSCC 2022.<br />
+					<span id="pscc_ciaMarket_2022" class="abstract" style="display:none">
+						This paper presents a market-based optimization framework wherein Aggregators can compete for nodal capacity across a distribution feeder and guarantee that allocated flexible capacity cannot cause overloads or congestion. This mechanism, thus, allows Aggregators with allocated capacity to pursue a number of services at the whole-sale market level to maximize revenue of flexible resources. Based on Aggregator bids of capacity (MW) and network access price ($/MW), the distribution system operator (DSO) formulates an optimization problem that prioritizes capacity to the different Aggregators across the network while implicitly considering AC network constraints. This grid-aware allocation is obtained by incorporating a con- vex inner approximation into the optimization framework that prioritizes hosting capacity to different Aggregators. We adapt concepts from transmission-level capacity market clearing, utility demand charges, and Internet-like bandwidth allocation rules to distribution system operations by incorporating nodal voltage and transformer constraints into the optimization framework. Simulation based results on IEEE distribution networks showcase the effectiveness of the approach.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('pscc_ciaMarket_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_ciaMarket_2022.pdf">pdf</a> ] </p></li>
+			</span>
+	</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> A. Khurram, M. Almassalkhi, and L. Duffaut Espinosa, "A Group-based Approach for Heterogeneity in Packetized Energy Management,". <i>Electric Power Systems Research</i>, Under review for PSCC 2022.<br />
+					<span id="pscc_quantPEM_2022" class="abstract" style="display:none">
+						In practice, fleets of DERs are inherently hetero-geneous due to manufacturers' specifications and the effects of wear and tear. Accounting for heterogeneity is critical in the design of control policies for DER aggregations, otherwise, the system response may be inaccurate and performance can be degraded. This paper presents a group-based approach to characterize parametric heterogeneity in a fleet of aggregated DERs by grouping into homogeneous fleets. The proposed group- based approach borrows concepts from quantization in the area of signal processing and the paper particularly highlights the effect of rated power heterogeneity due to its relevance to the control policy design in packetized energy management (PEM). The reason for this is that the effective control mechanism in PEM is a function of the aggregate DER demand and the rated power of devices that are switched on. As a result, the PEM system is susceptible to tracking errors that may degrade performance in a heterogeneous fleet. Therefore, the proposed quantization based approach provides a systematic approach to group DERs in the fleet so that the desired performance is achieved.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('pscc_quantPEM_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_quantPEM_2022.pdf">pdf</a> ] </p></li>
+			</span>
+	</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> S. Brahma, H. Ossareh, and M. R. Almassalkhi, "Statistical Modeling and Forecasting of Automatic Gen- eration Control Signals,". <i>Electric Power Systems Research</i>, Under review for PSCC 2022.<br />
+					<span id="pscc_agcpred_2022" class="abstract" style="display:none">
+						The performance of frequency regulating units for automatic generation control (AGC) of power systems depends on their ability to track the AGC signal accurately. In addition, representative models and advanced analysis and analytics can yield forecasts of the AGC signal that aids in controller design. In this paper, time-series analyses are conducted on an AGC signal, specifically the PJM Reg-D, and using the results, a statistical model is derived that fairly accurately captures its second moments and saturated nature, as well as a time-series- based predictive model to provide forecasts. The predictive model is used in a model predictive control framework to ensure optimal tracking performance of down ramp-limited DER coordination scheme. The results provide valuable insight into the properties of the AGC signal and indicate the effectiveness of these models in replicating its behavior.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('pscc_agcpred_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_agcpred_2022.pdf">pdf</a> ] </p></li>
+			</span>
+	</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> A. Khan, S. Paudyal, and M. Almassalkhi, "Performance Evaluation of Network-Admissible Demand Dispatch in Multi-Phase Distribution Grids,". <i>Electric Power Systems Research</i>, Under review for PSCC 2022.<br />
+					<span id="pscc_gaPEM_2022" class="abstract" style="display:none">
+						As the penetration of flexible loads increases in distribution networks, demand dispatch schemes need to con- sider the effects of large-scale load control on distribution grid reliability. More specifically, we need demand dispatch schemes that actively ensure that distribution grid operational constraints are not violated (i.e., network-admissible) and still deliver valuable market services. For network-admissible demand dispatch schemes that depend on live 3-phase grid measurements, their overall performance and ability to manage constraints depends on the number, update rate, and multi-phase nature of the available measurements. In this context, the manuscript develops and evaluates the performance of a new network- admissible version of the device-driven demand dispatch scheme called Packetized Energy Management (PEM) within a large multi-phase distribution feeder. Specifically, this work investigates the effects of different levels and rates of grid measurements for a practical-sized, 2,522-node, unbalanced distribution test feeder with a 3000 flexible kW-scale loads operating under the network- admissible PEM scheme. The results demonstrate the value of live grid measurements in managing distribution grid operational constraints while PEM is able to effectively deliver frequency regulation services.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('pscc_gaPEM_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/pscc_gaPEM_2022.pdf">pdf</a> ] </p></li>
+			</span>
+	</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> S. Brahma, A. Khurram, H. Ossareh, and M. Almassalkhi, "Optimal Frequency Regulation using Pack- etized Energy Management," <i>IEEE Transactions on Power Systems</i>, under review.<br />
+					<span id="tpwrs_mpcPEM_2021" class="abstract" style="display:none">
+						Packetized energy management (PEM) is a demand dispatch scheme that can be used to provide ancillary services such as frequency regulation. In PEM, distributed energy resources (DERs) are granted uninterruptible access to the grid for a pre-specified time interval called the packet length. This results in a down ramp-limited response in PEM for DERs that can only consume power from the grid. In this work, a linearized virtual battery model of PEM is provided that is capable of predicting the down-ramp limited output of PEM and is used in a model predictive control (MPC) framework to improve the performance of PEM in tracking an automatic generation control (AGC) signal. By performing statistical analysis on the AGC regulation signal, PJM Reg-D, an ARMA model is derived as a predictor for the MPC-based precompensator. Finally, as an alternative to MPC, it is shown that by varying the packet length as a function of time, for example through packet randomization, frequency regulation can be improved under PEM.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tpwrs_mpcPEM_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_mpcPEM_2021.pdf">pdf</a> ] </p></li>
+			</span>
+	</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> A. Khurram, M. Amini, L. Duffaut Espinosa, P. H. Hines, and M. Almassalkhi, "Real-time Grid and DER Co-simulation Platform for Validating Large-scale DER Control Schemes," <i>IEEE Transactions on Smart Grid</i>, under review (Rev01).<br />
 					<span id="tsg_hilDER_2021" class="abstract" style="display:none">
 						Distributed energy resources (DERs) such as responsive loads and energy storage systems are valuable resources available to grid operators for balancing supply-demand mismatches via load coordination. However, consumer acceptance of load coordination schemes depends on ensuring quality of service (QoS), which embodies device-level constraints. Since each device has its own internal energy state, the effect of QoS on the fleet can be cast as fleet-wide energy limits within which the aggregate "state of charge" (SoC) must be actively maintained. This requires coordination of DERs that is cognizant of the SoC, responsive to grid conditions, and depends on fast communication networks. To that effect, this paper presents a novel real-time grid-and-DER co-simulation platform for validating advanced DER coordination schemes and characterizing the capability of such a DER fleet. In particular, we present how the co-simulation platform is suitable for: i) testing real-time performance of a large fleet of DERs in delivering advanced grid services, including frequency regulation; ii) online state estimation to characterize the corresponding SoC of a large fleet of DERs;  and iii) incorporating practical limitations of DERs and communications and analyzing the effects on fleet-wide performance. To illustrate these benefits of the presented grid-DER co-simulation platform, we employ the advanced DER coordination scheme called packetized energy management (PEM), which is a novel device-driven, asynchronous, and randomizing control paradigm for DERs. A fleet of thousands of PEM-enabled DERs are then added to a realistic and dynamical model of the Vermont transmission system to complete validation of the co-simulation platform.
 					</span>
 			</span>
 			<span style="cursor:auto;">
 				&emsp;[ <span onclick="showDiv('tsg_hilDER_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tsg_hilDER_2021.pdf">pdf</a> ] </p></li>
-			</span>
-		</div>
-	<div class="tile scale-anm Year">
-			<span>
-				<li><p> N. Nazir and M. Almassalkhi, "Grid-aware aggregation and realtime disaggregation of distributed energy resources in radial networks," <i>IEEE Transactions on Power Systems</i>, submitted.<br />
-					<span id="tpwrs_ciaDist_2021" class="abstract" style="display:none">
-						Dispatching a large fleet of distributed energy resources (DERs) in response to wholesale energy market or regional grid signals  requires solving a challenging disaggregation problem when the DERs are located within a distribution network. This manuscript presents a computationally tractable convex inner approximation for the optimal power flow (OPF) problem that characterizes a feeders aggregate DERs hosting capacity and enables a realtime, grid-aware dispatch of DERs for radial distribution networks. The inner approximation is derived by considering convex envelopes on the nonlinear terms in the AC power flow equations. The resulting convex formulation is then used to derive provable nodal injection limits, such that any combination of DER dispatches within their respective nodal limits is guaranteed to be AC admissible. These nodal injection limits are then used to construct a realtime, open-loop control policy for dispatching DERs at each location in the network to collectively deliver grid services. The IEEE-37 distribution network is used to validate the technical results and highlight various use-cases.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('tpwrs_ciaDist_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_ciaDist_2021.pdf">pdf</a> ] </p></li>
-			</span>
-		</div>
-	<div class="tile scale-anm Year">
-			<span>
-				<li><p> M. Botkin-Levy, A. Engelmann, T. M&#252hlpfordt, T. Faulwasser, and M. Almassalkhi, "Distributed control of charging for electric vehicle fleets under dynamic transformer ratings," <i>IEEE Transactions on Control Systems Technology</i>, submitted.<br />
-					<span id="tcst_EVC_2021" class="abstract" style="display:none">
-							Due to their large power draws and increasing adoption rates, electric vehicles (EVs) will become a significant challenge for electric distribution grids. However, with proper charging control strategies, the challenge can be mitigated without the need for expensive grid reinforcements. This manuscript presents and analyzes new distributed charging control methods to coordinate EV charging under nonlinear transformer temperature ratings. Specifically, we assess the trade-offs between required data communications, computational efficiency, and optimality guarantees for different control strategies based on a convex relaxation of the underlying nonlinear transformer temperature dynamics. Classical distributed control methods such as those based on dual decomposition and alternating direction method of multipliers (ADMM) are compared against the new Augmented Lagrangian-based Alternating Direction Inexact Newton (ALADIN) method and a novel low-information, look-ahead version of packetized energy management (PEM). These algorithms are implemented and analyzed for two case studies on residential and commercial EV fleets. Simulation results validate the new methods and provide insights into key trade-offs.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('tcst_EVC_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_EVC_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2007.10304">arXiv</a> ] </p></li>
 			</span>
 	</div>
 			
@@ -124,44 +157,108 @@ Please see the links for the copy of record, which may have different formatting
 	</div>
 	<div class="tile scale-anm Year">
 			<span>
-				<li><p> N. Nazir, I. Hiskens, and M. Almassalkhi, "Exploring reactive power limits on wind farm collector networks with convex inner approximations," <i>IEEE Conference on Decision and Control (CDC)</i>, submitted.<br />
-					<span id="twprs_ccBatt_2021" class="abstract" style="display:none">
-						The non-convex complementarity constraints present a fundamental computational challenge in energy constrained optimization problems. In this work, we present a new, linear, and robust battery optimization formulation that sidesteps the need for battery complementarity constraints and integers and prove analytically that the formulation guarantees that all energy constraints are satisfied which ensures that the optimized battery dispatch is physically realizable. In addition, we bound the worst-case model mismatch and discuss conservativeness. Simulation results further illustrate the effectiveness of this approach.
+				<li><p> H. Basu, M. Almassalkhi, and H. Ossareh, "Fuel-Optimal Trajectory Planning of Satellites Using Minimum Distance Assignment and Comparative Analysis of Relative Dynamics under J2 and Air Drag," <i>American Control Conference (ACC)</i>, submitted.<br />
+					<span id="acc_pato_2022" class="abstract" style="display:none">
+						In this paper, we present a fuel-optimal trajectory optimization (TO) problem for satellite formation flying (SFF) in near-circular low-earth orbits (LEO) under perturbations and modeling uncertainties. Non-spherical gravity (J2) of the earth and air drag are two dominant perturbing forces in LEO which cause significant orbital measurement errors and eventually sub-optimal actuation and trajectory prediction by the TO algorithm. By quantifying uncertainties and modeling errors associated with various relative dynamical models of satellites, we identify a model that is suitable for the TO problem. However, one of the key challenges to design of a computationally efficient TO algorithm for satellite swarms pertains to the assignment of each satellite to a location in a given final formation. To address this, we first decouple the final configuration assignment problem from the TO, derive mini- mum distance assignment between initial and final formation pairs, and then by using this minimum distance assignment in the TO algorithm, we efficiently compute near-optimal trajectories and actuation under given mission specifications. We validate all the theoretical results with suitable numerical examples.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('twprs_ccBatt_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('acc_pato_2022');" class="abstractLink">abstract</span> ] [ <a href="pubs/acc_pato_2022.pdf">pdf</a> ] </p></li>
 			</span>
-		</div>
-
+	</div>
+<!--	
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> N. Nazir, I. Hiskens, and M. Almassalkhi, "Exploring reactive power limits on wind farm collector networks with convex inner approximations," <i>IEEE Conference on Decision and Control (CDC)</i>, submitted.<br />
+					<span id="cdc_windfarm_2021" class="abstract" style="display:none">
+						A wind farm collector network can provide reactive power support at sub-transmission and transmission buses in order to support and improve voltage profiles. Previous works in literature characterize the reactive power capability of a wind farm by summing the individual generator ratings and do not take into account the constraints imposed by the wind farm's electric network, specifically, the voltage constraints. In this paper we determine the range of reactive power support that each generator within a wind farm can provide by constructing convex inner approximations of the non-convex set of admissible reactive power injections. The advantage of such a method is that it guarantees satisfaction of network constraints within the determined reactive power dispatch range. We present theoretical analysis that provides guarantees of this approach and also simulation results on wind farm networks that illustrate its effectiveness. Such an approach has the potential to improve the design and operation of wind farm collector networks, reducing the need for additional costly reactive power resources.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('cdc_windfarm_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+			</span>
+	</div>
+-->
 	</ul>
 	<ul class="tile scale-anm Year">
 		<div class="tile scale-anm Year">
 			<a name="2021"><h1>2021</h1></a>
 		</div>
-<!--
 		<div class="tile scale-anm Year">
 			<h2>Journal Papers</h2>
 		</div>
-		
-		 <div class="tile scale-anm Year">
+		<div class="tile scale-anm Year">
 			<span>
-				<li><p> N. Nazir and M. Almassalkhi, "Voltage positioning using co-optimization of controllable grid assets," <i>IEEE Transactions on Power Systems</i> 2020 (Early Access).<br />
+				<li><p> N. Nazir and M. Almassalkhi, "Grid-aware aggregation and realtime disaggregation of distributed energy resources in radial networks," <i>IEEE Transactions on Power Systems</i>, 2021 (Early Access).<br />
+					<span id="tpwrs_ciaDist_2021" class="abstract" style="display:none">
+						Dispatching a large fleet of distributed energy resources (DERs) in response to wholesale energy market or regional grid signals requires solving a challenging disaggregation problem when the DERs are located within a distribution network. This manuscript presents a computationally tractable convex inner approximation for the optimal power flow (OPF) problem that characterizes a feeders aggregate DERs hosting capacity and enables a realtime, grid-aware dispatch of DERs for radial distribution networks. The inner approximation is derived by considering convex envelopes on the nonlinear terms in the AC power flow equations. The resulting convex formulation is then used to derive provable nodal injection limits, such that any combination of DER dispatches within their respective nodal limits is guaranteed to be AC admissible. These nodal injection limits are then used to construct a realtime, open-loop control policy for dispatching DERs at each location in the network to collectively deliver grid services. The IEEE-37 distribution network is used to validate the technical results and highlight various use-cases.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tpwrs_ciaDist_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_ciaDist_2021.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9580648">link</a> ]</p></li>
+			</span>
+		</div>
+	<div class="tile scale-anm Year">
+			<span>
+				<li><p> M. Botkin-Levy, A. Engelmann, T. M&#252hlpfordt, T. Faulwasser, and M. Almassalkhi, "Distributed control of charging for electric vehicle fleets under dynamic transformer ratings," <i>IEEE Transactions on Control Systems Technology</i>, 2021 (accepted).<br />
+					<span id="tcst_EVC_2021" class="abstract" style="display:none">
+							Due to their large power draws and increasing adoption rates, electric vehicles (EVs) will become a significant challenge for electric distribution grids. However, with proper charging control strategies, the challenge can be mitigated without the need for expensive grid reinforcements. This manuscript presents and analyzes new distributed charging control methods to coordinate EV charging under nonlinear transformer temperature ratings.
+							Specifically, we assess the trade-offs between required data communications, computational efficiency, and optimality guarantees for different control strategies based on a convex relaxation of the underlying nonlinear transformer temperature dynamics. Classical distributed control methods such as those based on dual decomposition and Alternating Direction Method of Multipliers (ADMM) are compared against the new Augmented Lagrangian-based Alternating Direction Inexact Newton (ALADIN) method and a novel low-information, look-ahead version of Packetized Energy Management (PEM). 
+							These algorithms are implemented and analyzed for two case studies on residential and commercial EV fleets with fixed and variable populations, respectively. The latter motivates a novel EV hub charging model that captures arrivals and departures. Simulation results validate the new methods and provide insights into key trade-offs.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tcst_EVC_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_EVC_2021.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2007.10304">arXiv</a> ] </p></li>
+			</span>
+	</div>
+		<div class="tile scale-anm Year">
+			<span>
+				<li><p> N. Nazir and M. Almassalkhi, "Guaranteeing a physically realizable battery dispatch without charge-discharge complementarity constraints," <i>IEEE Transactions on Smart Grid</i>, 2021 (Early Access).<br />
+					<span id="tsg_ccBatt_2021" class="abstract" style="display:none">
+						The non-convex complementarity constraints present a fundamental computational challenge in energy constrained optimization problems. In this work, we present a new, linear, and robust battery optimization formulation that sidesteps the need for battery complementarity constraints and integers and prove analytically that the formulation guarantees that all energy constraints are satisfied which ensures that the optimized battery dispatch is physically realizable. In addition, we bound the worst-case model mismatch and discuss conservativeness. Simulation results further illustrate the effectiveness of this approach.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('tsg_ccBatt_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/tsg_ccBatt_2021.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9527324">link</a> ] [ <a href="https://arxiv.org/abs/2103.07846">arXiv</a> ] </p></li>
+			</span>
+		</div>
+		<div class="tile scale-anm Year">
+			<span>
+				<li><p>L. Duffaut Espinosa, A. Khurram, and M. Almassalkhi, "Reference-Tracking Control Policies for Packetized Coordination of Heterogeneous DER Populations," <i>IEEE Transactions on Control Systems Technology</i>, vol. 29, no. 6, pp. 2427-2443, Nov. 2021.<br />
+					<span id="tcst_MAK2_2020" class="abstract" style="display:none">
+						This manuscript presents design and analysis of a set of reference-tracking control policies for large-scale coordination of distributed energy resources (DERs) and quantifies tracking errors that arise due to heterogeneity in the power ratings for a fleet of DERs. In particular, the relay-based, reference-tracking control strategy that underpins much of packetized energy management (PEM) is augmented to uniquely leverage PEM's energy packet request mechanism to optimize the number of accepted requests and to explicitly consider the quality of service (QoS). In addition, tracking errors from modeling a heterogeneous fleet of packetized DERs with a group of homogeneous macromodels are analytically derived for relevant PEM information scenarios. Finally, simulation-based analysis validates the results and shows that PEM is suitable for providing load balancing and ramping services for the grid.					
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp; [ <span onclick="showDiv('tcst_MAK2_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_MAK2_2020.pdf">pdf</a> ]  [ <a href="https://ieeexplore.ieee.org/document/9305237">link</a> ] </p></li>
+			</span>
+	  </div>
+	  		<div class="tile scale-anm Year">
+			<span>
+				<li><p> N. Nazir and M. Almassalkhi, "Voltage positioning using co-optimization of controllable grid assets," <i>IEEE Transactions on Power Systems</i> vol. 36, no. 4, pp. 2761-2770, July 2021.<br />
 					<span id="twprs_voltPosOPF_2020" class="abstract" style="display:none">
 						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('twprs_voltPosOPF_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_voltPosOPF_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9288638">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('twprs_voltPosOPF_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_voltPosOPF_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9292433">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
 			</span>
 		</div>
--->
-		
+				<div class="tile scale-anm Year">
+			<span>
+				<li><p>S. Brahma, N. Nazir, H. Ossareh, and M. Almassalkhi, "Optimal and resilient coordination of virtual batteries in distribution feeders," <i>IEEE Transactions on Power Systems</i> vol. 36, no. 4, pp. 2841-2854, July 2021.<br />
+					<span id="twprs_vbpaper_2020" class="abstract" style="display:none">
+						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('twprs_vbpaper_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_vbpaper_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9288638">link</a> ] [ <a href="https://arxiv.org/abs/2010.03063">arXiv</a> ] </p></li>
+			</span>
+		</div>
 		<div class="tile scale-anm Year">
 			<h2>Conference Proceedings</h2>
 		</div>
-		<div class="tile scale-anm Year">
-		
+		<div class="tile scale-anm Year">		
 			<span>
 				<li><p>S. Brahma, M. Almassalkhi, and H. Ossareh, "Optimal Control of Virtual Batteries using Stochastic Linearization," <i>IEEE Conference on Control Technology and Applications (CCTA) </i>, August 8-11, 2021.<br />
 					<span id="ccta_qlcVB_2021" class="abstract" style="display:none">
@@ -181,7 +278,7 @@ Please see the links for the copy of record, which may have different formatting
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('ptech_flex_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/ptech_flex_2021.pdf">pdf</a> ] [IEEE (to appear)] </p></li>
+				&emsp;[ <span onclick="showDiv('ptech_flex_2021');" class="abstractLink">abstract</span> ] [ <a href="pubs/ptech_flex_2021.pdf">pdf</a> ] [<a href="https://ieeexplore.ieee.org/document/9494864">link</a> ] </p></li>
 			</span>
 		</div>
 		</ul>
@@ -191,17 +288,6 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<h2>Journal Papers</h2>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p> N. Nazir and M. Almassalkhi, "Voltage positioning using co-optimization of controllable grid assets," <i>IEEE Transactions on Power Systems</i> 2020 (Early Access).<br />
-					<span id="twprs_voltPosOPF_2020" class="abstract" style="display:none">
-						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('twprs_voltPosOPF_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_voltPosOPF_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9288638">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
-			</span>
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
@@ -216,17 +302,6 @@ Please see the links for the copy of record, which may have different formatting
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
-				<li><p>S. Brahma, N. Nazir, H. Ossareh, and M. Almassalkhi, "Optimal and resilient coordination of virtual batteries in distribution feeders," <i>IEEE Transactions on Power Systems</i> 2020 (Early Access).<br />
-					<span id="twprs_vbpaper_2020" class="abstract" style="display:none">
-						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('twprs_vbpaper_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_vbpaper_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9288638">link</a> ] [ <a href="https://arxiv.org/abs/2010.03063">arXiv</a> ] </p></li>
-			</span>
-		</div>
-		<div class="tile scale-anm Year">
-			<span>
 				<li><p>L. A. Duffaut Espinosa and M. Almassalkhi, "A packetized energy management macromodel with quality of service guarantees for demand-side resources," <i>IEEE Transactions on Power Systems</i>, vol. 35, no. 5, pp. 3660-3670, 2020.<br />
 					<span id="twprs_MAK1_2020" class="abstract" style="display:none">
 						Using distributed energy resources (DERs), such as thermostatically controlled loads (TCLs), electric vehicles (EVs), and energy storage systems (ESSs) as a way to manage demand has been known for decades. A demand management scheme that explicitly considers the individual DER's local quality of service (QoS) is known as demand dispatch. Packetized energy management (PEM) is a demand dispatch paradigm that borrows packet-based concepts from wireless communications to dynamically manage fleets of DER at-scale and in realtime via small, discrete fixed-duration/fixed-power energy packets. PEM addresses QoS in a bottom-up fashion by having a coordinator authorize/deny incoming requests from DERs to consume energy packets. This manuscript extends prior work on modeling a large-scale population (i.e., macro-model) of homogeneous TCLs and ESSs operating under the PEM paradigm. In particular, we extend the macro-model methodology to include deferrable loads (DLs), such as EVs, together with analysis of QoS guarantees. Comparisons between an agent-based (micro-model) simulation and the proposed macro-model are presented to validate modeling accuracy and QoS guarantees.
@@ -236,17 +311,6 @@ Please see the links for the copy of record, which may have different formatting
 				&emsp;[ <span onclick="showDiv('twprs_MAK1_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/twprs_MAK1_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9039692">link</a> ] </p></li>
 			</span>
 		</div>
-		<div class="tile scale-anm Year">
-			<span>
-				<li><p>L. Duffaut Espinosa, A. Khurram, and M. Almassalkhi, "Reference-Tracking Control Policies for Packetized Coordination of Heterogeneous DER Populations," <i>IEEE Transactions on Control Systems Technology</i>, 2020 (Early Access).<br />
-					<span id="tcst_MAK2_2020" class="abstract" style="display:none">
-						This manuscript presents design and analysis of a set of reference-tracking control policies for large-scale coordination of distributed energy resources (DERs) and quantifies tracking errors that arise due to heterogeneity in the power ratings for a fleet of DERs. In particular, the relay-based, reference-tracking control strategy that underpins much of packetized energy management (PEM) is augmented to uniquely leverage PEM's energy packet request mechanism to optimize the number of accepted requests and to explicitly consider the quality of service (QoS). In addition, tracking errors from modeling a heterogeneous fleet of packetized DERs with a group of homogeneous macromodels are analytically derived for relevant PEM information scenarios. Finally, simulation-based analysis validates the results and shows that PEM is suitable for providing load balancing and ramping services for the grid.					
-					</span>
-			</span>
-			<span style="cursor:auto;">
-				&emsp; [ <span onclick="showDiv('tcst_MAK2_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_MAK2_2020.pdf">pdf</a> ]  [ <a href="https://ieeexplore.ieee.org/document/9305237">link</a> ] </p></li>
-			</span>
-	  </div>
 		<div class="tile scale-anm Year">
 			<span>
 				<li><p>A. Khurram, L. Duffaut Espinosa, R. Malhame, and M. Almassalkhi, "Identification of Hot Water End-use Process of Electric Water Heaters from Energy Measurements," <i>Electric Power Systems Research</i>, vol. 189 (106625), 2020. Presented at <i>21st Power Systems Computation Conference (PSCC)</i>, June 29 - July 3, 2020.<br />
@@ -297,7 +361,7 @@ Please see the links for the copy of record, which may have different formatting
 					<span id="ijepes_mes_2020" class="abstract" style="display:none">
 						Multi-energy systems (MES) offer an opportunity to leverage energy conversion processes and temporary energy storage mechanisms to reduce costs and emissions during operation of buildings, campuses, and cities. With increasing options for flexibility in demand-side resources, it is possible to temporarily defer thermal and electrical demand of (flexible) buildings without sacrificing comfort and convenience of its occupants, which can improve overall MES economic efficiency and reduce emissions.
 
-						To that effect, this paper develops a linear optimization formulation of a MES with flexible (thermal and electric) building demands that capture nonlinearities in the efficiencies of energy conversion processes. The optimization formulation accounts for multiple time-steps to capture the (first-order) dynamics of large thermal building loads. The flexible buildings are parameterized, in part, based on historical data from a college campus in Vermont, USA. The idea of the MES model is to investigate the role that flexible building loads play in reducing costs and emissions for a small campus relative to that of a possible carbon tax. The operation of the MES is optimized to reduce costs based on representative seasons and carbon tax scenarios. Interestingly, it is found that when utilized optimally, flexible buildings can offer an effective method to improve economic efficiency while also reducing carbon emissions close to the levels that a carbon tax would realize, though without carbon price’s large cost increases. That is, we present evidence that flexible buildings in Vermont may offer another route to achieve the emission goals close to that of a carbon tax policy.
+						To that effect, this paper develops a linear optimization formulation of a MES with flexible (thermal and electric) building demands that capture nonlinearities in the efficiencies of energy conversion processes. The optimization formulation accounts for multiple time-steps to capture the (first-order) dynamics of large thermal building loads. The flexible buildings are parameterized, in part, based on historical data from a college campus in Vermont, USA. The idea of the MES model is to investigate the role that flexible building loads play in reducing costs and emissions for a small campus relative to that of a possible carbon tax. The operation of the MES is optimized to reduce costs based on representative seasons and carbon tax scenarios. Interestingly, it is found that when utilized optimally, flexible buildings can offer an effective method to improve economic efficiency while also reducing carbon emissions close to the levels that a carbon tax would realize, though without carbon price's large cost increases. That is, we present evidence that flexible buildings in Vermont may offer another route to achieve the emission goals close to that of a carbon tax policy.
 					</span>
 			</span>
 			<span style="cursor:auto;">
@@ -311,7 +375,7 @@ Please see the links for the copy of record, which may have different formatting
 			<span>
 				<li><p>L. Duffaut Espinosa, A. Khurram, and M. Almassalkhi, "A Virtual Battery Model for Packetized Energy Management,"  <i>IEEE Conference on Decision and Control</i>, 14-18 Dec., 2020.<br />
 					<span id="cdc_pvb_2020" class="abstract" style="display:none">
-						The goal of this paper is to develop a low-order model to represent the coordination of distributed energy resources based on concepts that make the internet work and is known as packetized energy management (PEM). The low-order model includes energy as a state variable together with dynamic opt-out constraints and internal packet request feedback, which in principle turns the model into a PEM virtual battery (PEM-VB) model. The paper focuses on a homogeneous aggregation of electric water heaters (EWHs) under PEM. It is shown that the bottom-up logic of the PEM-VB makes the system observable mainly due to the convenient feeding back of the number of packet requests through the communication channel es- tablished between the PEM coordinator and devices enrolled in the scheme. Without such extra information, the system loses the ability to observe the system’s stored energy state. A procedure for comput- ing the maximum and minimum energy bounds for the PEM-VB is developed. Moreover, the PEM-VB is explicitly used as the underly- ing model for an extended Kalman filter observer formulation with the purpose of estimating the energy stored in a simulated ensemble of agent-based EWHs under PEM. The use of PEM-VB is demon- strated in pre-positioning of flexible resources depending upon load forecasts. Finally, conclusions and future directions are provided.					</span>
+						The goal of this paper is to develop a low-order model to represent the coordination of distributed energy resources based on concepts that make the internet work and is known as packetized energy management (PEM). The low-order model includes energy as a state variable together with dynamic opt-out constraints and internal packet request feedback, which in principle turns the model into a PEM virtual battery (PEM-VB) model. The paper focuses on a homogeneous aggregation of electric water heaters (EWHs) under PEM. It is shown that the bottom-up logic of the PEM-VB makes the system observable mainly due to the convenient feeding back of the number of packet requests through the communication channel es- tablished between the PEM coordinator and devices enrolled in the scheme. Without such extra information, the system loses the ability to observe the system's stored energy state. A procedure for comput- ing the maximum and minimum energy bounds for the PEM-VB is developed. Moreover, the PEM-VB is explicitly used as the underly- ing model for an extended Kalman filter observer formulation with the purpose of estimating the energy stored in a simulated ensemble of agent-based EWHs under PEM. The use of PEM-VB is demon- strated in pre-positioning of flexible resources depending upon load forecasts. Finally, conclusions and future directions are provided.					</span>
 			</span>
 			<span style="cursor:auto;">
 				&emsp;[ <span onclick="showDiv('cdc_pvb_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/cdc_pvb_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9304065">link</a> ] </p></li>
@@ -321,7 +385,7 @@ Please see the links for the copy of record, which may have different formatting
 			<span>
 				<li><p>H. Mavalizadeh, L. Duffaut Espinosa, and M. Almassalkhi, "Decentralized Frequency Control using Packet-based Energy Coordination," <i>IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, December, 2020.<br />
 					<span id="sgc_freqresp_2020" class="abstract" style="display:none">
-						Distributed algorithms provide attractive features for solving Optimal Power Flow (OPF) problems in interconnected power systems compared to traditional centralized algorithms. Distributed algorithms help to maintain the control autonomy and data privacy of subsystems, which is particularly relevant in competitive markets and practical control system implementations. This paper analyzes a distributed optimization algorithm known as the "Auxiliary Principle Problem" to solve multiperiod distributed DCOPF problems with energy storage systems. The proposed approach enables multiple interconnected systems with their own sub-objectives to share their resources and to participate in an electricity market without implicitly sharing information about their local generators or internal network parameters. The paper also shows how the proposed approach can enable future microgrids to coordinate their operation, reduce the total operational cost, and avoid internal constraint violations caused by unscheduled flows (USF) while maintaining the subsystems’ autonomy. We used an 11-bus test system consisting of two interconnected subsystems to evaluate the proposed approach and analyze the impact of USF.
+						Distributed algorithms provide attractive features for solving Optimal Power Flow (OPF) problems in interconnected power systems compared to traditional centralized algorithms. Distributed algorithms help to maintain the control autonomy and data privacy of subsystems, which is particularly relevant in competitive markets and practical control system implementations. This paper analyzes a distributed optimization algorithm known as the "Auxiliary Principle Problem" to solve multiperiod distributed DCOPF problems with energy storage systems. The proposed approach enables multiple interconnected systems with their own sub-objectives to share their resources and to participate in an electricity market without implicitly sharing information about their local generators or internal network parameters. The paper also shows how the proposed approach can enable future microgrids to coordinate their operation, reduce the total operational cost, and avoid internal constraint violations caused by unscheduled flows (USF) while maintaining the subsystems' autonomy. We used an 11-bus test system consisting of two interconnected subsystems to evaluate the proposed approach and analyze the impact of USF.
 					</span>
 			</span>
 			<span style="cursor:auto;">
@@ -434,7 +498,7 @@ Please see the links for the copy of record, which may have different formatting
 		<span>
 			<li><p>Mads Almassalkhi, Luis Duffaut Espinosa, Paul D. H. Hines, Jeff Frolik, Sumit Paudyal, and Mahraz Amini, "Asynchronous Coordination of Distributed Energy Resources with Packetized Energy Management," <i>20th In: Meyn S., Samad T., Hiskens I., Stoustrup J. (eds) Energy Markets and Responsive Grids. The IMA Volumes in Mathematics and its Applications,</i>, pp 333-361, vol 162. Springer, 2018.<br />
 				<span id="springer_asynchCoord_2018" class="abstract" style="display:none">
-					To enable greater penetration of renewable energy, there is a need to move away from the traditional form of ensuring electric grid reliability through fast-ramping generators and instead consider an active role for flexible and controllable distributed energy resources (DERs), e.g., plug-in electric vehicles (PEVs), thermostatically controlled loads (TCLs), and energy storage systems (ESSs) at the consumer level. However, in order to facilitate consumer acceptance of this type of load coordination, DERs need to be managed in a way that avoids degrading the consumers’ quality of service (QoS), autonomy, and privacy. This work leverages a probabilistic packetized approach to energy delivery that draws inspiration from random access, digital communications. Packetized energy management (PEM) is an asynchronous, bottom-up coordination scheme for DERs that both abides by the constraints of the transmission and distribution grids and does not require explicit knowledge of specific DER’s local states or schedules. We present a novel macro-model that approximates the aggregate behavior of packetized DERs and is suitable for estimation and control of available flexible DERs to closely track a time-varying regulation signal. PEM is then implemented in a transmission/distribution system setting, validated with realistic numerical simulations, and compared against state-of-the-art load coordination schemes from industry.
+					To enable greater penetration of renewable energy, there is a need to move away from the traditional form of ensuring electric grid reliability through fast-ramping generators and instead consider an active role for flexible and controllable distributed energy resources (DERs), e.g., plug-in electric vehicles (PEVs), thermostatically controlled loads (TCLs), and energy storage systems (ESSs) at the consumer level. However, in order to facilitate consumer acceptance of this type of load coordination, DERs need to be managed in a way that avoids degrading the consumers' quality of service (QoS), autonomy, and privacy. This work leverages a probabilistic packetized approach to energy delivery that draws inspiration from random access, digital communications. Packetized energy management (PEM) is an asynchronous, bottom-up coordination scheme for DERs that both abides by the constraints of the transmission and distribution grids and does not require explicit knowledge of specific DER's local states or schedules. We present a novel macro-model that approximates the aggregate behavior of packetized DERs and is suitable for estimation and control of available flexible DERs to closely track a time-varying regulation signal. PEM is then implemented in a transmission/distribution system setting, validated with realistic numerical simulations, and compared against state-of-the-art load coordination schemes from industry.
 				</span>
 		</span>
 		<span style="cursor:auto;">
