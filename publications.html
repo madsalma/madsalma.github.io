@@ -83,30 +83,21 @@ Please see the links for the copy of record, which may have different formatting
 		<h2>Journal Papers</h2>
 	</div>
 
-   <div class="tile scale-anm Year">
+     <div class="tile scale-anm Year">
 		  <span>
-			  <li><p> N. Qi, P. Pinson, M. R. Almassalkhi, L. Cheng, Y. Zhuang, "Chance Constrained Economic Dispatch of Generic Energy Storage under Decision-Dependent Uncertainty," <i>IEEE Transactions on Sustainable Energy</i>, under review (Rev01).<br />
-				  <span id="2022_tse_gesDDU" class="abstract" style="display:none">
-					  Compared with large-scale physical batteries, aggregated and coordinated generic energy storage (GES) resources provide low-cost, but uncertain flexibility for power grid operations. While GES can be characterized by different types of uncertainty, the literature mostly focuses on decision-independent uncertainties (DIUs), such as exogenous stochastic disturbances caused by weather conditions. Instead, this manuscript focuses on newly-introduced decision-dependent uncertainties (DDUs) and considers an optimal GES dispatch that accounts for uncertain available state-of-charge (SoC) bounds that are affected by incentive signals and discomfort levels. To incorporate DDUs, we present a novel chance-constrained optimization (CCO) approach for the day-ahead economic dispatch of GES units. Two tractable methods are presented to solve the proposed CCO problem with DDUs: (1) a robust reformulation for general but incomplete distribution of DDUs and (2) an iterative algorithm for specific and known distribution of DDUs. Furthermore, reliability indices are introduced to verify the applicability of the proposed approach with respect to the reliability of GES units' response. Simulation-based analysis shows that the proposed methods yield conservative, but credible GES dispatch strategies and reduced penalty cost by incorporating DDUs in the constraints and leveraging data-driven parameter identification. This results in improved availability and performance of coordinated GES units.
+			  <li><p> Hani Mavalizadeh, Luis D. A. Espinosa, and Mads R. Almassalkhi, "Improving frequency response with synthetic damping available from fleets of distributed energy resources," <i>IEEE Transactions on Power Systems</i>, under review.<br />
+				  <span id="2023_tpwrs_synthDamp" class="abstract" style="display:none">
+					With the increasing use of renewable generation in power systems, responsive resources will be necessary to support primary frequency control in future low-inertia/under-damped power systems. Flexible loads can provide fast-frequency response services, if coordinated effectively. However, practical implementations of such synthetic damping services require both effective local sensing and control at the device level and an ability to accurately estimate online and predict the available synthetic damping from a fleet. In addition, the inherent trade-off between a fleet being available for fast frequency response while providing other ancillary services needs to be characterized. In this context, the manuscript presents a novel, fully decentralized, packet-based controller for diverse flexible loads that dynamically prioritizes and interrupts loads to engender synthetic damping suitable for primary frequency control. Moreover, the packet-based control methodology is shown to accurately characterize the available synthetic damping in real-time, which is useful to aggregators and system operators. Furthermore, spectral analysis of historical frequency regulation data is used to produce a probabilistic bound on the expected available synthetic damping for primary frequency control from a fleet and the trade-off from concurrently providing secondary frequency control services. Finally, numerical simulation on IEEE test networks demonstrates the effectiveness of the proposed methodology.
 				  </span>
 		  </span>
 		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2022_tse_gesDDU');" class="abstractLink">abstract</span> ] [ <a href="pubs/2022_tse_gesDDU.pdf">pdf</a> ] [ <a href="https://arxiv.org/abs/2201.06407">arXiv</a> ] </p></li>
+			  &emsp;[ <span onclick="showDiv('2023_tpwrs_synthDamp');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_tpwrs_synthDamp.pdf">pdf</a> ] </p></li>
 		  </span>
    </div>
-   <div class="tile scale-anm Year">
-		  <span>
-			  <li><p> Himadri Basu, Yasaman Pedari, Mads R. Almassalkhi, Hamid R. Ossareh, "Computationally-Efficient Collision-Free Trajectory Planning of Satellite Swarms under Modeling Uncertainties and Perturbations," <i>Journal of Guidance, Control, and Dynamics</i>, under review.<br />
-				  <span id="2022_jgcd_patoca" class="abstract" style="display:none">
-					This paper studies the problem of collision-free optimal trajectory planning (TP) for reconfiguration of a satellite swarm in Low Earth Orbit (LEO) under perturbations and modeling uncertainties. By quantifying the modeling errors associated with various relative dynamical models of satellites, we identify a suitable predictive model for TP. To address the computational challenges in selecting the optimal terminal satellite configuration in TP, we decouple the path assignment (PA) problem from the trajectory optimization (TO) algorithm. For the decoupled PA problem, we estimate fuel consumption for each satellite-target pairing, which informs a fuel-optimal PA formulation. To determine collision-free, fuel-optimal satellite maneuvers, we present two novel TP approaches: (1) a distributed TO formulation that iteratively incorporates convexified collision avoidance (CA) constraints; and (2) a decentralized TO-based approach, where convexified CA constraints are now incorporated into the PA subproblem. We find that the first approach scales well while the second approach has low communication requirements for swarms of up to size 50. Finally, to mitigate the effects of modeling uncertainties, we employ feedback in the form of shrinking-horizon model predictive control to update control commands based on satellite measurements.				  </span>
-		  </span>
-		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2022_jgcd_patoca');" class="abstractLink">abstract</span> ] [ <a href="pubs/2022_jgcd_patoca.pdf">pdf</a> ] </p></li>
-		  </span>
-   </div>
+   
       <div class="tile scale-anm Year">
 		  <span>
-			  <li><p> Mohsen Banaei, Francesco D'Ettorre, Razgar Ebrahimy, Mads R. Almassalkhi, Henrik Madsen, "Procuring Flexibility in Power Systems with Incentive-based Grid Access Requests," <i>IEEE Transactions on Smart Grid</i>, under review.<br />
+			  <li><p> Mohsen Banaei, Francesco D'Ettorre, Razgar Ebrahimy, Mads R. Almassalkhi, and Henrik Madsen, "Procuring Flexibility in Power Systems with Incentive-based Grid Access Requests," <i>IEEE Transactions on Smart Grid</i>, under review.<br />
 				  <span id="2022_apen_ibgar" class="abstract" style="display:none">
 					Demand-side flexibility is a valuable grid resource. To employ this flexibility as a market product, aggregating and coordinating controllable loads are both necessary. In this regard, designing e↵ective coordination mechanisms that consider the preferences of aggregators, end-users, and network operators is critical for successful implementation of demand response (DR) programs. This paper proposes an incentive-based method for coordinating grid access requests from controllable devices that is practical, does not require complex, high-order models of the entire system, respects end-users’ privacy and quality of service (QoS), and can readily incorporate network conditions to ensure grid reliability. The main advantages of the proposed method compared to similar approaches are 1) responsiveness to external incentives, such as price and CO2 emissions, which supports cost-efficient and environmentally-friendly coordination and 2) incorporation of time-varying QoS constraints at the device level (e.g., occupancy-driven conditions). The method is il- lustrated with a realistic test system consisting of a set of controllable heat pumps used in pool heating systems and uncontrollable loads placed in a distribution feeder and supplied by a distribution substation transformer. Simulation results highlight the role of the pro- posed method in flattening the load curve, peak shaving, satisfying the QoS constraints of end-users and keeping the transformer loading below its rated power. For the studied system, the proposed method can decrease the electricity costs up to 17% compared to conventional methods.
 				  </span>
@@ -120,9 +111,141 @@ Please see the links for the copy of record, which may have different formatting
 	<div class="tile scale-anm Year">
 		<h2>Conference Proceedings</h2>
 	</div>
-
+<div class="tile scale-anm Year">
+			<span>
+				<li><p> Mazen Elsaadany, Waheed Owonikoko, Amrit Pandey, and Mads R. Almassalkhi, "Towards an Efficient Optimization-based Framework for Selecting Under-frequency Load Shedding Parameters" <i>Hawaii International Conference on Systems Science (HICSS)</i>, Under review<br />
+					<span id="2023_hicss_ufls" class="abstract" style="display:none">
+						High penetration of renewable resources is resulting in a power system with a lower inertia and higher frequency sensitivity to power imbalances. Such systems are becoming increasingly susceptible to frequency collapse during extreme disturbances. Under Frequency Load Shedding (UFLS) is a last resort protection scheme for such scenarios, and it acts as an emergency brake by shedding load to arrest frequency decline. Current and emerging efforts to optimize UFLS settings and frequency thresholds are mostly network agnostic, ignoring spatial information about the network. With the prevalence of Distributed Energy Resources (DERs) in the high-renewable paradigm, the power grid is becoming more bidirectional, making some locations in the network more effective for UFLS action than others. This work proposes a Mixed Integer Linear Program that optimizes the UFLS setpoints (prioritizing one location over another) to minimize frequency deviation and load-shed for a given disturbance. The formulation considers system information and DER generation mix at different network locations, increasing model fidelity. The formulation also captures the discrete nature and practical time delays and deadbands associated with UFLS using half as many binary variables, reducing problem complexity. We empirically validate the optimization approach on a WECC 9 bus system and a 45-bus system for performance metrics including frequency deviation, frequency nadir, steady-state frequency and solver time.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2023_hicss_ufls');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_hicss_ufls.pdf">pdf</a> ] </p></li>
+			</span>
+		</div>
 
 	</ul>
+		<ul class="tile scale-anm Year">
+		<div class="tile scale-anm Year">
+			<a name="2022"><h1>2023</h1></a>
+		</div>
+		<div class="tile scale-anm Year">
+			<h2>Journal Papers</h2>
+		</div>
+			<div class="tile scale-anm Year">
+		  <span>
+			  <li><p> Amrit Pandey, Mads R. Almassalkhi, and Samuel Chevalier, "Large-scale Grid Optimization: The Workhorse of Future Grid Computations," <i>Curr Sustainable Renewable Energy Rep</i>, July 2023.<br/>
+				<span id="2023_current_LargeOPF" class="abstract" style="display:none">
+					The computation methods for modeling, controlling, and optimizing the transforming grid are evolving rapidly. We review and systemize knowledge for a special class of computation methods that solve large-scale power grid optimization problems. <i>Recent Findings</i>: We find that while mechanistic physics-based methods are leading the science in solving large-scale grid optimizations, data-driven techniques, especially physics constrained ones, are emerging as an alternative to solve otherwise intractable problems. We also find observable gaps in the field and ascertain these gaps from the paper’s literature review and by collecting and synthesizing feedback from industry experts. <i>Summary</i>: Large-scale grid optimizations are pertinent for, among other things, hedging against risk due to resource stochasticity, evaluating aggregated DERs’ impact on grid operation and design, and improving the overall efficiency of grid operation in terms of cost, reliability, and carbon footprint. We attribute the continual growth in scale and complexity of grid optimizations to a large influx of new spatial and temporal features in both transmission (T) and distribution (D) networks. Therefore, to systemize knowledge in the field, we discuss the recent advancements in T and D systems from the viewpoint of mechanistic physics-based and emerging data-driven methods.
+				</span>
+		  </span>
+		  <span style="cursor:auto;">
+			  &emsp;[ <span onclick="showDiv('2023_current_LargeOPF');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_current_LargeOPF.pdf">pdf</a> ][ <a href="https://link.springer.com/article/10.1007/s40518-023-00213-6">Springer</a> ] </p></li>
+		  </span>
+   </div>
+   
+		<div class="tile scale-anm Year">
+			<h2>Journal Papers</h2>
+		</div>
+			<div class="tile scale-anm Year">
+		  <span>
+			  <li><p> Mustafa Matar, Hani Mavalizadeh, Sarnaduti Brahma, Mads R. Almassalkhi, and Safwan Wshah, "Learning the State-of-Charge of Heterogeneous Fleets of Distributed Energy Resources with Temporal Residual Networks," <i>Elsevier Journal of Energy Storage</i>, June 2023.<br/>
+				<span id="2023_jes_SoC" class="abstract" style="display:none">
+					With increased use of renewable energy such as wind and solar, electric power generation is experiencing increased variability and uncertainty, which drives larger imbalances between the electric demand and supply. To mitigate this challenge, one can use distributed energy resources to beget flexible demand from coordinating fleets of smart electric water heaters (EWH) and residential (kW-scale) batteries. To effectively coordinate and characterize such a large and heterogeneous fleet of distributed energy resources (DERs), a common abstraction is denoted a virtual battery (VB). While the state of charge (SoC) of individual DERs (e.g., EWHs's water temperature) can be easily measured, determining the SoC of a controlled virtual battery aggregation is a technically challenging task due to the fleet's heterogeneous nature, characterized by nonlinear, stochastic, partial differential equations with time-varying parameters. In this paper, a data-driven approach is presented that utilizes a deep-learning-based Temporal Residual Causal Network to determine the SoC for a heterogeneous fleet of DERs, updated using only available end-use measurements. Unlike existing literature that generally relies on complex physics-based models, our deep learning (DL) model is trained using practical input-output data. The simulation results demonstrate that accurate estimation can be achieved with a low computational burden, considering a range of parametric variations at the device and fleet levels, such as fleet population size, background demand, DER device parameters, and coordinator communication losses. The results suggest that the proposed approach has appropriate generalization and robustness properties for practical, real-time control settings
+				</span>
+		  </span>
+		  <span style="cursor:auto;">
+			  &emsp;[ <span onclick="showDiv('2023_jes_SoC');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_jes_SoC.pdf">pdf</a> ][ <a href="https://www.sciencedirect.com/science/article/pii/S2352152X23013762">Elsevier</a> ] </p></li>
+		  </span>
+   </div>
+			<div class="tile scale-anm Year">
+		  <span>
+			  <li><p> Himadri Basu, Yasaman Pedari, Mads R. Almassalkhi, and Hamid R. Ossareh, "Computationally Efficient Collision-Free Trajectory Planning of Satellite Swarms Under Unmodeled Orbital Perturbations," <i>AIAA Journal of Guidance, Control, and Dynamics</i>, May 2023.<br/>
+				<span id="2023_jgcd_patoca" class="abstract" style="display:none">
+					This paper studies the problem of collision-free trajectory planning for a satellite swarm reconfiguration under perturbations and modeling uncertainties in a low Earth orbit (LEO). Determining exact trajectory planning solutions is computationally heavy as they require solving a mixed-integer nonlinear program owing to i) nonlinear relative dynamic models of satellites, ii) fuel-optimal assignment of satellites on the final formation, and iii) nonconvex collision avoidance constraints. To address these, first, a suitable linear model for trajectory planning is identified by quantifying modeling accuracy associated with various models capturing LEO perturbations. The effects of any residual modeling errors in the path prediction are mitigated by shrinking-horizon model-predictive feedback control, which updates the control command based on the latest satellite measurements. Secondly, an optimal swarm configuration is efficiently computed by decoupling the target-assignment algorithm from the trajectory optimization problem. Based on the estimated fuel expenditure for each satellite–target pairing, the target-assignment algorithm selects a configuration with minimal fuel consumption. Lastly, to determine collision-free, fuel-optimal maneuvers, two novel trajectory planning approaches, namely, distributed and decentralized trajectory optimization, are presented. While the former iteratively searches for collision-free feasible paths to optimal terminal configuration, the latter computes a near-optimal configuration with collision-free paths.
+				</span>
+		  </span>
+		  <span style="cursor:auto;">
+			  &emsp;[ <span onclick="showDiv('2023_jgcd_patoca');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_jgcd_patoca.pdf">pdf</a> ][ <a href="https://arc.aiaa.org/doi/10.2514/1.G007206">AIAA</a> ] </p></li>
+		  </span>
+   </div>
+   <div class="tile scale-anm Year">
+		  <span>
+			  <li><p> N. Qi, P. Pinson, M. R. Almassalkhi, L. Cheng, and Y. Zhuang, "Chance Constrained Economic Dispatch of Generic Energy Storage under Decision-Dependent Uncertainty," <i>IEEE Transactions on Sustainable Energy</i>, 2023.<br/>
+				  <span id="2022_tse_gesDDU" class="abstract" style="display:none">
+					Compared with large-scale physical batteries, aggregated and coordinated generic energy storage (GES) resources provide low-cost, but uncertain, flexibility for power grid operations. While GES can be characterized by different types of uncertainty, the literature mostly focuses on decision-independent uncertainties (DIUs), such as exogenous stochastic disturbances caused by weather conditions. Instead, this manuscript focuses on newly-introduced decision-dependent uncertainties (DDUs) and considers an optimal GES dispatch that accounts for uncertain available state-of-charge (SoC) bounds that are affected by incentive signals and discomfort levels. To incorporate DDUs, we present a novel chance-constrained optimization (CCO) approach for the day-ahead economic dispatch of GES units. Two tractable methods are presented to solve the proposed CCO problem with DDUs: (i) a robust reformulation for general but incomplete distributions of DDUs, and (ii) an iterative algorithm for specific and known distributions of DDUs. Furthermore, reliability indices are introduced to verify the applicability of the proposed approach with respect to the reliability of the response of GES units. Simulation-based analysis shows that the proposed methods yield conservative, but credible, GES dispatch strategies and reduced penalty cost by incorporating DDUs in the constraints and leveraging data-driven parameter identification. This results in improved availability and performance of coordinated GES units.
+				  </span>
+		  </span>
+		  <span style="cursor:auto;">
+			  &emsp;[ <span onclick="showDiv('2023_tse_gesDDU');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_tse_gesDDU.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/10081472">IEEE</a> ] </p></li>
+		  </span>
+   </div>
+			
+		<div class="tile scale-anm Year">
+			<h2>Conference Proceedings</h2>
+		</div>
+		<div class="tile scale-anm Year">
+			<span>
+				<li><p> Hani Mavalizadeh and Mads R. Almassalkhi "," <i>IEEE PES General Meeting</i>, 2023.<br />
+					<span id="2023_pesgm_DERcoordMetrics" class="abstract" style="display:none">
+						In this paper, we illustrate a novel methodology
+						for comparing and quantifying the performance of
+						different distributed energy resources (DER)
+						schemes’ ability to deliver frequency regulation
+						services across a number of salient criteria. The
+						schemes considered include (bottom-up) packetized
+						energy management, fitness-based methods, and
+						(direct load control) optimization-based methods.
+						The criteria of interest include tracking
+						performance, scalability of communication,
+						scalability of computation, device availability,
+						ability to maintain consumer quality of service
+						(CQoS) relative to delivered hot water
+						temperatures, and impact on the device quality of
+						service (DQoS) such as average cycling rates.
+						Moreover, we augment the fitness-based method with
+						an ability to estimate the fitness values
+						dynamically which significantly reduces the
+						communication burden while maintaining the tracking
+						capability. Finally, the simulations and
+						corresponding comparisons are based on a
+						representative subset of PJM’s historical Reg-D
+						data.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2023_pesgm_DERcoordMetrics');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_pesgm_DERcoordMetrics.pdf">pdf</a> ] [ <a href="">IEEE</a> ]</p></li>
+			</span>
+		</div>
+		 
+		 	<div class="tile scale-anm Year">
+			<span>
+				<li><p> Mazen Elsaadany and Mads R. Almassalkhi, "Battery Optimization for Power Systems: Feasibility and Optimality" <i>IEEE Conference on Decision and Control</i> December 2023.<br />
+					<span id="2023_cdc_battOpti" class="abstract" style="display:none">
+						The deployment of battery energy storage systems (BESS) is necessary to integrate terawatts of renewable generation while supporting grid resilience and reliability efforts. Optimizing battery dispatch requires predictive battery models that accurately characterize the battery state of charge (SOC) to ensure that the battery operates within the energy and power limits and avoids unexpected saturation effects. Furthermore, most BESS are unable to simultaneously charge and discharge, which begets an additional, non-convex complementary constraint. This paper presents and compares recently developed predictive battery models that side-step the non-convexity while providing supporting analysis on modeling error and optimal parameter selection. Specifically, insights for four different predictive BESS formulations are presented, including non-linear, mixed-integer, linear convex relaxation, and linear robust formulations. Additionally, two two-stage approaches are also considered. Analysis is conducted on optimal parameter selection for two of the methods, as well, as providing a new and improved SOC error bound on the relaxed formulation and the role of sustainability constraints on the robust formulation. Through the lens of relevant BESS use-cases, the paper discusses optimality and feasibility guarantees between the different models and provides extensive simulation-based analysis.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2023_cdc_battOpti');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_cdc_battOpti.pdf">pdf</a> ] [IEEE (to appear)]</p></li>
+			</span>
+		</div>
+		 
+			<div class="tile scale-anm Year">
+			<h2>Technical Report</h2>
+						<div class="tile scale-anm Year">
+			<span>
+				<li><p> Mads R. Almassalkhi, et al, "Packetized energy management: coordination transmission and distribution" <i>United States Department of Energy - Advanced Research Projects Agency - Energy (ARPA-E)</i>, March, 2023.<br />
+					<span id="2023_arpae_PEM" class="abstract" style="display:none">
+							This is the final technical report (FTR) for the project Packetized Energy Management (PEM): Coordinating Transmission and Distribution, which was part of the ARPA-E NODES program from 2015 to 2023. The high-level goal of the project was to develop and demonstrate novel, scalable, and impactful technologies related to the coordination of networked distributed energy resources (DERs). By demonstrating responsive means by which fleets of DERs could be coordinated to enhance grid operation and reliability, the U.S. could accelerate renewable integration and electrification efforts and meet decarbonization goals.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2023_arpae_PEM');" class="abstractLink">abstract</span> ] [ <a href="pubs/2023_arpae_PEM.pdf">pdf</a> ] [ <a href="">OSTI link</a> ] </p></li>
+			</span>
+		</div>
+		</div>
+		
+		</ul>
+	
 	<ul class="tile scale-anm Year">
 		<div class="tile scale-anm Year">
 			<a name="2022"><h1>2022</h1></a>
@@ -308,23 +431,23 @@ Please see the links for the copy of record, which may have different formatting
 		<div class="tile scale-anm Year">
 			<span>
 				<li><p>L. Duffaut Espinosa, A. Khurram, and M. Almassalkhi, "Reference-Tracking Control Policies for Packetized Coordination of Heterogeneous DER Populations," <i>IEEE Transactions on Control Systems Technology</i>, vol. 29, no. 6, pp. 2427-2443, Nov. 2021.<br />
-					<span id="tcst_MAK2_2020" class="abstract" style="display:none">
+					<span id="2020_tcst_MAK2" class="abstract" style="display:none">
 						This manuscript presents design and analysis of a set of reference-tracking control policies for large-scale coordination of distributed energy resources (DERs) and quantifies tracking errors that arise due to heterogeneity in the power ratings for a fleet of DERs. In particular, the relay-based, reference-tracking control strategy that underpins much of packetized energy management (PEM) is augmented to uniquely leverage PEM's energy packet request mechanism to optimize the number of accepted requests and to explicitly consider the quality of service (QoS). In addition, tracking errors from modeling a heterogeneous fleet of packetized DERs with a group of homogeneous macromodels are analytically derived for relevant PEM information scenarios. Finally, simulation-based analysis validates the results and shows that PEM is suitable for providing load balancing and ramping services for the grid.					
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp; [ <span onclick="showDiv('tcst_MAK2_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/tcst_MAK2_2020.pdf">pdf</a> ]  [ <a href="https://ieeexplore.ieee.org/document/9305237">link</a> ] </p></li>
+				&emsp; [ <span onclick="showDiv('2020_tcst_MAK2');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_tcst_MAK2.pdf">pdf</a> ]  [ <a href="https://ieeexplore.ieee.org/document/9305237">link</a> ] </p></li>
 			</span>
 	  </div>
 	  		<div class="tile scale-anm Year">
 			<span>
 				<li><p> N. Nazir and M. Almassalkhi, "Voltage positioning using co-optimization of controllable grid assets," <i>IEEE Transactions on Power Systems</i> vol. 36, no. 4, pp. 2761-2770, July 2021.<br />
-					<span id="2020_twprs_voltPosOPF" class="abstract" style="display:none">
+					<span id="2020_tpwrs_voltPosOPF" class="abstract" style="display:none">
 						This paper presents a novel hierarchical framework for real-time, network-admissible coordination of responsive grid resources aggregated into virtual batteries (VBs). In this context, a VB represents a local aggregation of directly controlled loads, such as smart inverters, electric water heaters, and air-conditioners. The coordination is achieved by solving an optimization problem to disaggregate a feeder's desired reference trajectory into constraint-aware set-points for the VBs. Specifically, a novel, provably-tight, convex relaxation of the AC optimal power flow (OPF) problem is presented to optimally dispatch the VBs to track the feeder's desired power trajectory. In addition to the optimal VB dispatch scheme, a real-time, corrective control scheme is designed, which is based on optimal proportional-integral (PI) control with anti-windup, to reject intra-feeder and inter-feeder disturbances that arise during operation of the power system. Simulation results conducted on a modified IEEE test system demonstrate the effectiveness of the proposed multi-layer VB coordination framework.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('2020_twprs_voltPosOPF');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_twprs_voltPosOPF.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9292433">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('2020_tpwrs_voltPosOPF');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_tpwrs_voltPosOPF.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/9292433">link</a> ] [ <a href="https://arxiv.org/abs/1911.00338">arXiv</a> ] </p></li>
 			</span>
 		</div>
 				<div class="tile scale-anm Year">
@@ -386,34 +509,34 @@ Please see the links for the copy of record, which may have different formatting
 		<div class="tile scale-anm Year">
 			<span>
 				<li><p>L. L. Duffaut Espinosa and M. Almassalkhi, "A packetized energy management macromodel with quality of service guarantees for demand-side resources," <i>IEEE Transactions on Power Systems</i>, vol. 35, no. 5, pp. 3660-3670, 2020.<br />
-					<span id="tpwrs_MAK1_2020" class="abstract" style="display:none">
+					<span id="2020_tpwrs_MAK1" class="abstract" style="display:none">
 						Using distributed energy resources (DERs), such as thermostatically controlled loads (TCLs), electric vehicles (EVs), and energy storage systems (ESSs) as a way to manage demand has been known for decades. A demand management scheme that explicitly considers the individual DER's local quality of service (QoS) is known as demand dispatch. Packetized energy management (PEM) is a demand dispatch paradigm that borrows packet-based concepts from wireless communications to dynamically manage fleets of DER at-scale and in realtime via small, discrete fixed-duration/fixed-power energy packets. PEM addresses QoS in a bottom-up fashion by having a coordinator authorize/deny incoming requests from DERs to consume energy packets. This manuscript extends prior work on modeling a large-scale population (i.e., macro-model) of homogeneous TCLs and ESSs operating under the PEM paradigm. In particular, we extend the macro-model methodology to include deferrable loads (DLs), such as EVs, together with analysis of QoS guarantees. Comparisons between an agent-based (micro-model) simulation and the proposed macro-model are presented to validate modeling accuracy and QoS guarantees.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('tpwrs_MAK1_2020');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_MAK1_2020.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9039692">link</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('2020_tpwrs_MAK1');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_tpwrs_MAK1.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/abstract/document/9039692">link</a> ] </p></li>
 			</span>
 		</div>
 		<div class="tile scale-anm Year">
 			<span>
 				<li><p>A. Khurram, L. Duffaut Espinosa, R. Malhame, and M. Almassalkhi, "Identification of Hot Water End-use Process of Electric Water Heaters from Energy Measurements," <i>Electric Power Systems Research</i>, vol. 189 (106625), 2020. Presented at <i>21st Power Systems Computation Conference (PSCC)</i>, June 29 - July 3, 2020.<br />
-					<span id="epsr_2020_pscc_whprocess" class="abstract" style="display:none">
+					<span id="2020_epsr_whprocess" class="abstract" style="display:none">
 						This paper presents an algorithm for the identification of parameters for a stochastic hot water end-use process that drives a homogeneous population of thermostatically controlled electric water heaters (EWH). Usually, only metered interval consumption data (kWh) is collected and the hot water end-use process is unobservable to utility and aggregators. However, the availability of EWHs for demand response (DR) is closely coupled with the hot water end-use process. In this context, the hot water end-use process is modeled as a two-state Markov chain (Use / No use), which causes the thermostatic ON-OFF switching process to behave as a Markov renewal process (MRP). A set of first passage-time problems is developed to obtain the moments of the transition probability densities of the MRP. These problems are addressed by establishing a system of coupled partial differential equations characterizing the temperature evolution of the EWH population. A key quantity in the methodology for estimating the parameters is the total time an EWH is ON within a period of interest. It is referred to as the total busy time. Total busy time in this approach is a random variable for which analytical expressions of the moments are developed as a function of the metered window length. The latter expressions become the basis of a hot water demand model identification algorithm which is validated using agent-based simulations of EWHs.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('epsr_2020_pscc_whprocess');" class="abstractLink">abstract</span> ] [ <a href="pubs/epsr_2020_pscc_whprocess.pdf">pdf</a> ] [ <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779620304284">link</a> ] [ Presentation: <a href="https://youtu.be/PuEyUJgoO-Q">video</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('2020_epsr_whprocess');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_epsr_whprocess.pdf">pdf</a> ] [ <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779620304284">link</a> ] [ Presentation: <a href="https://youtu.be/PuEyUJgoO-Q">video</a> ] </p></li>
 			</span>
 	  </div>
 		<div class="tile scale-anm Year">
 			<span>
 				<li><p>N. Nazir and M. Almassalkhi, "Stochastic multi-period optimal dispatch of energy storage in unbalanced distribution feeders," <i>Electric Power Systems Research</i>, vol. 189 (106783), 2020. Presented at <i>21st Power Systems Computation Conference (PSCC)</i>, June 29 - July 3, 2020.<br />
-					<span id="epsr_2020_pscc_stochOPF" class="abstract" style="display:none">
+					<span id="2020_epsr_stochOPF" class="abstract" style="display:none">
 						This paper presents a convex, multi-period, AC-feasible Optimal Power Flow (OPF) framework that robustly dispatches flexible demand-side resources in unbalanced distribution feeders against uncertainty in very-short timescale solar Photo-Voltaic (PV) forecasts. This is valuable for power systems with significant behind-the-meter solar PV generation as their operation is affected by uncertainty from forecasts of demand and solar PV generation. The aim of this work is then to ensure the feasibility and reliability of distribution system operation under high solar PV penetration. We develop and present a novel, robust OPF formulation that accounts for both the nonlinear power flow constraints and the uncertainty in forecasts. This is achieved by linearizing an optimal trajectory and using first-order methods to systematically tighten voltage bounds. Case studies on a realistic distribution feeder shows the effectiveness of a receding-horizon implementation.						
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('epsr_2020_pscc_stochOPF');" class="abstractLink">abstract</span> ] [ <a href="pubs/epsr_2020_pscc_stochOPF.pdf">pdf</a> ] [ <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779620305861">link</a> ] [ Presentation: <a href="https://youtu.be/VNHu2anAV1Q">video</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('2020_epsr_stochOPF');" class="abstractLink">abstract</span> ] [ <a href="pubs/2020_epsr_stochOPF.pdf">pdf</a> ] [ <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378779620305861">link</a> ] [ Presentation: <a href="https://youtu.be/VNHu2anAV1Q">video</a> ] </p></li>
 			</span>
 	  </div>
 	  <div class="tile scale-anm Year">
@@ -695,22 +818,22 @@ This paper presents a state bin transition (macro)model for a large homogeneous 
 	<div class="tile scale-anm Year">
 		<span>
 			<li><p>M. Almassalkhi and I. Hiskens, "Model-Predictive Cascade Mitigation in Electric Power Systems with Storage and Renewables Part I: Theory and implementation," <i>IEEE Transactions on Power Systems</i>, vol. 30, no. 1, pp. 67-77, 2015.<br />
-				<span id="tpwrs_cascade1_2015" class="abstract" style="display:none">
+				<span id="2015_tpwrs_cascade1" class="abstract" style="display:none">
 					A novel model predictive control (MPC) scheme is developed for mitigating the effects of severe line-overload disturbances in electrical power systems. A piece-wise linear convex approximation of line losses is employed to model the effect of transmission line power flow on conductor temperatures. Control is achieved through a receding-horizon model predictive control (MPC) strategy which alleviates line temperature overloads and thereby prevents the propagation of outages. The MPC strategy adjusts line flows by rescheduling generation, energy storage and controllable load, while taking into account ramp-rate limits and network limitations. In Part II of this paper, the MPC strategy is illustrated through simulation of the IEEE RTS-96 network, augmented to incorporate energy storage and renewable generation.
 				</span>
 		</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('tpwrs_cascade1_2015');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_cascade1_2015.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6824273">link</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('2015_tpwrs_cascade1');" class="abstractLink">abstract</span> ] [ <a href="pubs/2015_tpwrs_cascade1.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6824273">link</a> ] </p></li>
 		</span>
   </div>
   <div class="tile scale-anm Year">
 		<span>
 			<li><p>M. Almassalkhi and I. Hiskens, "Model-Predictive Cascade Mitigation in Electric Power Systems With Storage and Renewables Part II: Case-Study," <i>IEEE Transactions on Power Systems</i>, vol. 30, no. 1, pp. 78 - 87, 2015.<br />
-			<span id="tpwrs_cascade2_2015" class="abstract" style="display:none">
+			<span id="2015_tpwrs_cascade2" class="abstract" style="display:none">
 				The novel cascade-mitigation scheme developed in Part I of this paper is implemented within a receding-horizon model predictive control (MPC) scheme with a linear controller model. This present paper illustrates the MPC strategy with a case-study that is based on the IEEE RTS-96 network, though with energy storage and renewable generation added. It is shown that the MPC strategy alleviates temperature overloads on transmission lines by rescheduling generation, energy storage, and other network elements, while taking into account ramp-rate limits and network limitations. Resilient performance is achieved despite the use of a simplified linear controller model. The MPC scheme is compared against a base-case that seeks to emulate human operator behavior.				</span>
 			</span>
 		<span style="cursor:auto;">
-			&emsp;[ <span onclick="showDiv('tpwrs_cascade2_2015');" class="abstractLink">abstract</span> ] [ <a href="pubs/tpwrs_cascade2_2015.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6825913">link</a> ] </p></li>
+			&emsp;[ <span onclick="showDiv('2015_tpwrs_cascade2');" class="abstractLink">abstract</span> ] [ <a href="pubs/2015_tpwrs_cascade2.pdf">pdf</a> ] [ <a href="https://ieeexplore.ieee.org/document/6825913">link</a> ] </p></li>
 		</span>
   </div>
     <div class="tile scale-anm Year">
