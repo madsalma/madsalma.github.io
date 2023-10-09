@@ -3,6 +3,7 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
 <meta name="description" content="Homepage for Mads Almassalkhi"/>
 <meta name="keywords" content="mads almassalkhi core control optimization energy power systems"/>
@@ -49,6 +50,8 @@
 
 		<div class="content">
 
+		<table border="0">			<tr>				<td style="width:33%;"><img src="logo/logoCORE.png" alt="CORE Systems Lab" width="200"></td>			</tr>		</table>
+
 <h1><font size="5">Publications</font></h1>
 
 <p>
@@ -83,17 +86,7 @@ Please see the links for the copy of record, which may have different formatting
 		<h2>Journal Papers</h2>
 	</div>
 
-     <div class="tile scale-anm Year">
-		  <span>
-			  <li><p> Mads R. Almassalkhi and Soumya Kundu, "Intelligent Electrification as an enabler of Clean Energy and Decarbonization," <i>Current Sustainable/Renewable Energy Reports</i>, under review (Rev01).<br />
-				  <span id="2023_current_intelec" class="abstract" style="display:none">
-					Electrification efforts will change electric demand pat- terns, but must be made beneficial to the deployment of renewable generation. To ensure this, we need intelligent coordination of millions of resulting dis- tributed energy resources (DERs). We provide an overview of challenges and opportunities associated with intelligent electrification as a means to enable decarbonization and clean energy.
-				  </span>
-		  </span>
-		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2023_current_intelec');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_current_intelec.pdf">pdf</a> ] </p></li>
-		  </span>
-   </div>
+    
    
       <div class="tile scale-anm Year">
 		  <span>
@@ -111,15 +104,40 @@ Please see the links for the copy of record, which may have different formatting
 	<div class="tile scale-anm Year">
 		<h2>Conference Proceedings</h2>
 	</div>
-<div class="tile scale-anm Year">
+		
+		<div class="tile scale-anm Year">
 			<span>
-				<li><p> Mazen Elsaadany, Waheed Owonikoko, Amrit Pandey, and Mads R. Almassalkhi, "Towards an Efficient Optimization-based Framework for Selecting Under-frequency Load Shedding Parameters" <i>Hawaii International Conference on Systems Science (HICSS)</i>, under review.<br />
-					<span id="2023_hicss_ufls" class="abstract" style="display:none">
-						High penetration of renewable resources is resulting in a power system with a lower inertia and higher frequency sensitivity to power imbalances. Such systems are becoming increasingly susceptible to frequency collapse during extreme disturbances. Under Frequency Load Shedding (UFLS) is a last resort protection scheme for such scenarios, and it acts as an emergency brake by shedding load to arrest frequency decline. Current and emerging efforts to optimize UFLS settings and frequency thresholds are mostly network agnostic, ignoring spatial information about the network. With the prevalence of Distributed Energy Resources (DERs) in the high-renewable paradigm, the power grid is becoming more bidirectional, making some locations in the network more effective for UFLS action than others. This work proposes a Mixed Integer Linear Program that optimizes the UFLS setpoints (prioritizing one location over another) to minimize frequency deviation and load-shed for a given disturbance. The formulation considers system information and DER generation mix at different network locations, increasing model fidelity. The formulation also captures the discrete nature and practical time delays and deadbands associated with UFLS using half as many binary variables, reducing problem complexity. We empirically validate the optimization approach on a WECC 9 bus system and a 45-bus system for performance metrics including frequency deviation, frequency nadir, steady-state frequency and solver time.
+				<li><p> Mazen Elsaadany, Waheed Owonikoko, Amrit Pandey, and Mads R. Almassalkhi, "Optimization-based Framework for Selecting Under-frequency Load Shedding Parameters" <i>Power Systems Computations Conference (PSCC)</i>, under review.<br />
+					<span id="2024_pscc_ufls" class="abstract" style="display:none">
+						High penetration of renewable resources results in a power system with lower inertia and higher frequency sensitivity to power imbalances. Such systems are becoming increasingly susceptible to frequency collapse during extreme disturbances. Under- Frequency Load Shedding (UFLS) is a last-resort protection scheme and acts as an emergency brake by shedding load to arrest frequency decline. Current and emerging efforts to optimize UFLS settings and frequency thresholds are mostly network agnostic, ignoring network spatial information. With the prevalence of Distributed Energy Resources (DERs) in the high-renewable paradigm, the power grid is becoming more bidirectional, making some locations in the network less effective for UFLS action than others. This work proposes a Mixed Integer Linear Program that optimizes the UFLS setpoints (prioritizing one location over another) to minimize frequency deviation and load-shed for a given disturbance. The formulation considers system information and DER generation mix at different network locations, increasing model fidelity. The formulation also captures the discrete nature and practical time delays and deadbands associated with UFLS using a minimal set of binary variables, reducing problem complexity. We empirically validate the optimization approach on the dynamic IEEE 39-bus system for performance metrics, including frequency nadir, steady-state frequency and total load shed.
 					</span>
 			</span>
 			<span style="cursor:auto;">
-				&emsp;[ <span onclick="showDiv('2023_hicss_ufls');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_hicss_ufls.pdf">pdf</a> ] </p></li>
+				&emsp;[ <span onclick="showDiv('2024_pscc_ufls');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2024_pscc_ufls.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="arxiv.com">arXiv</a> ]  </p></li>
+			</span>
+		</div>
+
+		<div class="tile scale-anm Year">
+			<span>
+				<li><p> Tanmay Mishra, Amrit Pandey, and Mads R. Almassalkhi, "Predictive Optimization of Hybrid Energy Systems with Temperature Dependency" <i>Power Systems Computations Conference (PSCC)</i>, under review.<br />
+					<span id="2024_pscc_hes" class="abstract" style="display:none">
+						Hybrid Energy Systems (HES), amalgamating renewable sources, energy storage, and conventional generation, have emerged as a responsive resource for providing valuable grid services. Subsequently, modeling and analysis of HES has become critical, and the quality of grid services hedges on it. Currently, most HES models are temperature-agnostic. However, the temperature-dependent factors can significantly impact HES performance, necessitating advanced modeling and optimization techniques. With the inclusion of temperature- dependent models, the challenges and complexity of solving optimization problem increases. In this paper, the electro-thermal modeling of HES is discussed. Based on this model, a nonlinear predictive optimization framework is formulated. A simplified model is developed to address the challenges associated with solving nonlinear problems. Further, projection and homotopy approaches are proposed. In the homotopy method, the NLP is solved by incrementally changing the C-rating of the bat- tery. Simulation-based analysis of the algorithms highlights the effects of different battery ratings, ambient temperatures, and energy price variations. Finally, comparative assessments with a temperature-agnostic approach illustrates the effectiveness of electro-thermal methods in optimizing HES.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2024_pscc_hes');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2024_pscc_hes.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="arxiv.com">arXiv</a> ]  </p></li>
+			</span>
+		</div>
+		
+				<div class="tile scale-anm Year">
+			<span>
+				<li><p> Hani Mavalizadeh and Mads R. Almassalkhi, "Decomposed Phase Analysis using Convex Inner Approximations: a Methodology for DER Hosting Capacity in Distribution Systems" <i>Power Systems Computations Conference (PSCC)</i>, under review.<br />
+					<span id="2024_pscc_3phost" class="abstract" style="display:none">
+						This paper uses convex inner approximations (CIA) of the AC power flow to tackle the optimization problem of quantifying a three-phase distribution feeder’s capacity to host distributed energy resources (DERs). This is often connoted host- ing capacity (HC), but herein we consider separative bounds for each node on positive and negative DER injections, which ensures that injections within these nodal limits satisfy feeder voltage and current limits and across nodes sum up to the feeder HC. The methodology decomposes a three-phase feeder into separate phases and applies CIA-based techniques to each phase. An analysis is developed to determine the technical condition under which this per-phase approach can still guarantee three-phase constraints. New approaches are then presented that modify the per-phase optimization problems to overcome conservativeness inherent to CIA methods and increase HC, including selectively modifying the per-phase impedances and iteratively relaxing per- phase voltage bounds iterative method has been proposed to modify the voltage bounds. Discussion is included on trade-offs and feasibility. To validate the methodology simulation-based analysis is conducted with the IEEE 37-node test feeder and a real 534-node unbalanced radial distribution feeder.
+					</span>
+			</span>
+			<span style="cursor:auto;">
+				&emsp;[ <span onclick="showDiv('2024_pscc_3phost');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2024_pscc_3phost.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="arxiv.com">arXiv</a> ]  </p></li>
 			</span>
 		</div>
 
@@ -132,27 +150,39 @@ Please see the links for the copy of record, which may have different formatting
 			<h2>Journal Papers</h2>
 		</div>
 		
+		 <div class="tile scale-anm Year">
+		  <span>
+			  <li><p> Mads R. Almassalkhi and Soumya Kundu, "Intelligent Electrification as an enabler of Clean Energy and Decarbonization," <i>Current Sustainable/Renewable Energy Reports</i>, September 2023 (Invited paper).<br />
+				  <span id="2023_current_intelec" class="abstract" style="display:none">
+					Electrification efforts will change electric demand pat- terns, but must be made beneficial to the deployment of renewable generation. To ensure this, we need intelligent coordination of millions of resulting dis- tributed energy resources (DERs). We provide an overview of challenges and opportunities associated with intelligent electrification as a means to enable decarbonization and clean energy.
+				  </span>
+		  </span>
+		  <span style="cursor:auto;">
+			  &emsp;[ <span onclick="showDiv('2023_current_intelec');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_current_intelec.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="https://link.springer.com/article/10.1007/s40518-023-00228-z">Springer</a> ]</p></li>
+		  </span>
+   </div>
+		
 		     <div class="tile scale-anm Year">
 		  <span>
-			  <li><p> Hani Mavalizadeh, Luis D. A. Espinosa, and Mads R. Almassalkhi, "Improving frequency response with synthetic damping available from fleets of distributed energy resources," <i>IEEE Transactions on Power Systems</i>, under review (Accepted).<br />
+			  <li><p> Hani Mavalizadeh, Luis D. A. Espinosa, and Mads R. Almassalkhi, "Improving frequency response with synthetic damping available from fleets of distributed energy resources," <i>IEEE Transactions on Power Systems</i>, 2023.<br />
 				  <span id="2023_tpwrs_synthDamp" class="abstract" style="display:none">
 					With the increasing use of renewable generation in power systems, responsive resources will be necessary to support primary frequency control in future low-inertia/under-damped power systems. Flexible loads can provide fast-frequency response services, if coordinated effectively. However, practical implementations of such synthetic damping services require both effective local sensing and control at the device level and an ability to accurately estimate online and predict the available synthetic damping from a fleet. In addition, the inherent trade-off between a fleet being available for fast frequency response while providing other ancillary services needs to be characterized. In this context, the manuscript presents a novel, fully decentralized, packet-based controller for diverse flexible loads that dynamically prioritizes and interrupts loads to engender synthetic damping suitable for primary frequency control. Moreover, the packet-based control methodology is shown to accurately characterize the available synthetic damping in real-time, which is useful to aggregators and system operators. Furthermore, spectral analysis of historical frequency regulation data is used to produce a probabilistic bound on the expected available synthetic damping for primary frequency control from a fleet and the trade-off from concurrently providing secondary frequency control services. Finally, numerical simulation on IEEE test networks demonstrates the effectiveness of the proposed methodology.
 				  </span>
 		  </span>
 		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2023_tpwrs_synthDamp');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_tpwrs_synthDamp.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2307.14498">arXiv</a> ] </p></li>
+			  &emsp;[ <span onclick="showDiv('2023_tpwrs_synthDamp');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_tpwrs_synthDamp.pdf">pdf</a> ] [ <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2307.14498">arXiv</a> ] [ <a target="_blank" rel="noopener noreferrer" href="https://ieeexplore.ieee.org/document/10219001">IEEE</a> ]</p></li>
 		  </span>
    </div>
    
 			<div class="tile scale-anm Year">
 		  <span>
-			  <li><p> Amrit Pandey, Mads R. Almassalkhi, and Samuel Chevalier, "Large-scale Grid Optimization: The Workhorse of Future Grid Computations," <i>Curr Sustainable Renewable Energy Rep</i>, July 2023.<br/>
+			  <li><p> Amrit Pandey, Mads R. Almassalkhi, and Samuel Chevalier, "Large-scale Grid Optimization: The Workhorse of Future Grid Computations," <i>Curr Sustainable Renewable Energy Rep</i>, July 2023 (Invited paper).<br/>
 				<span id="2023_current_LargeOPF" class="abstract" style="display:none">
 					The computation methods for modeling, controlling, and optimizing the transforming grid are evolving rapidly. We review and systemize knowledge for a special class of computation methods that solve large-scale power grid optimization problems. <i>Recent Findings</i>: We find that while mechanistic physics-based methods are leading the science in solving large-scale grid optimizations, data-driven techniques, especially physics constrained ones, are emerging as an alternative to solve otherwise intractable problems. We also find observable gaps in the field and ascertain these gaps from the paper’s literature review and by collecting and synthesizing feedback from industry experts. <i>Summary</i>: Large-scale grid optimizations are pertinent for, among other things, hedging against risk due to resource stochasticity, evaluating aggregated DERs’ impact on grid operation and design, and improving the overall efficiency of grid operation in terms of cost, reliability, and carbon footprint. We attribute the continual growth in scale and complexity of grid optimizations to a large influx of new spatial and temporal features in both transmission (T) and distribution (D) networks. Therefore, to systemize knowledge in the field, we discuss the recent advancements in T and D systems from the viewpoint of mechanistic physics-based and emerging data-driven methods.
 				</span>
 		  </span>
 		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2023_current_LargeOPF');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_current_LargeOPF.pdf">pdf</a> ][ <a target="_blank" rel="noopener noreferrer" href="https://link.springer.com/article/10.1007/s40518-023-00213-6">link</a> ] </p></li>
+			  &emsp;[ <span onclick="showDiv('2023_current_LargeOPF');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_current_LargeOPF.pdf">pdf</a> ][ <a target="_blank" rel="noopener noreferrer" href="https://link.springer.com/article/10.1007/s40518-023-00213-6">Springer</a> ] </p></li>
 		  </span>
    </div>
    
@@ -164,7 +194,7 @@ Please see the links for the copy of record, which may have different formatting
 				</span>
 		  </span>
 		  <span style="cursor:auto;">
-			  &emsp;[ <span onclick="showDiv('2023_jes_SoC');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_jes_SoC.pdf">pdf</a> ][ <a target="_blank" rel="noopener noreferrer" href="https://www.sciencedirect.com/science/article/pii/S2352152X23013762">link</a> ] </p></li>
+			  &emsp;[ <span onclick="showDiv('2023_jes_SoC');" class="abstractLink">abstract</span> ] [ <a target="_blank" rel="noopener noreferrer" href="pubs/2023_jes_SoC.pdf">pdf</a> ][ <a target="_blank" rel="noopener noreferrer" href="https://www.sciencedirect.com/science/article/pii/S2352152X23013762">Elsevier</a> ] </p></li>
 		  </span>
    </div>
 			<div class="tile scale-anm Year">
