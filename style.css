@@ -80,3 +80,34 @@
 .bp {
   color: #F70;
 }
+
+/* --- Publication layout: snug links, readable separation --- */
+/* Add top spacing before any subsection block that follows another */
+.tile.Year > div + div {
+  margin-top: 18px;      /* add space between section groups */
+}
+
+/* Remove unwanted gap between citation text and its link row */
+.tile.Year li p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Tighten [abstract][pdf][doi] under each paper */
+.ref-links {
+  display: block;
+  margin-top: -2px;      /* keeps links close to citation */
+  margin-bottom: 16px;   /* adds inter-article space below links */
+  line-height: 1.3;
+}
+
+/* Avoid extra gap below <li> itself (handled by link-row spacing) */
+.tile.Year li {
+  margin-bottom: 0;
+}
+
+/* Section headers (Journal Papers, etc.) */
+.tile.Year h2 {
+  margin-top: 28px;
+  margin-bottom: 6px;
+}
