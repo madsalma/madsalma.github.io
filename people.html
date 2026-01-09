@@ -450,9 +450,37 @@ Last updated Jan 2023.
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("a[href]").forEach(function (link) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
+    const siteHost = window.location.host;
+
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      const href = a.getAttribute('href');
+
+      // Skip anchors without real navigation
+      if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+
+      // Skip mailto/tel
+      if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+      // If it's inside your top navigation, keep same-tab
+      if (a.closest('.navigation')) return;
+
+      // Resolve relative URLs safely
+      let url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch (e) {
+        return; // if it's malformed, don't touch it
+      }
+
+      const isExternal = url.host && url.host !== siteHost;
+
+      if (isExternal) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        // Ensure internal links do NOT open new tabs
+        a.removeAttribute('target');
+      }
     });
   });
 </script>
