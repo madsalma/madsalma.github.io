@@ -111,3 +111,8 @@
   margin-top: 28px;
   margin-bottom: 6px;
 }
+
+.ref-links {
+  font-size: 14px;     /* or 0.95em if you prefer */
+  line-height: 1.3;
+}
