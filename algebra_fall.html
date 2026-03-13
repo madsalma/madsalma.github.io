@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algebra Fall</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+'use strict';
+
+// ── Canvas setup ──────────────────────────────────────────────────────────────
+const canvas = document.getElementById('c');
+const ctx    = canvas.getContext('2d');
+
+function resize() {
+  canvas.width  = Math.min(window.innerWidth, 900);
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', () => { resize(); initStars(); });
+resize();
+
+// ── Layout ────────────────────────────────────────────────────────────────────
+const HEADER_H = 80;
+const FOOTER_H = 78;
+
+// Equation font size scales with canvas height so it feels right on any screen
+const eqSize   = () => Math.round(Math.min(48, canvas.height * 0.065));
+const eqFont   = () => `bold ${eqSize()}px 'Courier New',monospace`;
+
+// Y positions (recalculated each frame so resize works cleanly)
+const spawnY     = () => HEADER_H + eqSize() + 6;
+const limitY     = () => canvas.height - FOOTER_H - 8;
+const travelPx   = () => Math.max(limitY() - spawnY(), 20);
+const fallPxSec  = (lvl) => travelPx() / Math.max(14 - lvl * 1.5, 4);
+
+// ── Colour palette ────────────────────────────────────────────────────────────
+const C = {
+  bg    : '#0b0b18',
+  div   : '#1c3050',
+  title : '#00cfff',
+  score : '#c0d0f0',
+  ok    : '#44ff88',
+  err   : '#ff4444',
+  inp   : '#ffe033',
+  hint  : '#485a6e',
+  heart : '#ff4466',
+};
+
+function lerpRgb(a, b, t) {
+  return a.map((v, i) => Math.round(v + (b[i] - v) * t));
+}
+
+// Smooth colour: white → yellow → red as the equation falls
+function eqColor(prog) {
+  const W = [255, 255, 255], Y = [255, 210, 20], R = [255, 48, 20];
+  let rgb;
+  if      (prog < 0.60) rgb = W;
+  else if (prog < 0.85) rgb = lerpRgb(W, Y, (prog - 0.60) / 0.25);
+  else                  rgb = lerpRgb(Y, R, (prog - 0.85) / 0.15);
+  return `rgb(${rgb})`;
+}
+
+// ── Stars ─────────────────────────────────────────────────────────────────────
+let stars = [];
+function initStars() {
+  stars = Array.from({ length: 60 }, () => ({
+    x: Math.random(), y: Math.random(),
+    r: Math.random() * 1.5 + 0.3,
+    a: Math.random() * 0.55 + 0.12,
+  }));
+}
+initStars();
+
+function drawStars() {
+  for (const s of stars) {
+    ctx.fillStyle = `rgba(180,210,255,${s.a})`;
+    ctx.beginPath();
+    ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+// ── Text helpers ──────────────────────────────────────────────────────────────
+function txt(str, x, y, font, color, align = 'center', baseline = 'alphabetic') {
+  ctx.font = font;
+  ctx.fillStyle = color;
+  ctx.textAlign = align;
+  ctx.textBaseline = baseline;
+  ctx.fillText(str, x, y);
+}
+
+function hline(y) {
+  ctx.strokeStyle = C.div; ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+  ctx.stroke();
+}
+
+// ── Equation generation ───────────────────────────────────────────────────────
+function ri(lo, hi) { return Math.floor(Math.random() * (hi - lo + 1)) + lo; }
+
+function newEq(level) {
+  const pool = ['add', 'sub'];
+  if (level >= 3) pool.push('mul');
+  if (level >= 5) pool.push('div');
+  if (level >= 6) pool.push('twostep');
+  if (level >= 7) pool.push('frac');
+  const kind = pool[ri(0, pool.length - 1)];
+  const cap  = Math.min(5 + level * 3, 25);
+
+  switch (kind) {
+    case 'add': {
+      const x = ri(1, cap), a = ri(1, cap);
+      return { t: `x + ${a} = ${x + a}`, a: x };
+    }
+    case 'sub': {
+      const a = ri(1, cap), x = ri(a + 1, cap + a);
+      return { t: `x \u2212 ${a} = ${x - a}`, a: x };
+    }
+    case 'mul': {
+      const m = ri(2, 9), x = ri(1, 10);
+      return { t: `${m} \u00b7 x = ${m * x}`, a: x };
+    }
+    case 'div': {
+      const d = ri(2, 9), q = ri(1, 10);
+      return { t: `x \u00f7 ${d} = ${q}`, a: d * q };
+    }
+    case 'twostep': {
+      const m = ri(2, 5), x = ri(1, 8), b = ri(1, 10);
+      return { t: `${m} \u00b7 x + ${b} = ${m * x + b}`, a: x };
+    }
+    default: { // frac: (x + a) / b = c
+      const b = ri(2, 6), c = ri(2, 6);
+      const a = ri(1, Math.min(b * c - 1, 10));
+      const x = b * c - a;
+      return { t: `(x + ${a}) \u00f7 ${b} = ${c}`, a: x };
+    }
+  }
+}
+
+// ── High score ────────────────────────────────────────────────────────────────
+const HS_KEY = 'algebraFallHS';
+const loadHS = () => parseInt(localStorage.getItem(HS_KEY) || '0', 10);
+const saveHS = (n) => localStorage.setItem(HS_KEY, String(n));
+
+// ── Game state ────────────────────────────────────────────────────────────────
+const S = {
+  screen   : 'title',   // 'title' | 'game' | 'gameover'
+  score    : 0,
+  high     : 0,
+  initHigh : 0,
+  level    : 1,
+  lives    : 3,
+  streak   : 0,
+  eqText   : '',
+  eqAns    : 0,
+  eqY      : 0.0,       // float baseline-y in pixels
+  input    : '',
+  fb       : null,      // { text, color, until }  ms timestamp
+  prevTs   : null,
+  newBest  : false,
+  shake    : 0,         // frames remaining for screen-shake
+  particles: [],        // { x, y, vx, vy, alpha, color }
+};
+
+// ── Particles (burst on correct/wrong) ───────────────────────────────────────
+function burst(x, y, color, n = 14) {
+  for (let i = 0; i < n; i++) {
+    const angle = (Math.random() * Math.PI * 2);
+    const speed = Math.random() * 220 + 60;
+    S.particles.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      alpha: 1.0,
+      color,
+    });
+  }
+}
+
+function updateParticles(dt) {
+  S.particles = S.particles.filter(p => p.alpha > 0.01);
+  for (const p of S.particles) {
+    p.x     += p.vx * dt;
+    p.y     += p.vy * dt;
+    p.vy    += 320 * dt;   // gravity
+    p.alpha -= dt * 1.8;
+  }
+}
+
+function drawParticles() {
+  for (const p of S.particles) {
+    ctx.globalAlpha = Math.max(p.alpha, 0);
+    ctx.fillStyle   = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+
+// ── Feedback + spawn ──────────────────────────────────────────────────────────
+function setFB(text, color) {
+  S.fb = { text, color, until: performance.now() + 1800 };
+}
+
+function spawn() {
+  const eq = newEq(S.level);
+  S.eqText = eq.t;
+  S.eqAns  = eq.a;
+  S.eqY    = spawnY();
+  S.input  = '';
+  S.prevTs = null;   // reset dt after spawn to avoid big jump
+}
+
+// ── Answer check ─────────────────────────────────────────────────────────────
+function checkAnswer() {
+  if (!S.input) return;
+  const guess = parseInt(S.input, 10);
+  const cx = canvas.width / 2;
+
+  if (!isNaN(guess) && guess === S.eqAns) {
+    const prog = Math.max(0, Math.min(1, (S.eqY - spawnY()) / travelPx()));
+    const mult = 1.25 - 0.50 * prog;
+    const pts  = Math.max(1, Math.round((10 + S.level * 5) * mult));
+    S.score   += pts;
+    S.streak  += 1;
+    if (S.score > S.high) { S.high = S.score; saveHS(S.high); }
+    const ms = `\u00d7${mult.toFixed(2)}`;
+    if (S.streak % 5 === 0) {
+      S.level++;
+      setFB(`\u2b06 Level up! Level ${S.level}   +${pts} (${ms})`, C.ok);
+    } else {
+      setFB(`\u2713 Correct!  +${pts} (${ms})   streak: ${S.streak}`, C.ok);
+    }
+    burst(cx, S.eqY, C.ok);
+    spawn();
+  } else {
+    S.lives--;
+    S.streak = 0;
+    S.shake  = 9;
+    setFB(`\u2717 Nope!  x = ${S.eqAns}   lives left: ${S.lives}`, C.err);
+    burst(cx, S.eqY, C.err);
+    if (S.lives <= 0) { endGame(); return; }
+    spawn();
+  }
+}
+
+function endGame() {
+  S.newBest = S.score > S.initHigh;
+  S.screen  = 'gameover';
+}
+
+function startGame() {
+  S.screen    = 'game';
+  S.score     = 0;
+  S.high      = loadHS();
+  S.initHigh  = S.high;
+  S.level     = 1;
+  S.lives     = 3;
+  S.streak    = 0;
+  S.fb        = null;
+  S.shake     = 0;
+  S.particles = [];
+  spawn();
+}
+
+// ── Keyboard ─────────────────────────────────────────────────────────────────
+document.addEventListener('keydown', (e) => {
+  if (S.screen === 'title') {
+    if (e.key === 'Enter') startGame();
+    return;
+  }
+  if (S.screen === 'gameover') {
+    if (e.key === 'Enter') startGame();
+    if (e.key === 'q' || e.key === 'Q' || e.key === 'Escape') S.screen = 'title';
+    return;
+  }
+  // game
+  if (e.key === 'q' || e.key === 'Q' || e.key === 'Escape') { endGame(); return; }
+  if (e.key === 'Backspace') { e.preventDefault(); S.input = S.input.slice(0, -1); return; }
+  if (e.key === 'Enter') { checkAnswer(); return; }
+  if (/^\d$/.test(e.key) && S.input.length < 5) S.input += e.key;
+});
+
+// ── Draw: title ───────────────────────────────────────────────────────────────
+function drawTitle(ts) {
+  const W = canvas.width, H = canvas.height, cx = W / 2;
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  drawStars();
+
+  let y = Math.max(H * 0.07, 16);
+
+  // Title box
+  const boxW = Math.min(520, W - 40);
+  ctx.strokeStyle = C.title; ctx.lineWidth = 2;
+  ctx.strokeRect(cx - boxW / 2, y, boxW, 66);
+  txt('\u2605  ALGEBRA  FALL  \u2605', cx, y + 44, 'bold 29px "Courier New",monospace', C.title);
+  y += 88;
+
+  txt('Solve for x before the equation hits the ground!',
+    cx, y, '17px "Courier New",monospace', C.score);
+  y += 36;
+
+  // Level guide
+  const lf = '15px "Courier New",monospace';
+  const bf = 'bold 15px "Courier New",monospace';
+  const rows = [
+    ['Levels 1\u20132:', 'x + a = b   and   x \u2212 a = b'],
+    ['Level  3+:',  'a \u00b7 x = b   (\u00b7 means multiply)'],
+    ['Level  5+:',  'x \u00f7 a = b'],
+    ['Level  6+:',  'a \u00b7 x + b = c   (two steps!)'],
+    ['Level  7+:',  '(x + a) \u00f7 b = c   (fractions!)'],
+  ];
+  for (const [label, val] of rows) {
+    txt(label, cx - 6, y, bf,  C.title, 'right');
+    txt(val,   cx + 6, y, lf,  C.score, 'left');
+    y += 24;
+  }
+  y += 10;
+
+  const legend = [
+    ['\u2713 Correct  \u2192 earn points', C.ok],
+    ['\u2717 Wrong / too slow  \u2192 lose a life \u2665', C.err],
+    ['5 correct in a row  \u2192 LEVEL UP!', C.inp],
+  ];
+  for (const [msg, col] of legend) {
+    txt(msg, cx, y, '15px "Courier New",monospace', col);
+    y += 22;
+  }
+  y += 14;
+
+  // Divider
+  ctx.strokeStyle = C.div; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(cx - 215, y); ctx.lineTo(cx + 215, y); ctx.stroke();
+  y += 24;
+
+  const hs = loadHS();
+  if (hs > 0) {
+    txt(`Best Score: ${hs}`, cx, y, 'bold 19px "Courier New",monospace', C.inp);
+    y += 34;
+  }
+
+  if (Math.floor(ts / 550) % 2 === 0)
+    txt('Press  ENTER  to start  |  Q  to quit',
+      cx, y + 4, 'bold 18px "Courier New",monospace', C.title);
+}
+
+// ── Draw: game over ───────────────────────────────────────────────────────────
+function drawGameOver(ts) {
+  const W = canvas.width, H = canvas.height, cx = W / 2;
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  drawStars();
+
+  let y = H * 0.22;
+  const boxW = Math.min(420, W - 40);
+  ctx.strokeStyle = C.err; ctx.lineWidth = 2;
+  ctx.strokeRect(cx - boxW / 2, y, boxW, 60);
+  txt('G A M E   O V E R', cx, y + 40, 'bold 27px "Courier New",monospace', C.err);
+  y += 90;
+
+  txt(`Your score:  ${S.score}`, cx, y, 'bold 22px "Courier New",monospace', C.score);
+  y += 38;
+  txt(`Best score:  ${S.high}`,  cx, y, 'bold 22px "Courier New",monospace', C.score);
+  y += 52;
+
+  if (S.newBest) {
+    if (Math.floor(ts / 420) % 2 === 0)
+      txt('\u2605  NEW HIGH SCORE!  \u2605', cx, y, 'bold 23px "Courier New",monospace', C.inp);
+  } else {
+    txt('Keep practicing \u2014 you can do it!', cx, y, '18px "Courier New",monospace', C.ok);
+  }
+  y += 58;
+
+  if (Math.floor(ts / 550) % 2 === 0)
+    txt('ENTER  to play again   |   Q  to quit',
+      cx, y, 'bold 18px "Courier New",monospace', C.title);
+}
+
+// ── Draw: game ────────────────────────────────────────────────────────────────
+function drawGame(ts) {
+  const W = canvas.width, H = canvas.height, cx = W / 2;
+
+  // Screen-shake transform
+  let ox = 0, oy = 0;
+  if (S.shake > 0) {
+    ox = (Math.random() - 0.5) * 7;
+    oy = (Math.random() - 0.5) * 5;
+    ctx.save(); ctx.translate(ox, oy);
+    S.shake--;
+  }
+
+  ctx.fillStyle = C.bg; ctx.fillRect(-ox, -oy, W + Math.abs(ox) * 2, H + Math.abs(oy) * 2);
+
+  // ── Danger gradient near bottom  ──────────────────────────────────────────
+  const eqProg = Math.max(0, Math.min(1, (S.eqY - spawnY()) / travelPx()));
+  if (eqProg > 0.55) {
+    const a = Math.min((eqProg - 0.55) / 0.45 * 0.28, 0.28);
+    const g = ctx.createLinearGradient(0, H - FOOTER_H - 120, 0, H - FOOTER_H);
+    g.addColorStop(0, `rgba(255,30,0,0)`);
+    g.addColorStop(1, `rgba(255,30,0,${a})`);
+    ctx.fillStyle = g;
+    ctx.fillRect(0, H - FOOTER_H - 120, W, 120);
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────────
+  txt('\u2605  ALGEBRA FALL  \u2605', cx, 26,
+    'bold 20px "Courier New",monospace', C.title);
+  const hearts = '\u2665 '.repeat(S.lives).trim() || 'none';
+  txt(`Score: ${S.score}   Best: ${S.high}   Level: ${S.level}   Lives: ${hearts}`,
+    cx, 54, '14px "Courier New",monospace', C.score);
+  hline(HEADER_H);
+
+  // ── Ground line (pulses red when close) ───────────────────────────────────
+  if (eqProg > 0.75) {
+    const pulse = 0.5 + 0.5 * Math.sin(ts * 0.012);
+    const a = (eqProg - 0.75) / 0.25 * pulse;
+    ctx.strokeStyle = `rgba(255,60,20,${Math.min(a, 0.9)})`;
+    ctx.lineWidth   = 2 + pulse * 2;
+    ctx.beginPath();
+    ctx.moveTo(0, limitY()); ctx.lineTo(W, limitY());
+    ctx.stroke();
+  }
+
+  // ── Falling equation ──────────────────────────────────────────────────────
+  const col = eqColor(eqProg);
+  ctx.save();
+  if (eqProg > 0.85) {
+    ctx.shadowColor = col; ctx.shadowBlur = 20;
+  } else if (eqProg > 0.60) {
+    ctx.shadowColor = col; ctx.shadowBlur = 11;
+  }
+  txt(S.eqText, cx, S.eqY, eqFont(), col);
+  ctx.restore();
+
+  // ── Particles ─────────────────────────────────────────────────────────────
+  drawParticles();
+
+  // ── Feedback banner ───────────────────────────────────────────────────────
+  if (S.fb && ts < S.fb.until) {
+    const age   = ts - (S.fb.until - 1800);
+    const alpha = Math.min(age / 120, 1.0) * Math.min((S.fb.until - ts) / 400, 1.0);
+    ctx.globalAlpha = Math.max(alpha, 0);
+    const fbY = Math.min(S.eqY + eqSize() + 30, H - FOOTER_H - 32);
+    txt(S.fb.text, cx, Math.max(fbY, HEADER_H + 30),
+      '17px "Courier New",monospace', S.fb.color);
+    ctx.globalAlpha = 1;
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────────
+  hline(H - FOOTER_H);
+
+  const prompt = 'Your answer:  ';
+  const iFont  = `bold 24px 'Courier New',monospace`;
+  ctx.font      = iFont;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  const pW  = ctx.measureText(prompt).width;
+  const iX  = cx - (pW + ctx.measureText('00000').width) / 2;
+  ctx.fillStyle = C.inp;
+  ctx.fillText(prompt, iX, H - FOOTER_H + 36);
+  ctx.fillText(S.input, iX + pW, H - FOOTER_H + 36);
+  // blinking cursor
+  if (Math.floor(ts / 520) % 2 === 0) {
+    const curW = ctx.measureText(S.input).width;
+    ctx.fillText('_', iX + pW + curW, H - FOOTER_H + 36);
+  }
+
+  txt('[Enter] Submit   [Backspace] Delete   [Q] Quit',
+    cx, H - 14, '12px "Courier New",monospace', C.hint);
+
+  if (S.shake > 0 || ox !== 0) ctx.restore();
+}
+
+// ── Main loop ─────────────────────────────────────────────────────────────────
+function loop(ts) {
+  if (S.screen === 'game') {
+    // Physics
+    let dt = 0;
+    if (S.prevTs !== null) {
+      dt = Math.min((ts - S.prevTs) / 1000, 0.1);   // cap at 100ms to handle tab blur
+      S.eqY += fallPxSec(S.level) * dt;
+
+      if (S.eqY > limitY()) {
+        S.lives--;
+        S.streak = 0;
+        S.shake  = 10;
+        burst(canvas.width / 2, limitY(), C.err, 18);
+        setFB(`\u23f0 Too slow!  x was ${S.eqAns}   lives left: ${S.lives}`, C.err);
+        if (S.lives <= 0) { endGame(); }
+        else              { spawn(); }
+      }
+    }
+    S.prevTs = ts;
+    updateParticles(dt);
+    drawGame(ts);
+
+  } else if (S.screen === 'title') {
+    drawTitle(ts);
+  } else {
+    drawGameOver(ts);
+  }
+
+  requestAnimationFrame(loop);
+}
+
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
