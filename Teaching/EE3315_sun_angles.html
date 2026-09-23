@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;}
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+</style>
+<title>Sun Angles on a Fixed Tilt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  :root{
+    --ground:#F2F5F8;
+    --surface:#FFFFFF;
+    --surface-2:#E9EFF4;
+    --ink:#0F1A22;
+    --ink-2:#51636F;
+    --ink-3:#7C8E9B;
+    --rule:#D3DDE5;
+    --rule-soft:#E4EBF1;
+    --accent:#D9820F;
+    --accent-ink:#8A4E00;
+    --accent-soft:rgba(217,130,15,.14);
+    --cell:#2C6E92;
+    --cell-2:#1D4E6B;
+    --normal:#0E7C7B;
+    --sky:rgba(120,165,200,.13);
+    --shade:rgba(20,40,60,.05);
+    --focus:#1668B0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D141A;
+      --surface:#151F27;
+      --surface-2:#1C2831;
+      --ink:#E7EEF3;
+      --ink-2:#9DAFBC;
+      --ink-3:#7A8C99;
+      --rule:#2A3945;
+      --rule-soft:#22303A;
+      --accent:#F0A93C;
+      --accent-ink:#F5C37A;
+      --accent-soft:rgba(240,169,60,.16);
+      --cell:#4E9CC4;
+      --cell-2:#2E6C90;
+      --normal:#3FB3AE;
+      --sky:rgba(90,140,180,.12);
+      --shade:rgba(0,0,0,.22);
+      --focus:#6FB6EE;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D141A;
+    --surface:#151F27;
+    --surface-2:#1C2831;
+    --ink:#E7EEF3;
+    --ink-2:#9DAFBC;
+    --ink-3:#7A8C99;
+    --rule:#2A3945;
+    --rule-soft:#22303A;
+    --accent:#F0A93C;
+    --accent-ink:#F5C37A;
+    --accent-soft:rgba(240,169,60,.16);
+    --cell:#4E9CC4;
+    --cell-2:#2E6C90;
+    --normal:#3FB3AE;
+    --sky:rgba(90,140,180,.12);
+    --shade:rgba(0,0,0,.22);
+    --focus:#6FB6EE;
+  }
+
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:22px 40px;}
+
+  header.masthead{border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:22px;}
+  h1{
+    font-family:"Source Serif 4", Georgia, serif;
+    font-weight:600;
+    font-size:clamp(25px,3.4vw,34px);
+    line-height:1.15;
+    margin:0 0 6px;
+    text-wrap:balance;
+    letter-spacing:-.01em;
+  }
+  .sub{color:var(--ink-2);margin:0;max-width:66ch;}
+  .sub code{font-family:"IBM Plex Mono",monospace;font-size:.92em;color:var(--ink);}
+
+  .stage{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start;}
+  @media (max-width:880px){.stage{grid-template-columns:minmax(0,1fr);}}
+
+  .scene{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+  }
+  #sky{display:block;width:100%;aspect-ratio:4/3;max-width:100%;touch-action:none;cursor:grab;}
+  #sky.dragging{cursor:grabbing;}
+  .hint{
+    position:absolute;left:12px;bottom:10px;
+    font-size:11.5px;color:var(--ink-3);letter-spacing:.02em;
+    pointer-events:none;
+  }
+  .viewbtns{position:absolute;right:10px;top:10px;display:flex;gap:6px;}
+  .viewbtns button{
+    font:500 11.5px/1 "IBM Plex Sans",sans-serif;
+    letter-spacing:.04em;text-transform:uppercase;
+    background:var(--surface-2);color:var(--ink-2);
+    border:1px solid var(--rule);border-radius:5px;padding:6px 9px;cursor:pointer;
+  }
+  .viewbtns button:hover{color:var(--ink);border-color:var(--ink-3);}
+
+  .rail{display:flex;flex-direction:column;gap:18px;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:16px 16px 18px;
+  }
+  .card h2{
+    font-family:"IBM Plex Sans",sans-serif;
+    font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);margin:0 0 14px;
+  }
+
+  .ctl{display:flex;flex-direction:column;gap:5px;margin-bottom:15px;}
+  .ctl:last-of-type{margin-bottom:0;}
+  .ctl .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+  .ctl label{font-size:13px;color:var(--ink-2);}
+  .ctl label .sym{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:15px;color:var(--ink);}
+  .ctl output{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;
+    font-variant-numeric:tabular-nums;color:var(--ink);
+  }
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;width:100%;height:20px;background:transparent;margin:0;
+  }
+  input[type=range]::-webkit-slider-runnable-track{height:3px;background:var(--rule);border-radius:2px;}
+  input[type=range]::-moz-range-track{height:3px;background:var(--rule);border-radius:2px;}
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+    background:var(--accent);border:2px solid var(--surface);margin-top:-6px;
+    box-shadow:0 0 0 1px var(--accent);cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:13px;height:13px;border-radius:50%;background:var(--accent);
+    border:2px solid var(--surface);box-shadow:0 0 0 1px var(--accent);cursor:pointer;
+  }
+  input[type=range]:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:3px;}
+
+  .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+  .act{
+    flex:1 1 auto;font:500 12.5px/1 "IBM Plex Sans",sans-serif;
+    background:var(--surface-2);color:var(--ink);
+    border:1px solid var(--rule);border-radius:6px;padding:9px 10px;cursor:pointer;
+    white-space:nowrap;
+  }
+  .act:hover{border-color:var(--ink-3);}
+  .act[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);}
+  .act:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
+  table.read{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+  table.read th, table.read td{padding:7px 0;border-bottom:1px solid var(--rule-soft);text-align:left;vertical-align:baseline;}
+  table.read tr:last-child th, table.read tr:last-child td{border-bottom:none;}
+  table.read th{font-weight:400;color:var(--ink-2);font-size:13px;}
+  table.read th .sym{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:16px;color:var(--ink);margin-right:7px;}
+  table.read td{font-family:"IBM Plex Mono",monospace;font-size:13.5px;text-align:right;}
+  tr.hero th, tr.hero td{padding:10px 0;}
+  tr.hero td{font-size:19px;color:var(--accent-ink);}
+  tr.hero th .sym{font-size:18px;}
+  .note{font-size:12.5px;color:var(--ink-3);margin:12px 0 0;line-height:1.45;}
+  .warn{color:var(--accent-ink);}
+
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;}
+  @media (max-width:760px){.charts{grid-template-columns:1fr;}}
+  .chart canvas{display:block;width:100%;aspect-ratio:16/9;max-width:100%;}
+  .chart h2{
+    font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-3);margin:0 0 4px;
+  }
+  .chart p{margin:0 0 10px;font-size:12.5px;color:var(--ink-2);}
+
+  .eqs{
+    margin-top:26px;border-top:1px solid var(--rule);padding-top:18px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 26px;
+  }
+  .eq{font-size:13.5px;color:var(--ink-2);}
+  .eq b{display:block;font-weight:600;color:var(--ink);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+  .eq span.m{font-family:"Source Serif 4",Georgia,serif;font-size:16px;color:var(--ink);}
+  .eq i{font-style:italic;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Sun Angles on a Fixed Tilt</h1>
+    <p class="sub">A fixed collector sees the sun through four angles that change on two different clocks. Declination <span style="font-family:'Source Serif 4',Georgia,serif;font-style:italic">&delta;</span> moves with the season, while altitude <span style="font-family:'Source Serif 4',Georgia,serif;font-style:italic">&beta;</span> and azimuth <span style="font-family:'Source Serif 4',Georgia,serif;font-style:italic">&phi;<sub>S</sub></span> move through the day, and the incidence angle <span style="font-family:'Source Serif 4',Georgia,serif;font-style:italic">&theta;</span> collects all of them against the panel normal. Angle conventions and equations follow Masters chapter on The Solar Resource.</p>
+  </header>
+
+  <div class="stage">
+    <div class="scene">
+      <canvas id="sky" aria-label="Three dimensional view of the sun path, the tilted collector, and the solar angles"></canvas>
+      <div class="viewbtns">
+        <button type="button" id="viewIso">Oblique</button>
+        <button type="button" id="viewTop">Plan</button>
+        <button type="button" id="viewSouth">Elevation</button>
+      </div>
+      <p class="hint">Drag to orbit the view</p>
+    </div>
+
+    <div class="rail">
+      <div class="card">
+        <h2>Site and time</h2>
+        <div class="ctl">
+          <div class="top"><label for="lat">Latitude <span class="sym">L</span></label><output id="latOut" for="lat"></output></div>
+          <input type="range" id="lat" min="-66" max="66" step="0.5" value="44.5">
+        </div>
+        <div class="ctl">
+          <div class="top"><label for="day">Day number <span class="sym">n</span></label><output id="dayOut" for="day"></output></div>
+          <input type="range" id="day" min="1" max="365" step="1" value="172">
+        </div>
+        <div class="ctl">
+          <div class="top"><label for="time">Solar time</label><output id="timeOut" for="time"></output></div>
+          <input type="range" id="time" min="0" max="24" step="0.0833333" value="10">
+        </div>
+        <div class="row">
+          <button type="button" class="act" id="play" aria-pressed="false">Run the day</button>
+          <button type="button" class="act" id="noon">Solar noon</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Collector</h2>
+        <div class="ctl">
+          <div class="top"><label for="tilt">Tilt <span class="sym">&Sigma;</span></label><output id="tiltOut" for="tilt"></output></div>
+          <input type="range" id="tilt" min="0" max="90" step="1" value="40">
+        </div>
+        <div class="ctl">
+          <div class="top"><label for="az">Azimuth <span class="sym">&phi;<sub>C</sub></span></label><output id="azOut" for="az"></output></div>
+          <input type="range" id="az" min="-90" max="90" step="1" value="0">
+        </div>
+        <div class="row">
+          <button type="button" class="act" id="latTilt">&Sigma; = L, due south</button>
+          <button type="button" class="act" id="track">Aim at the sun</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Angles</h2>
+        <table class="read">
+          <tbody>
+            <tr><th><span class="sym">&delta;</span>Declination</th><td id="rDec"></td></tr>
+            <tr><th><span class="sym">H</span>Hour angle</th><td id="rH"></td></tr>
+            <tr><th><span class="sym">&beta;</span>Solar altitude</th><td id="rBeta"></td></tr>
+            <tr><th><span class="sym">&phi;<sub>S</sub></span>Solar azimuth</th><td id="rPhi"></td></tr>
+            <tr class="hero"><th><span class="sym">&theta;</span>Incidence angle</th><td id="rTheta"></td></tr>
+            <tr><th><span class="sym">cos&thinsp;&theta;</span>Beam fraction</th><td id="rCos"></td></tr>
+            <tr><th><span class="sym">I<sub>BC</sub></span>Clear-sky beam</th><td id="rIbc"></td></tr>
+          </tbody>
+        </table>
+        <p class="note" id="statusNote"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart">
+      <h2>Declination through the year</h2>
+      <p>The seasonal clock: &delta; = 23.45&deg; sin[360(n &minus; 81)/365].</p>
+      <canvas id="decChart" aria-label="Solar declination versus day number, with the selected day marked"></canvas>
+    </div>
+    <div class="chart">
+      <h2>Beam fraction through the day</h2>
+      <p>The daily clock: cos&thinsp;&theta; on this fixed tilt, sunrise to sunset.</p>
+      <canvas id="dayChart" aria-label="Cosine of the incidence angle versus solar time for the selected day"></canvas>
+    </div>
+  </div>
+
+  <div class="eqs">
+    <div class="eq"><b>Declination</b><span class="m">&delta; = 23.45&deg; sin[(360/365)(<i>n</i> &minus; 81)]</span></div>
+    <div class="eq"><b>Hour angle</b><span class="m"><i>H</i> = (15&deg;/h) &middot; (hours before solar noon)</span></div>
+    <div class="eq"><b>Altitude</b><span class="m">sin&thinsp;&beta; = cos&thinsp;<i>L</i> cos&thinsp;&delta; cos&thinsp;<i>H</i> + sin&thinsp;<i>L</i> sin&thinsp;&delta;</span></div>
+    <div class="eq"><b>Azimuth</b><span class="m">sin&thinsp;&phi;<sub>S</sub> = cos&thinsp;&delta; sin&thinsp;<i>H</i> / cos&thinsp;&beta;</span></div>
+    <div class="eq"><b>Incidence angle</b><span class="m">cos&thinsp;&theta; = cos&thinsp;&beta; cos(&phi;<sub>S</sub> &minus; &phi;<sub>C</sub>) sin&thinsp;&Sigma; + sin&thinsp;&beta; cos&thinsp;&Sigma;</span></div>
+    <div class="eq"><b>Clear-sky beam on the collector</b><span class="m"><i>I</i><sub>BC</sub> = <i>A e</i><sup>&minus;<i>km</i></sup> cos&thinsp;&theta;, &nbsp; <i>m</i> = 1/sin&thinsp;&beta;</span></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  const D = Math.PI/180;
+  const clamp = (v,a,b)=>Math.min(b,Math.max(a,v));
+  const sin = a=>Math.sin(a*D), cos = a=>Math.cos(a*D);
+
+  /* ---------- solar geometry (Masters) ---------- */
+
+  function declination(n){ return 23.45*sin((360/365)*(n-81)); }
+
+  function sunPosition(L, dec, H){
+    const sb = cos(L)*cos(dec)*cos(H) + sin(L)*sin(dec);
+    const beta = Math.asin(clamp(sb,-1,1))/D;
+    // east and north components of the unit vector toward the sun
+    const e = cos(dec)*sin(H);
+    const nth = sin(dec)*cos(L) - cos(dec)*cos(H)*sin(L);
+    // azimuth measured from due south, positive toward the east
+    const phi = Math.atan2(e, -nth)/D;
+    return {beta:beta, phi:phi, vec:[e, nth, Math.sin(beta*D)]};
+  }
+
+  function normalVec(tilt, azc){
+    return [sin(tilt)*sin(azc), -sin(tilt)*cos(azc), cos(tilt)];
+  }
+
+  function cosTheta(beta, phi, tilt, azc){
+    return cos(beta)*cos(phi-azc)*sin(tilt) + sin(beta)*cos(tilt);
+  }
+
+  function sunriseHour(L, dec){
+    const x = -Math.tan(L*D)*Math.tan(dec*D);
+    if (x >= 1) return {type:"night", H:0};
+    if (x <= -1) return {type:"midnight-sun", H:180};
+    return {type:"normal", H:Math.acos(x)/D};
+  }
+
+  function clearSkyBeam(n, beta){
+    if (beta <= 0) return 0;
+    const A = 1160 + 75*sin((360/365)*(n-275));
+    const k = 0.174 + 0.035*sin((360/365)*(n-100));
+    const m = 1/sin(beta);
+    return A*Math.exp(-k*m);
+  }
+
+  const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const CUM=[0,31,59,90,120,151,181,212,243,273,304,334,365];
+  function dateLabel(n){
+    for(let i=11;i>=0;i--){ if(n>CUM[i]) return MONTHS[i]+" "+(n-CUM[i]); }
+    return "Jan 1";
+  }
+  function clockLabel(t){
+    let h=Math.floor(t), m=Math.round((t-h)*60);
+    if(m===60){h+=1;m=0;}
+    return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0");
+  }
+
+  /* ---------- vector helpers ---------- */
+  const dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2];
+  const add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
+  const scl=(a,s)=>[a[0]*s,a[1]*s,a[2]*s];
+  function norm(a){const L=Math.hypot(a[0],a[1],a[2])||1;return scl(a,1/L);}
+  function slerp(a,b,t){
+    const d=clamp(dot(norm(a),norm(b)),-1,1), w=Math.acos(d);
+    if(w<1e-6) return norm(a);
+    const s=Math.sin(w);
+    return add(scl(norm(a),Math.sin((1-t)*w)/s), scl(norm(b),Math.sin(t*w)/s));
+  }
+
+  /* ---------- state ---------- */
+  const el = id=>document.getElementById(id);
+  const S = {lat:44.5, day:172, time:10, tilt:40, az:0, yaw:12, pitch:26, playing:false};
+
+  let theme = {};
+  function readTheme(){
+    const cs = getComputedStyle(document.documentElement);
+    const g = k => cs.getPropertyValue(k).trim();
+    theme = {
+      ink:g("--ink"), ink2:g("--ink-2"), ink3:g("--ink-3"),
+      rule:g("--rule"), ruleSoft:g("--rule-soft"), surface:g("--surface"),
+      surface2:g("--surface-2"), accent:g("--accent"), accentSoft:g("--accent-soft"),
+      cell:g("--cell"), cell2:g("--cell-2"), normal:g("--normal"),
+      sky:g("--sky"), shade:g("--shade")
+    };
+  }
+
+  /* ---------- canvas setup ---------- */
+  function fit(cv){
+    const dpr = Math.min(window.devicePixelRatio||1, 2);
+    const r = cv.getBoundingClientRect();
+    const w = Math.max(1,Math.round(r.width)), h = Math.max(1,Math.round(r.height));
+    if(cv.width !== w*dpr || cv.height !== h*dpr){ cv.width=w*dpr; cv.height=h*dpr; }
+    const ctx = cv.getContext("2d");
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,w,h);
+    return {ctx:ctx, w:w, h:h};
+  }
+
+  /* ---------- 3D scene ---------- */
+  const sky = el("sky");
+
+  function makeProjector(w,h){
+    const yaw = S.yaw*D, pit = S.pitch*D;
+    const cy=Math.cos(yaw), sy=Math.sin(yaw), cp=Math.cos(pit), sp=Math.sin(pit);
+    const R = Math.min(w,h)*0.40;
+    const ox = w/2, oy = h*0.60;
+    return function(p){
+      const X = p[0]*cy + p[1]*sy;
+      const Y = -p[0]*sy + p[1]*cy;
+      const Z = p[2];
+      return {
+        x: ox + X*R,
+        y: oy - (Y*sp + Z*cp)*R,
+        d: -Y*cp + Z*sp
+      };
+    };
+  }
+
+  function poly(ctx,P,pts,close){
+    ctx.beginPath();
+    pts.forEach(function(p,i){ const q=P(p); if(i===0) ctx.moveTo(q.x,q.y); else ctx.lineTo(q.x,q.y); });
+    if(close) ctx.closePath();
+  }
+
+  function label(ctx,x,y,text,color,size,weight){
+    ctx.font = (weight||500)+" "+(size||12)+'px "IBM Plex Sans", sans-serif';
+    ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.lineWidth=3.5; ctx.strokeStyle=theme.surface; ctx.lineJoin="round";
+    ctx.strokeText(text,x,y);
+    ctx.fillStyle=color; ctx.fillText(text,x,y);
+  }
+
+  function arrowHead(ctx,from,to,color,size){
+    const a=Math.atan2(to.y-from.y,to.x-from.x), s=size||9;
+    ctx.beginPath();
+    ctx.moveTo(to.x,to.y);
+    ctx.lineTo(to.x-s*Math.cos(a-0.38), to.y-s*Math.sin(a-0.38));
+    ctx.lineTo(to.x-s*Math.cos(a+0.38), to.y-s*Math.sin(a+0.38));
+    ctx.closePath(); ctx.fillStyle=color; ctx.fill();
+  }
+
+  function arc3(ctx,P,a,b,r,color,text,dash){
+    const N=40, pts=[];
+    for(let i=0;i<=N;i++) pts.push(scl(slerp(a,b,i/N),r));
+    ctx.save();
+    ctx.strokeStyle=color; ctx.lineWidth=1.6;
+    if(dash) ctx.setLineDash(dash);
+    poly(ctx,P,pts,false); ctx.stroke();
+    ctx.restore();
+    if(text){
+      const m=P(scl(slerp(a,b,0.5), r*1.16));
+      label(ctx,m.x,m.y,text,color,13,600);
+    }
+  }
+
+  function drawScene(st){
+    const f = fit(sky), ctx=f.ctx, w=f.w, h=f.h;
+    const P = makeProjector(w,h);
+
+    // sky wash
+    const g = ctx.createLinearGradient(0,0,0,h);
+    g.addColorStop(0, theme.sky); g.addColorStop(1,"rgba(0,0,0,0)");
+    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+
+    // ground disc
+    const ring=[]; for(let i=0;i<=72;i++){const a=i*5*D; ring.push([Math.sin(a),Math.cos(a),0]);}
+    poly(ctx,P,ring,true);
+    ctx.fillStyle=theme.shade; ctx.fill();
+    ctx.strokeStyle=theme.rule; ctx.lineWidth=1.2; ctx.stroke();
+
+    // cardinal axes on the ground
+    ctx.strokeStyle=theme.ruleSoft; ctx.lineWidth=1;
+    poly(ctx,P,[[-1,0,0],[1,0,0]],false); ctx.stroke();
+    poly(ctx,P,[[0,-1,0],[0,1,0]],false); ctx.stroke();
+    [["N",[0,1.13,0]],["E",[1.13,0,0]],["S",[0,-1.13,0]],["W",[-1.13,0,0]]].forEach(function(c){
+      const q=P(c[1]); label(ctx,q.x,q.y,c[0],theme.ink3,12,600);
+    });
+
+    // altitude guide rings at 30 and 60 degrees
+    ctx.strokeStyle=theme.ruleSoft; ctx.lineWidth=1;
+    [30,60].forEach(function(al){
+      const r=Math.cos(al*D), z=Math.sin(al*D), pts=[];
+      for(let i=0;i<=72;i++){const a=i*5*D; pts.push([r*Math.sin(a), r*Math.cos(a), z]);}
+      poly(ctx,P,pts,true); ctx.stroke();
+    });
+
+    // sun path for the day
+    const sr = sunriseHour(S.lat, st.dec);
+    if(sr.type!=="night"){
+      const pts=[];
+      for(let i=0;i<=120;i++){
+        const H = sr.H - (2*sr.H)*(i/120);
+        const s = sunPosition(S.lat, st.dec, H);
+        if(s.beta >= -0.2) pts.push(s.vec);
+      }
+      if(pts.length>1){
+        ctx.save();
+        ctx.strokeStyle=theme.accent; ctx.globalAlpha=0.45; ctx.lineWidth=2;
+        poly(ctx,P,pts,false); ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    const sunUp = st.beta > 0;
+    const sv = st.sun.vec;
+    const sq = P(sv);
+    const drawSun = function(){
+      if(!sunUp) return;
+      // ray toward the collector
+      ctx.save();
+      ctx.setLineDash([5,4]); ctx.strokeStyle=theme.accent; ctx.lineWidth=1.6;
+      const a=P(scl(sv,1.0)), b=P(scl(sv,0.16));
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      ctx.restore();
+      arrowHead(ctx,a,b,theme.accent,9);
+      // ground track and altitude drop line
+      const hz = norm([sv[0],sv[1],0]);
+      ctx.save();
+      ctx.setLineDash([3,4]); ctx.strokeStyle=theme.ink3; ctx.lineWidth=1;
+      poly(ctx,P,[sv, [sv[0],sv[1],0]],false); ctx.stroke();
+      poly(ctx,P,[[0,0,0], [sv[0],sv[1],0]],false); ctx.stroke();
+      ctx.restore();
+      // angle arcs: azimuth on the ground, altitude up to the sun
+      arc3(ctx,P,[0,-1,0],hz,0.55,theme.accent,"φS");
+      arc3(ctx,P,hz,sv,0.42,theme.accent,"β");
+      // the sun
+      ctx.save();
+      ctx.shadowColor=theme.accent; ctx.shadowBlur=18;
+      ctx.beginPath(); ctx.arc(sq.x,sq.y,9,0,2*Math.PI);
+      ctx.fillStyle=theme.accent; ctx.fill();
+      ctx.restore();
+    };
+
+    // collector
+    const nv = st.nvec;
+    const f_h = [sin(S.az), -cos(S.az), 0];                 // horizontal facing direction
+    const wv = [cos(S.az), sin(S.az), 0];                    // along the panel's lower edge
+    const uv = add(scl(f_h,-cos(S.tilt)), [0,0,sin(S.tilt)]);// up the slope
+    const A=0.46, B=0.32;
+    const corners=[
+      add(scl(wv,-A), scl(uv,-B)),
+      add(scl(wv, A), scl(uv,-B)),
+      add(scl(wv, A), scl(uv, B)),
+      add(scl(wv,-A), scl(uv, B))
+    ];
+    const drawPanel=function(){
+      const lit = st.cosT > 0 && sunUp;
+      poly(ctx,P,corners,true);
+      ctx.fillStyle = lit ? theme.cell : theme.cell2;
+      ctx.globalAlpha = lit ? (0.35 + 0.5*st.cosT) : 0.5;
+      ctx.fill(); ctx.globalAlpha=1;
+      ctx.strokeStyle=theme.cell2; ctx.lineWidth=1.6; ctx.stroke();
+      // cell divisions
+      ctx.save(); ctx.strokeStyle=theme.surface; ctx.globalAlpha=0.45; ctx.lineWidth=1;
+      for(let i=1;i<4;i++){
+        const t=-A+2*A*i/4;
+        poly(ctx,P,[add(scl(wv,t),scl(uv,-B)), add(scl(wv,t),scl(uv,B))],false); ctx.stroke();
+      }
+      for(let i=1;i<3;i++){
+        const t=-B+2*B*i/3;
+        poly(ctx,P,[add(scl(wv,-A),scl(uv,t)), add(scl(wv,A),scl(uv,t))],false); ctx.stroke();
+      }
+      ctx.restore();
+      // footprint on the ground, and the tilt angle
+      ctx.save(); ctx.setLineDash([3,3]); ctx.strokeStyle=theme.ink3; ctx.lineWidth=1;
+      poly(ctx,P,[[0,0,0], scl(f_h,-0.7)],false); ctx.stroke();
+      ctx.restore();
+      arc3(ctx,P,scl(f_h,-1),uv,0.62,theme.cell,"Σ");
+      // normal
+      const n0=P([0,0,0]), n1=P(scl(nv,0.72));
+      ctx.strokeStyle=theme.normal; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(n0.x,n0.y); ctx.lineTo(n1.x,n1.y); ctx.stroke();
+      arrowHead(ctx,n0,n1,theme.normal,9);
+      const nl=P(scl(nv,0.86));
+      label(ctx,nl.x,nl.y,"n",theme.normal,13,600);
+      // incidence angle between the normal and the sun
+      if(sunUp) arc3(ctx,P,nv,sv,0.30,theme.normal,"θ");
+    };
+
+    if(sq.d < 0){ drawSun(); drawPanel(); } else { drawPanel(); drawSun(); }
+
+    if(!sunUp){
+      ctx.font='500 13px "IBM Plex Sans", sans-serif';
+      ctx.textAlign="center"; ctx.textBaseline="middle";
+      ctx.fillStyle=theme.ink3;
+      ctx.fillText("The sun is below the horizon at this hour.", w/2, h*0.13);
+    }
+  }
+
+  /* ---------- charts ---------- */
+  function axisFont(ctx){ ctx.font='500 11px "IBM Plex Mono", monospace'; }
+
+  function drawDecChart(st){
+    const cv=el("decChart"), f=fit(cv), ctx=f.ctx, w=f.w, h=f.h;
+    const L=36, R=10, T=24, Bm=26;
+    const x = n => L + (n-1)/364*(w-L-R);
+    const y = d => T + (23.45-d)/46.9*(h-T-Bm);
+
+    ctx.strokeStyle=theme.ruleSoft; ctx.lineWidth=1;
+    axisFont(ctx); ctx.fillStyle=theme.ink3; ctx.textAlign="right"; ctx.textBaseline="middle";
+    [-23.45,-11.7,0,11.7,23.45].forEach(function(d){
+      ctx.beginPath(); ctx.moveTo(L,y(d)); ctx.lineTo(w-R,y(d)); ctx.stroke();
+      ctx.fillText(d.toFixed(1).replace("-","−"), L-6, y(d));
+    });
+    ctx.textAlign="center"; ctx.textBaseline="top";
+    [[1,"Jan"],[91,"Apr"],[182,"Jul"],[274,"Oct"],[365,"Dec"]].forEach(function(t){
+      ctx.fillText(t[1], x(t[0]), h-Bm+7);
+    });
+    ctx.textAlign="left"; ctx.textBaseline="top";
+    ctx.fillText("δ [deg]", 2, 2);
+
+    ctx.beginPath();
+    for(let n=1;n<=365;n++){
+      const d=declination(n);
+      if(n===1) ctx.moveTo(x(n),y(d)); else ctx.lineTo(x(n),y(d));
+    }
+    ctx.strokeStyle=theme.accent; ctx.lineWidth=2; ctx.stroke();
+
+    ctx.save(); ctx.setLineDash([3,3]); ctx.strokeStyle=theme.ink3; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(x(S.day),T); ctx.lineTo(x(S.day),h-Bm); ctx.stroke(); ctx.restore();
+    ctx.beginPath(); ctx.arc(x(S.day),y(st.dec),4.5,0,2*Math.PI);
+    ctx.fillStyle=theme.accent; ctx.fill();
+    ctx.strokeStyle=theme.surface; ctx.lineWidth=1.5; ctx.stroke();
+  }
+
+  function drawDayChart(st){
+    const cv=el("dayChart"), f=fit(cv), ctx=f.ctx, w=f.w, h=f.h;
+    const L=36, R=10, T=24, Bm=26;
+    const x = t => L + t/24*(w-L-R);
+    const y = c => T + (1-c)*(h-T-Bm);
+
+    // night shading outside the geometric day
+    const sr = sunriseHour(S.lat, st.dec);
+    if(sr.type==="normal"){
+      const rise=12-sr.H/15, set=12+sr.H/15;
+      ctx.fillStyle=theme.shade;
+      ctx.fillRect(L,T,x(rise)-L,h-T-Bm);
+      ctx.fillRect(x(set),T,(w-R)-x(set),h-T-Bm);
+    } else if(sr.type==="night"){
+      ctx.fillStyle=theme.shade; ctx.fillRect(L,T,w-L-R,h-T-Bm);
+    }
+
+    ctx.strokeStyle=theme.ruleSoft; ctx.lineWidth=1;
+    axisFont(ctx); ctx.fillStyle=theme.ink3; ctx.textAlign="right"; ctx.textBaseline="middle";
+    [0,0.25,0.5,0.75,1].forEach(function(c){
+      ctx.beginPath(); ctx.moveTo(L,y(c)); ctx.lineTo(w-R,y(c)); ctx.stroke();
+      ctx.fillText(c.toFixed(2), L-6, y(c));
+    });
+    ctx.textAlign="center"; ctx.textBaseline="top";
+    [0,6,12,18,24].forEach(function(t){ ctx.fillText(clockLabel(t), x(t), h-Bm+7); });
+    ctx.textAlign="left"; ctx.textBaseline="top";
+    ctx.fillText("cos θ", 2, 2);
+
+    ctx.beginPath();
+    let started=false;
+    for(let i=0;i<=288;i++){
+      const t=i/12;
+      const H=15*(12-t);
+      const s=sunPosition(S.lat, st.dec, H);
+      let c = s.beta>0 ? cosTheta(s.beta, s.phi, S.tilt, S.az) : 0;
+      if(c<0) c=0;
+      if(!started){ ctx.moveTo(x(t),y(c)); started=true; } else ctx.lineTo(x(t),y(c));
+    }
+    ctx.strokeStyle=theme.normal; ctx.lineWidth=2; ctx.stroke();
+
+    ctx.save(); ctx.setLineDash([3,3]); ctx.strokeStyle=theme.accent; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.moveTo(x(S.time),T); ctx.lineTo(x(S.time),h-Bm); ctx.stroke(); ctx.restore();
+    const cNow = st.beta>0 ? Math.max(0,st.cosT) : 0;
+    ctx.beginPath(); ctx.arc(x(S.time),y(cNow),4.5,0,2*Math.PI);
+    ctx.fillStyle=theme.accent; ctx.fill();
+    ctx.strokeStyle=theme.surface; ctx.lineWidth=1.5; ctx.stroke();
+  }
+
+  /* ---------- readouts ---------- */
+  const deg = v => (v<0?"−":"")+Math.abs(v).toFixed(1)+"°";
+
+  function compute(){
+    const dec = declination(S.day);
+    const H = 15*(12-S.time);
+    const sun = sunPosition(S.lat, dec, H);
+    const cosT = cosTheta(sun.beta, sun.phi, S.tilt, S.az);
+    const theta = Math.acos(clamp(cosT,-1,1))/D;
+    const Ib = clearSkyBeam(S.day, sun.beta);
+    const Ibc = (sun.beta>0 && cosT>0) ? Ib*cosT : 0;
+    return {dec:dec, H:H, sun:sun, beta:sun.beta, phi:sun.phi,
+            cosT:cosT, theta:theta, Ibc:Ibc, nvec:normalVec(S.tilt,S.az)};
+  }
+
+  function render(){
+    const st = compute();
+
+    el("latOut").textContent = deg(S.lat)+" "+(S.lat>=0?"N":"S").replace("N",S.lat>=0?"N":"S");
+    el("latOut").textContent = Math.abs(S.lat).toFixed(1)+"° "+(S.lat>=0?"N":"S");
+    el("dayOut").textContent = dateLabel(S.day)+"  (n = "+S.day+")";
+    el("timeOut").textContent = clockLabel(S.time);
+    el("tiltOut").textContent = S.tilt.toFixed(0)+"°";
+    el("azOut").textContent = S.az===0 ? "0° (due south)"
+      : Math.abs(S.az).toFixed(0)+"° "+(S.az>0?"east of south":"west of south");
+
+    el("rDec").textContent = deg(st.dec);
+    el("rH").textContent = deg(st.H);
+    el("rBeta").textContent = deg(st.beta);
+    el("rPhi").textContent = deg(st.phi);
+    el("rTheta").textContent = st.beta>0 ? deg(st.theta) : "—";
+    el("rCos").textContent = st.beta>0 ? (st.cosT>0?st.cosT.toFixed(3):"0.000") : "—";
+    el("rIbc").textContent = st.Ibc>0 ? st.Ibc.toFixed(0)+" W/m²" : "0 W/m²";
+
+    const sr = sunriseHour(S.lat, st.dec);
+    let note;
+    if(st.beta<=0){
+      note = "Sun below the horizon. ";
+      if(sr.type==="normal") note += "Geometric sunrise "+clockLabel(12-sr.H/15)+", sunset "+clockLabel(12+sr.H/15)+" solar time.";
+      else if(sr.type==="night") note += "This latitude has no sunrise on day "+S.day+".";
+      else note += "Polar day: the sun stays up, but it is behind the collector now.";
+    } else if(st.cosT<=0){
+      note = "The sun is up, yet θ exceeds 90°, so the beam strikes the back of the collector and no direct radiation is collected.";
+    } else {
+      note = "Sunrise "+ (sr.type==="normal" ? clockLabel(12-sr.H/15) : "—") +
+             ", sunset "+ (sr.type==="normal" ? clockLabel(12+sr.H/15) : "—") +
+             " solar time. Air mass m = "+(1/sin(st.beta)).toFixed(2)+".";
+    }
+    el("statusNote").textContent = note;
+    el("statusNote").className = "note" + ((st.beta>0 && st.cosT<=0) ? " warn" : "");
+
+    drawScene(st);
+    drawDecChart(st);
+    drawDayChart(st);
+  }
+
+  /* ---------- wiring ---------- */
+  function bind(id, key, transform){
+    const input = el(id);
+    input.value = S[key];
+    input.addEventListener("input", function(){
+      S[key] = transform ? transform(parseFloat(input.value)) : parseFloat(input.value);
+      render();
+    });
+  }
+  bind("lat","lat"); bind("day","day"); bind("time","time");
+  bind("tilt","tilt"); bind("az","az");
+
+  function setSliders(){
+    el("lat").value=S.lat; el("day").value=S.day; el("time").value=S.time;
+    el("tilt").value=S.tilt; el("az").value=S.az;
+  }
+
+  el("noon").addEventListener("click", function(){ S.time=12; setSliders(); render(); });
+  el("latTilt").addEventListener("click", function(){
+    S.tilt = clamp(Math.abs(S.lat),0,90); S.az = 0; setSliders(); render();
+  });
+  el("track").addEventListener("click", function(){
+    const st = compute();
+    if(st.beta<=0) return;
+    S.tilt = clamp(90-st.beta,0,90);
+    S.az = clamp(st.phi,-90,90);
+    setSliders(); render();
+  });
+
+  let timer=null;
+  el("play").addEventListener("click", function(){
+    S.playing = !S.playing;
+    this.setAttribute("aria-pressed", S.playing ? "true":"false");
+    this.textContent = S.playing ? "Pause" : "Run the day";
+    if(S.playing){
+      timer = setInterval(function(){
+        S.time += 0.1; if(S.time>24) S.time=0;
+        el("time").value=S.time; render();
+      }, 60);
+    } else { clearInterval(timer); timer=null; }
+  });
+
+  el("viewIso").addEventListener("click", function(){ S.yaw=12; S.pitch=26; render(); });
+  el("viewTop").addEventListener("click", function(){ S.yaw=0; S.pitch=84; render(); });
+  el("viewSouth").addEventListener("click", function(){ S.yaw=0; S.pitch=6; render(); });
+
+  let dragging=false, lastX=0, lastY=0;
+  sky.addEventListener("pointerdown", function(e){
+    dragging=true; lastX=e.clientX; lastY=e.clientY;
+    sky.classList.add("dragging"); sky.setPointerCapture(e.pointerId);
+  });
+  sky.addEventListener("pointermove", function(e){
+    if(!dragging) return;
+    S.yaw = (S.yaw + (e.clientX-lastX)*0.4) % 360;
+    S.pitch = clamp(S.pitch + (e.clientY-lastY)*0.3, 4, 88);
+    lastX=e.clientX; lastY=e.clientY; render();
+  });
+  ["pointerup","pointercancel"].forEach(function(ev){
+    sky.addEventListener(ev, function(){ dragging=false; sky.classList.remove("dragging"); });
+  });
+
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  if(mq.addEventListener) mq.addEventListener("change", function(){ readTheme(); render(); });
+  new MutationObserver(function(){ readTheme(); render(); })
+    .observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+  window.addEventListener("resize", function(){ render(); });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+
+  readTheme();
+  render();
+})();
+</script>
+</body>
+</html>
